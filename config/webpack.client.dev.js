@@ -5,21 +5,21 @@ export default {
   devtool: 'cheap-module-eval-source-map',
   entry: [
     'webpack-hot-middleware/client',
-    './src/default'
+    path.resolve(__dirname, '..', 'src', 'client')
   ],
   output: {
     path: path.resolve(__dirname, '..', 'dist'),
-    filename: 'default.js',
+    filename: 'app.js',
     publicPath: '/dist/'
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
+    new webpack.NoErrorsPlugin(),
+    new webpack.HotModuleReplacementPlugin()
   ],
   module: {
     loaders: [{
       test: /\.js$/,
-      loaders: ['babel'],
+      loader: 'babel',
       include: path.resolve(__dirname, '..', 'src')
     }, {
       test: /\.scss$/,
