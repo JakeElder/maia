@@ -25,5 +25,8 @@ export default {
       test: /\.scss$/,
       loaders: ['style', 'css', 'sass']
     }]
+  },
+  sassLoader: {
+    includePaths: [path.resolve(__dirname, '..', 'node_modules')]
   }
 };

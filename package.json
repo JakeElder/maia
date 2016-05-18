@@ -6,7 +6,8 @@
     "start": "./node_modules/.bin/forever --minUptime 1000 --spinSleepTime 1000 -c \"node --harmony\" ./dist/server/server.js",
     "dev-server": "./node_modules/.bin/webpack --watch --verbose --colors --display-error-details --config ./config/webpack.server.dev.babel.js",
     "dev-server-start": "node ./node_modules/just-wait --pattern \"./dist/server/server.js\" && npm run start",
-    "dev": "./node_modules/.bin/concurrently --kill-others \"npm run dev-server\" \"npm run dev-server-start\""
+    "dev-client": "./node_modules/.bin/webpack-dev-server --no-info --config ./config/webpack.client.dev.babel.js",
+    "dev": "./node_modules/.bin/concurrently --kill-others \"npm run dev-client\" \"npm run dev-server\" \"npm run dev-server-start\""
   },
   "keywords": [],
   "author": "",
@@ -21,7 +22,9 @@
     "concurrently": "^2.1.0",
     "css-loader": "^0.23.1",
     "just-wait": "^1.0.5",
+    "node-reset-scss": "^1.0.1",
     "node-sass": "^3.7.0",
+    "null-loader": "^0.1.1",
     "sass-loader": "^3.2.0",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.0",
@@ -34,6 +37,9 @@
     "express": "^4.13.4",
     "forever": "^0.15.1",
     "react": "^15.0.2",
-    "react-dom": "^15.0.2"
+    "react-dom": "^15.0.2",
+    "react-redux": "^4.4.5",
+    "react-router": "^2.4.0",
+    "redux": "^3.5.2"
   }
 }

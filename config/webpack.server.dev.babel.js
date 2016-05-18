@@ -26,7 +26,7 @@ export default {
       loader: 'babel'
     }, {
       test: /\.scss$/,
-      loaders: ['style', 'css', 'sass']
+      loader: 'null'
     }]
   },
   externals: externals({ whitelist: ['webpack/hot/poll?1000'] }),
