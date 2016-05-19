@@ -25,6 +25,7 @@ server.get('*', (req, res) => {
               <RouterContext {...props} />
             </Provider>
           );
+          const jsonState = JSON.stringify(store.getState());
           res.send(`
             <!doctype html>
             <html>
@@ -34,6 +35,7 @@ server.get('*', (req, res) => {
             </head>
             <body>
               <div id="root">${appHtml}</div>
+              <script>window.__REDUX_STATE__ = ${jsonState}</script>
               <script src="http://localhost:8080/dist/app.js"></script>
             </body>
             </html>
