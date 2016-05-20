@@ -9,7 +9,7 @@ import './Route.scss';
 
 function mapStateToProps(state, ownProps) {
   return {
-    isExpanded: state.expandedRoutes.indexOf(ownProps.id) > -1
+    isExpanded: state.expandedRoutes.indexOf(ownProps.route.id) > -1
   };
 }
 
@@ -22,7 +22,8 @@ export default class Route extends Component {
   }
 
   render() {
-    const { dispatch, id, label, pattern, target, isExpanded } = this.props;
+    const { id, label, pattern, target } = this.props.route;
+    const { dispatch, isExpanded } = this.props;
     return (
       <div className="Route">
         <h2 className="Route--heading">

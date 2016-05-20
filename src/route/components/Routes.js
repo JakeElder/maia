@@ -17,7 +17,7 @@ export default class Routes extends Component {
           {routes.map((route) => {
             return (
               <li className="RouteList--route" key={route.id}>
-                <Route {...route} />
+                <Route route={route} />
               </li>
             );
           })}
