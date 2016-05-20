@@ -4,6 +4,8 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { renderToString } from 'react-dom/server';
 import { match, RouterContext } from 'react-router';
+import { getMuiTheme, MuiThemeProvider } from  'material-ui/styles';
+import DevTools from './DevTools';
 
 import app from './app';
 import route from './route';
@@ -19,11 +21,16 @@ server.get('*', (req, res) => {
     } else if (props) {
       route.api.all().then((routes) => {
         try {
-          const store = createStore(app.reducer, { routes: routes });
+          const store = createStore(app.reducer, { routes: routes }, DevTools.instrument());
+          const muiTheme = getMuiTheme({}, {
+            userAgent: req.headers['user-agent']
+          });
           const appHtml = renderToString(
-            <Provider store={store}>
-              <RouterContext {...props} />
-            </Provider>
+            <MuiThemeProvider muiTheme={muiTheme}>
+              <Provider store={store}>
+                <RouterContext {...props} />
+              </Provider>
+            </MuiThemeProvider>
           );
           const jsonState = JSON.stringify(store.getState());
           res.send(`
@@ -32,6 +39,7 @@ server.get('*', (req, res) => {
             <head>
               <title>Maia</title>
               <meta name="viewport" content="width=device-width, initial-scale=1" />
+              <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500' rel='stylesheet' type='text/css'>
             </head>
             <body>
               <div id="root">${appHtml}</div>

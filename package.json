@@ -6,8 +6,8 @@
     "start": "./node_modules/.bin/forever --minUptime 1000 --spinSleepTime 1000 -c \"node --harmony\" ./dist/server/server.js",
     "dev-server": "./node_modules/.bin/webpack --watch --verbose --colors --display-error-details --config ./config/webpack.server.dev.babel.js",
     "dev-server-start": "node ./node_modules/just-wait --pattern \"./dist/server/server.js\" && npm run start",
-    "dev-client": "./node_modules/.bin/webpack-dev-server --no-info --config ./config/webpack.client.dev.babel.js",
-    "dev": "./node_modules/.bin/concurrently --kill-others \"npm run dev-client\" \"npm run dev-server\" \"npm run dev-server-start\""
+    "dev-client": "./node_modules/.bin/webpack-dev-server --config ./config/webpack.client.dev.babel.js",
+    "dev": "./node_modules/.bin/concurrently --kill-others \"npm run dev-client\" \"npm run dev-server-start\" \"npm run dev-server\""
   },
   "keywords": [],
   "author": "",
@@ -27,6 +27,9 @@
     "node-reset-scss": "^1.0.1",
     "node-sass": "^3.7.0",
     "null-loader": "^0.1.1",
+    "redux-devtools": "^3.3.1",
+    "redux-devtools-dock-monitor": "^1.1.1",
+    "redux-devtools-log-monitor": "^1.0.11",
     "sass-loader": "^3.2.0",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.0",
@@ -36,12 +39,16 @@
     "webpack-node-externals": "^1.2.0"
   },
   "dependencies": {
+    "classnames": "^2.2.5",
     "express": "^4.13.4",
     "forever": "^0.15.1",
+    "lodash": "^4.12.0",
+    "material-ui": "^0.15.0",
     "react": "^15.0.2",
     "react-dom": "^15.0.2",
     "react-redux": "^4.4.5",
     "react-router": "^2.4.0",
+    "react-tap-event-plugin": "^1.0.0",
     "redux": "^3.5.2"
   }
 }

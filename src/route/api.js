@@ -1,7 +1,7 @@
 export const all = () => {
   return new Promise((resolve, reject) => {
     resolve([{
-      "id": 0,
+      "id": 1,
       "label": "Test route",
       "methods": ["GET", "POST", "PUT", "DELETE"],
       "pattern": "/test(.*)",
@@ -11,13 +11,13 @@ export const all = () => {
         "pathname": "/$1"
       }
     }, {
-      "id": 1,
+      "id": 2,
       "label": "Another Test route",
       "methods": ["GET", "POST", "PUT", "DELETE"],
       "pattern": "/test(.*)",
       "target": {
         "protocol": "http",
-        "host": "example.com",
+        "host": "another-example.com",
         "pathname": "/$1"
       }
     }])

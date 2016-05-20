@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
+import AppBar from 'material-ui/AppBar';
 
 export default class Header extends Component {
   render() {
     return (
       <header>
-        <h1>Maia</h1>
+        <AppBar
+          title="Maia"
+          showMenuIconButton={false}
+        />
       </header>
     );
   }

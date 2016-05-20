@@ -3,14 +3,19 @@ import webpack from 'webpack';
 
 export default {
   devtool: 'cheap-module-eval-source-map',
+  devServer: {
+    hot: true,
+    noInfo: true,
+  },
   entry: [
-    'webpack-hot-middleware/client',
+    'webpack-dev-server/client?http://localhost:8080',
+    'webpack/hot/only-dev-server',
     path.resolve(__dirname, '..', 'src', 'client')
   ],
   output: {
     path: path.resolve(__dirname, '..', 'dist'),
     filename: 'app.js',
-    publicPath: '/dist/'
+    publicPath: 'http://localhost:8080/dist/'
   },
   plugins: [
     new webpack.NoErrorsPlugin(),

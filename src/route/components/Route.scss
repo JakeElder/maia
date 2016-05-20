@@ -1,0 +1,38 @@
+.Route--heading {
+  font-size: 16px;
+  height: 44px;
+  padding-left: 14px;
+  padding-right: 14px;
+  background-color: #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Route--heading-label {
+  display: flex;
+  align-items: center;
+}
+
+.Route--heading-info {
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.Route--seperator {
+  padding-left: 4px;
+  padding-right: 4px;
+  color: #1E88E5;
+  letter-spacing: -1px;
+}
+
+.Route--body {
+  padding: 14px;
+  font-size: 14px;
+  background-color: #f5f5f5;
+  display: none;
+}
+
+.Route--body.is-expanded {
+  display: block;
+}
