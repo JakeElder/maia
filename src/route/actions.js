@@ -1,5 +1,6 @@
 export const EXPAND_ROUTE = 'route/EXPAND';
 export const CONTRACT_ROUTE = 'route/CONTRACT';
+export const STAGE_ROUTE = 'route/STAGE';
 
 export function expandRoute(id) {
   return {
@@ -14,3 +15,10 @@ export function contractRoute(id) {
     id
   };
 };
+
+export function stageRoute(route) {
+  return {
+    type: STAGE_ROUTE,
+    route
+  }
+}

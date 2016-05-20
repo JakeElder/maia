@@ -1,9 +1,18 @@
 import React, { Component, PropTypes } from 'react';
+import _ from 'lodash';
 import { connect } from 'react-redux';
 import Route from './Route';
 import './Routes.scss';
 
-@connect(state => ({ routes: state.routes }))
+function mapStateToProps(state) {
+  return {
+    routes: state.routes.map((route) => {
+      return _.find(state.stagedRoutes, { id: route.id }) || route;
+    })
+  }
+}
+
+@connect(mapStateToProps)
 export default class Routes extends Component {
   static propTypes = {
     routes: PropTypes.array.isRequired

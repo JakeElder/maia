@@ -1,4 +1,4 @@
 import { combineReducers } from 'redux';
-import { routes, expandedRoutes } from '../route/reducers';
+import { routes, expandedRoutes, stagedRoutes } from '../route/reducers';
 
-export default combineReducers({ routes, expandedRoutes });
+export default combineReducers({ routes, expandedRoutes, stagedRoutes });
