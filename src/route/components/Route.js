@@ -30,6 +30,7 @@ export default class Route extends Component {
 
   getRouteFromForm() {
     const route = serialize(this.refs.form, { hash: true });
+    if (!route.methods) { route.methods = []; }
     route.id = parseInt(route.id);
     return route;
   }
@@ -69,40 +70,41 @@ export default class Route extends Component {
           </div>
         </h2>
         <pre className={this.bodyClassName}>
-          <form onChange={this.handleUpdate} method="post" action={`/routes/${id}`} ref="form">
+          <form method="post" action={`/routes/${id}`} ref="form">
             <input type="hidden" name="id" value={id} />
             <div className="Route--row">
               <TextField
                 disabled={disabled}
-                defaultValue={name}
+                value={name}
                 id='name'
                 name='name'
                 floatingLabelText="Name"
-                onKeyDown={this.handleUpdate}
+                onChange={this.handleUpdate}
               />
             </div>
             <div className="Route--row">
               <TextField
                 disabled={disabled}
-                defaultValue={pattern}
+                value={pattern}
                 id='pattern'
                 name='pattern'
                 floatingLabelText="pattern"
-                onKeyDown={this.handleUpdate}
+                onChange={this.handleUpdate}
               />
               <TextField
                 disabled={disabled}
-                defaultValue={target}
+                value={target}
                 id='target'
                 name='target'
                 floatingLabelText="target"
-                onKeyDown={this.handleUpdate}
+                onChange={this.handleUpdate}
               />
             </div>
             <div className="Route--row">
               <div className="Route--methods">
                 {methods.map((method, idx) => {
                   return <Checkbox
+                    onCheck={this.handleUpdate}
                     name={`methods[${idx}]`}
                     key={method}
                     label={method}
