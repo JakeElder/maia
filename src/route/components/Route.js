@@ -7,6 +7,7 @@ import TextField from 'material-ui/TextField';
 import Checkbox from 'material-ui/Checkbox';
 import ArrowDown from 'material-ui/svg-icons/hardware/keyboard-arrow-down';
 import ArrowUp from 'material-ui/svg-icons/hardware/keyboard-arrow-up';
+import RaisedButton from 'material-ui/RaisedButton';
 import { expandRoute, contractRoute, stageRoute, unstageRoute } from '../actions';
 import './Route.scss';
 
@@ -71,6 +72,19 @@ export default class Route extends Component {
     }
   }
 
+  get formControls() {
+    const { id } = this.props.route;
+    const { dispatch, isModified } = this.props;
+
+    return <div className="Route--form-controls">
+      <RaisedButton
+        onMouseUp={() => { dispatch(unstageRoute(id)) }}
+        disabled={!isModified}
+        label="Reset"
+      />
+    </div>
+  }
+
   render() {
     const { id, name, pattern, target } = this.props.route;
     const methods = ['GET', 'POST', 'PUT', 'DELETE'];
@@ -124,12 +138,13 @@ export default class Route extends Component {
                     name={`methods[${idx}]`}
                     key={method}
                     label={method}
-                    defaultValue={method}
-                    defaultChecked={this.props.route.methods.indexOf(method) > -1}
+                    value={method}
+                    checked={this.props.route.methods.indexOf(method) > -1}
                   />
                 })}
               </div>
             </div>
+            {this.formControls}
           </form>
         </pre>
       </div>

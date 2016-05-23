@@ -44,10 +44,16 @@
   display: none;
 }
 
+.Route--body.is-expanded {
+  display: block;
+}
+
 .Route--methods {
   padding-top: 16px;
 }
 
-.Route--body.is-expanded {
-  display: block;
+.Route--form-controls {
+  padding-top: 14px;
+  display: flex;
+  justify-content: flex-end;
 }
