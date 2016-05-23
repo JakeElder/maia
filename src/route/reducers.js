@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import { EXPAND_ROUTE, CONTRACT_ROUTE, STAGE_ROUTE } from './actions';
+import { EXPAND_ROUTE, CONTRACT_ROUTE, STAGE_ROUTE, UNSTAGE_ROUTE } from './actions';
 
 export function routes(state = [], action) {
   switch(action.type) {
@@ -23,6 +23,8 @@ export function stagedRoutes(state = [], action) {
   switch(action.type) {
     case STAGE_ROUTE:
       return [..._.filter(state, route => route.id !== action.route.id), action.route];
+    case UNSTAGE_ROUTE:
+      return [..._.filter(state, route => route.id !== action.id)];
     default:
       return state;
   }
