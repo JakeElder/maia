@@ -10,7 +10,9 @@ export const expressMiddleware = (req, res, next) => {
   const innerState = cookie.parse(req.get('Cookie') || '').rs_state;
   try {
     state = JSON.parse(innerState);
-  } catch(e) {}
+  } catch(e) {
+    state = false;
+  }
 
   const originalSend = res.send;
   res.send = function(body) {
