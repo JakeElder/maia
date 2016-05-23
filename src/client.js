@@ -1,14 +1,20 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { createStore } from 'redux';
+import { createStore, compose, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import { Router, browserHistory } from 'react-router';
 import { getMuiTheme, MuiThemeProvider } from  'material-ui/styles';
+import { getSyncedState, reduxMiddleware as syncMiddleware } from './redux-universal-sync';
 import DevTools from './DevTools';
 
 import app from './app';
 
-const store = createStore(app.reducer, window.__REDUX_STATE__, DevTools.instrument());
+const store = createStore(
+  app.reducer,
+  getSyncedState(),
+  compose(applyMiddleware(syncMiddleware), DevTools.instrument())
+);
+
 const App = (
   <MuiThemeProvider muiTheme={getMuiTheme()}>
     <Provider store={store}>

@@ -1,16 +1,26 @@
 import express from 'express';
 import React from 'react';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
 import { renderToString } from 'react-dom/server';
 import { match, RouterContext } from 'react-router';
 import { getMuiTheme, MuiThemeProvider } from  'material-ui/styles';
+import Promise from 'bluebird';
+import * as reduxSync from './redux-universal-sync';
 import DevTools from './DevTools';
 
 import app from './app';
 import route from './route';
 
 const server = express();
+
+function getInitialState() {
+  const syncedState = reduxSync.getSyncedState();
+  if (syncedState) { return Promise.resolve(syncedState); }
+  return route.api.all().then(routes => ({ routes }));
+}
+
+server.use(reduxSync.expressMiddleware);
 
 server.get('*', (req, res) => {
   match({ routes: app.routes, location: req.url }, (err, redirect, props) => {
@@ -19,9 +29,13 @@ server.get('*', (req, res) => {
     } else if (redirect) {
       res.redirect(redirect.pathname + redirect.search)
     } else if (props) {
-      route.api.all().then((routes) => {
+      getInitialState().then((state) => {
         try {
-          const store = createStore(app.reducer, { routes: routes }, DevTools.instrument());
+          const store = createStore(
+              app.reducer,
+              state,
+              compose(applyMiddleware(reduxSync.reduxMiddleware), DevTools.instrument())
+          );
           const muiTheme = getMuiTheme({}, {
             userAgent: req.headers['user-agent']
           });

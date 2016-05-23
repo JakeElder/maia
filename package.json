@@ -39,7 +39,10 @@
     "webpack-node-externals": "^1.2.0"
   },
   "dependencies": {
+    "bluebird": "^3.4.0",
+    "browser-cookies": "^1.0.8",
     "classnames": "^2.2.5",
+    "cookie": "^0.2.4",
     "express": "^4.13.4",
     "forever": "^0.15.1",
     "form-serialize": "^0.7.1",
