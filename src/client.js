@@ -2,6 +2,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import { createStore, compose, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
+import thunk from 'redux-thunk';
 import { Router, browserHistory } from 'react-router';
 import { getMuiTheme, MuiThemeProvider } from  'material-ui/styles';
 import { getSyncedState, reduxMiddleware as syncMiddleware } from './redux-universal-sync';
@@ -12,7 +13,7 @@ import app from './app';
 const store = createStore(
   app.reducer,
   getSyncedState(),
-  compose(applyMiddleware(syncMiddleware), DevTools.instrument())
+  compose(applyMiddleware(syncMiddleware, thunk), DevTools.instrument())
 );
 
 const App = (

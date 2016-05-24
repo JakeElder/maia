@@ -1,5 +1,6 @@
-import express from 'express';
 import React from 'react';
+import express from 'express';
+import bodyParser from 'body-parser';
 import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
 import { renderToString } from 'react-dom/server';
@@ -20,7 +21,15 @@ function getInitialState() {
   return route.api.all().then(routes => ({ routes }));
 }
 
+server.use(bodyParser.json());
 server.use(reduxSync.expressMiddleware);
+
+server.post('/routes/:id', (req, res) => {
+  route.api.update(parseInt(req.params.id), req.body).then(
+    () => res.status(200).end(),
+    () => res.status(500).end()
+  );
+});
 
 server.get('*', (req, res) => {
   match({ routes: app.routes, location: req.url }, (err, redirect, props) => {

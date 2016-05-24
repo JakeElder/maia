@@ -8,12 +8,14 @@ import Checkbox from 'material-ui/Checkbox';
 import ArrowDown from 'material-ui/svg-icons/hardware/keyboard-arrow-down';
 import ArrowUp from 'material-ui/svg-icons/hardware/keyboard-arrow-up';
 import RaisedButton from 'material-ui/RaisedButton';
-import { expandRoute, contractRoute, stageRoute, unstageRoute } from '../actions';
+import { expandRoute, contractRoute, stageRoute, unstageRoute, update } from '../actions';
 import './Route.scss';
 
 function mapStateToProps(state, ownProps) {
+  const originalRoute = _.find(state.routes, { id: ownProps.route.id });
   return {
-    originalRoute: _.find(state.routes, { id: ownProps.route.id }),
+    originalRoute,
+    isUpdating: originalRoute.isUpdating,
     isExpanded: _.includes(state.expandedRoutes, ownProps.route.id),
     isModified: _.some(state.stagedRoutes, { id: ownProps.route.id })
   };
@@ -66,27 +68,41 @@ export default class Route extends Component {
   }
 
   get modifiedStateIndicator() {
-    const { isModified } = this.props;
+    const { isModified, isUpdating } = this.props;
+    if (isUpdating) {
+      return <span className="Route--modified-label">posting</span>;
+    }
     if (isModified) {
       return <span className="Route--modified-label">modified</span>;
     }
+    return <span className="Route--modified-label">👌</span>;
   }
 
   get formControls() {
     const { id } = this.props.route;
-    const { dispatch, isModified } = this.props;
+    const { dispatch, isModified, isUpdating } = this.props;
+    const disabled = isUpdating || !isModified;
 
     return <div className="Route--form-controls">
       <RaisedButton
         onMouseUp={() => { dispatch(unstageRoute(id)) }}
-        disabled={!isModified}
+        disabled={disabled}
+        style={{ marginRight: 10 }}
         label="Reset"
+      />
+      <RaisedButton
+        onMouseUp={() => { dispatch(update(this.props.route)) }}
+        primary={true}
+        disabled={disabled}
+        label="Save"
       />
     </div>
   }
 
   render() {
     const { id, name, pattern, target } = this.props.route;
+    const { isModified, isUpdating } = this.props;
+    const disabled = isUpdating;
     const methods = ['GET', 'POST', 'PUT', 'DELETE'];
     return (
       <div className="Route">
@@ -107,6 +123,7 @@ export default class Route extends Component {
             <input type="hidden" name="id" value={id} />
             <div className="Route--row">
               <TextField
+                disabled={disabled}
                 value={name}
                 id='name'
                 name='name'
@@ -116,6 +133,7 @@ export default class Route extends Component {
             </div>
             <div className="Route--row">
               <TextField
+                disabled={disabled}
                 value={pattern}
                 id='pattern'
                 name='pattern'
@@ -123,6 +141,7 @@ export default class Route extends Component {
                 onChange={this.handleUpdate}
               />
               <TextField
+                disabled={disabled}
                 value={target}
                 id='target'
                 name='target'
@@ -134,6 +153,7 @@ export default class Route extends Component {
               <div className="Route--methods">
                 {methods.map((method, idx) => {
                   return <Checkbox
+                    disabled={disabled}
                     onCheck={this.handleUpdate}
                     name={`methods[${idx}]`}
                     key={method}
