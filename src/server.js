@@ -16,9 +16,12 @@ import route from './route';
 const server = express();
 
 function getInitialState() {
-  const syncedState = reduxSync.getSyncedState();
-  if (syncedState) { return Promise.resolve(syncedState); }
-  return route.api.all().then(routes => ({ routes }));
+  const syncedState = reduxSync.getSyncedState() || {};
+  return route.api.all().then(routes => {
+    if (syncedState) { return Promise.resolve(syncedState); }
+    syncedState.routes = routes;
+    return syncedState;
+  });
 }
 
 server.use(bodyParser.json());
