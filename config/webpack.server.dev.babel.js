@@ -32,6 +32,11 @@ export default {
   externals: externals({ whitelist: ['webpack/hot/poll?1000'] }),
   node: {
     __dirname: true
+  },
+  resolve: {
+    alias: {
+      'route-api': path.resolve(__dirname, '..', 'src', 'route', 'api.server')
+    }
   }
 };
 

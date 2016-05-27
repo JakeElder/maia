@@ -1,4 +1,4 @@
-import * as api from './api';
+import * as api from 'route-api';
 
 export const EXPAND_ROUTE = 'route/EXPAND';
 export const CONTRACT_ROUTE = 'route/CONTRACT';
@@ -11,54 +11,16 @@ export const UPDATE_SUCCESS = 'route/UPDATE_SUCCESS';
 export const UPDATE_FAILURE = 'route/UPDATE_FAILURE';
 
 
-export function expandRoute(id) {
-  return {
-    type: EXPAND_ROUTE,
-    id
-  };
-};
+export const expandRoute = id => ({ type: EXPAND_ROUTE, id });
+export const contractRoute = id => ({ type: CONTRACT_ROUTE, id });
 
-export function contractRoute(id) {
-  return {
-    type: CONTRACT_ROUTE,
-    id
-  };
-};
+export const stageRoute = route => ({ type: STAGE_ROUTE, route });
+export const unstageRoute = id => ({ type: UNSTAGE_ROUTE, id });
 
-export function stageRoute(route) {
-  return {
-    type: STAGE_ROUTE,
-    route
-  }
-}
+export const updateRequest = route => ({ type: UPDATE_REQUEST, route });
+export const updateSuccess = route => ({ type: UPDATE_SUCCESS, route });
+export const updateFailure = route => ({ type: UPDATE_FAILURE, route });
 
-export function unstageRoute(id) {
-  return {
-    type: UNSTAGE_ROUTE,
-    id
-  }
-}
-
-export function updateRequest(route) {
-  return {
-    type: UPDATE_REQUEST,
-    route
-  }
-}
-
-export function updateSuccess(route) {
-  return {
-    type: UPDATE_SUCCESS,
-    route
-  }
-}
-
-export function updateFailure(route) {
-  return {
-    type: UPDATE_FAILURE,
-    route
-  }
-}
 
 export const update = route => dispatch => {
   dispatch(updateRequest(route));

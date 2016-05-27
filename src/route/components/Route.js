@@ -37,7 +37,6 @@ export default class Route extends Component {
   getRouteFromForm() {
     const route = serialize(this.refs.form, { hash: true });
     if (!route.methods) { route.methods = []; }
-    route.id = parseInt(route.id);
     return route;
   }
 

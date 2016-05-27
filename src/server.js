@@ -5,8 +5,10 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
 import { renderToString } from 'react-dom/server';
 import { match, RouterContext } from 'react-router';
-import { getMuiTheme, MuiThemeProvider } from  'material-ui/styles';
+import { getMuiTheme, MuiThemeProvider } from 'material-ui/styles';
 import Promise from 'bluebird';
+
+import { awaitConnection as awaitDbConnection } from './database';
 import * as reduxSync from './redux-universal-sync';
 import DevTools from './DevTools';
 
@@ -18,9 +20,11 @@ const server = express();
 function getInitialState() {
   const syncedState = reduxSync.getSyncedState() || {};
   return route.api.all().then(routes => {
-    if (syncedState) { return Promise.resolve(syncedState); }
-    syncedState.routes = routes;
-    return syncedState;
+    if (syncedState) {
+      syncedState.routes = routes;
+      return syncedState;
+    }
+    return { routes };
   });
 }
 
@@ -28,7 +32,7 @@ server.use(bodyParser.json());
 server.use(reduxSync.expressMiddleware);
 
 server.post('/routes/:id', (req, res) => {
-  route.api.update(parseInt(req.params.id), req.body).then(
+  route.api.update(req.params.id, req.body).then(
     () => res.status(200).end(),
     () => res.status(500).end()
   );
@@ -83,7 +87,12 @@ server.get('*', (req, res) => {
   });
 });
 
-server.listen(3000, (err) => {
-  if (err) { return console.log(err); }
-  console.log('Listening at http://localhost:3000');
-});
+awaitDbConnection.then(
+  () => {
+    server.listen(3000, (err) => {
+      if (err) { return console.log(err); }
+      console.log('Listening at http://localhost:3000');
+    });
+  },
+  (err) => { throw err; }
+);
