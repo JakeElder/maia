@@ -1,6 +1,6 @@
 import Promise from 'bluebird';
 import omit from 'lodash.omit';
-import { ROUTE_QUALIFIER, makeRouteKey, all, create } from '../api.server';
+import { ROUTE_QUALIFIER, makeRouteKey, all, create, update } from '../api.server';
 import config from '../../config';
 import * as db from '../../database';
 
@@ -63,6 +63,26 @@ describe('create', () => {
           resolve();
         });
       });
+    });
+  });
+});
+
+describe('update', () => {
+  it('updates a route', () => {
+    const route = routes[0];
+    db.client.hmset(makeRouteKey(route.id), route);
+    route.name = 'New name';
+    route.pattern = '/amended-test(.*)';
+    return update(route.id, route).then(() => {
+      return new Promise((resolve, reject) => {
+        db.client.hgetall(makeRouteKey(route.id), (err, retrievedRoute) => {
+          expect({
+            ...retrievedRoute,
+            order: parseInt(retrievedRoute.order, 10)
+          }).toEqual(route);
+          resolve();
+        });
+      })
     });
   });
 });

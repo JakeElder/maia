@@ -35,5 +35,11 @@ export function create(route) {
 }
 
 export function update(id, route) {
-  return Promise.reject();
+  return new Promise((resolve, reject) => {
+    const id = route.id;
+    redis.hmset(makeRouteKey(id), route, (err, route) => {
+      if (err) { return reject(err); }
+      resolve();
+    });
+  });
 }
