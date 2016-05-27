@@ -2,6 +2,8 @@ import Promise from 'bluebird';
 import fetch from 'isomorphic-fetch';
 import findIndex from 'lodash.findindex';
 import sortBy from 'lodash.sortby';
+import uuid from 'uuid';
+
 import { client as redis } from '../database';
 import config from '../config'
 
@@ -19,6 +21,16 @@ export function all() {
       methods: JSON.parse(route.methods)
     }));
     return sortBy(routes, 'order');
+  });
+}
+
+export function create(route) {
+  return new Promise((resolve, reject) => {
+    const id = uuid.v4();
+    redis.hmset(makeRouteKey(id), { id, ...route }, (err, route) => {
+      if (err) { return reject(err); }
+      resolve(id);
+    });
   });
 }
 

@@ -1,5 +1,6 @@
 import Promise from 'bluebird';
-import { ROUTE_QUALIFIER, makeRouteKey, all } from '../api.server';
+import omit from 'lodash.omit';
+import { ROUTE_QUALIFIER, makeRouteKey, all, create } from '../api.server';
 import config from '../../config';
 import * as db from '../../database';
 
@@ -45,6 +46,23 @@ describe('all', () => {
     });
     return all().then((retrievedRoutes) => {
       expect(routes).toEqual(retrievedRoutes);
+    });
+  });
+});
+
+describe('create', () => {
+  it('adds a new route to the database', () => {
+    const route = omit(routes[0], 'id');
+    return create(route).then((id) => {
+      return new Promise((resolve, reject) => {
+        db.client.hgetall(makeRouteKey(id), (err, retrievedRoute) => {
+          expect({
+            ...retrievedRoute,
+            order: parseInt(retrievedRoute.order, 10)
+          }).toEqual({ id, ...route });
+          resolve();
+        });
+      });
     });
   });
 });
