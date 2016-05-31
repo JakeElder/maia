@@ -18,7 +18,7 @@ export function all() {
     routes = routes.map(route => ({
       ...route,
       order: parseInt(route.order, 10),
-      methods: JSON.parse(route.methods)
+      methods: JSON.parse(route.methods || '[]')
     }));
     return sortBy(routes, 'order');
   });
@@ -37,6 +37,7 @@ export function create(route) {
 export function update(id, route) {
   return new Promise((resolve, reject) => {
     const id = route.id;
+    route.methods = JSON.stringify(route.methods || []);
     redis.hmset(makeRouteKey(id), route, (err, route) => {
       if (err) { return reject(err); }
       resolve();

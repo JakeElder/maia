@@ -10,11 +10,6 @@ import {
 
 export function routes(state = [], action) {
   switch(action.type) {
-    case UPDATE_REQUEST:
-      return state.map(route => {
-        if (route.id === action.route.id) { route.isUpdating = true; }
-        return route;
-      });
     case UPDATE_SUCCESS:
       return state.map(route => {
         return route.id === action.route.id ? action.route : route;
@@ -30,6 +25,17 @@ export function expandedRoutes(state = [], action) {
       return _.uniq([...state, action.id]);
     case CONTRACT_ROUTE:
       return _.without([...state], action.id);
+    default:
+      return state;
+  }
+}
+
+export function updatingRoutes(state = [], action) {
+  switch(action.type) {
+    case UPDATE_REQUEST:
+      return _.uniq([...state, action.route.id]);
+    case UPDATE_SUCCESS:
+      return _.without([...state], action.route.id);
     default:
       return state;
   }

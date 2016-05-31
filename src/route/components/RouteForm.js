@@ -1,0 +1,95 @@
+import React, { Component, PropTypes } from 'react';
+import TextField from 'material-ui/TextField';
+import Checkbox from 'material-ui/Checkbox';
+import serialize from 'form-serialize';
+import RaisedButton from 'material-ui/RaisedButton';
+
+import { METHODS } from '../constants';
+
+export default class RouteForm extends Component {
+  get formControls() {
+    const { disabled, onReset, resetEnabled, submitEnabled } = this.props;
+
+    return <div className="Route--form-controls">
+      <RaisedButton
+        onMouseUp={onReset}
+        disabled={!resetEnabled}
+        style={{ marginRight: 10 }}
+        label="Reset"
+      />
+      <RaisedButton
+        primary={true}
+        disabled={!submitEnabled}
+        label="Submit"
+        type="submit"
+      />
+    </div>
+  }
+
+  render() {
+    const { id, name, pattern, target, order } = this.props.route;
+    const { onChange, onSubmit, editable } = this.props;
+
+    return (
+      <form
+        ref="form"
+        onSubmit={(e) => {
+          e.preventDefault();
+          onSubmit();
+        }}
+        onChange={() => {
+          let route = serialize(this.refs.form, { hash: true })
+          route = {
+            ...route,
+            order: parseInt(route.order, 10),
+            methods: route.methods || []
+          };
+          onChange(event, route);
+        }}
+        autoComplete="off"
+      >
+        <input type="hidden" name="id" value={id} />
+        <input type="hidden" name="order" value={order} />
+        <div className="Route--row">
+          <TextField
+            value={name}
+            id="name"
+            name="name"
+            floatingLabelText="Name"
+          />
+        </div>
+        <div className="Route--row">
+          <TextField
+            disabled={!editable}
+            value={pattern}
+            id="pattern"
+            name="pattern"
+            floatingLabelText="pattern"
+          />
+          <TextField
+            disabled={!editable}
+            value={target}
+            id="target"
+            name="target"
+            floatingLabelText="target"
+          />
+        </div>
+        <div className="Route--row">
+          <div className="Route--methods">
+            {METHODS.map((method, idx) => {
+              return <Checkbox
+                disabled={!editable}
+                name={`methods[${idx}]`}
+                key={method}
+                label={method}
+                value={method}
+                checked={this.props.route.methods.indexOf(method) > -1}
+              />
+            })}
+          </div>
+        </div>
+        {this.formControls}
+      </form>
+    );
+  }
+}
