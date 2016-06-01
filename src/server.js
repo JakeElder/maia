@@ -1,6 +1,5 @@
 import React from 'react';
 import express from 'express';
-import bodyParser from 'body-parser';
 import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
 import { renderToString } from 'react-dom/server';
@@ -9,6 +8,7 @@ import { getMuiTheme, MuiThemeProvider } from 'material-ui/styles';
 import Promise from 'bluebird';
 
 import { awaitConnection as awaitDbConnection } from './database';
+import api from './api';
 import * as reduxSync from './redux-universal-sync';
 import DevTools from './DevTools';
 
@@ -24,22 +24,8 @@ function getInitialState() {
   );
 }
 
-server.use(bodyParser.json());
 server.use(reduxSync.expressMiddleware);
-
-server.post('/route', (req, res) => {
-  route.api.create(req.body).then(
-    id => res.send({ id }),
-    () => res.status(500).end()
-  );
-});
-
-server.put('/routes/:id', (req, res) => {
-  route.api.update(req.params.id, req.body).then(
-    () => res.status(200).end(),
-    () => res.status(500).end()
-  );
-});
+server.use('/api', api);
 
 server.get('*', (req, res) => {
   match({ routes: app.routes, location: req.url }, (err, redirect, props) => {
