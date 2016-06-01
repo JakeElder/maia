@@ -1,4 +1,4 @@
-import * as api from 'route-api';
+import * as Route from 'route-api';
 
 export const EXPAND_ROUTE = 'route/EXPAND';
 export const CONTRACT_ROUTE = 'route/CONTRACT';
@@ -44,7 +44,7 @@ export const unstageDraft = () => ({ type: UNSTAGE_DRAFT });
 
 export const create = route => dispatch => {
   dispatch(createRequest(route));
-  return api.create(route).then(
+  return Route.create(route).then(
     id => dispatch(createSuccess({ ...route, id })),
     () => dispatch(createFailure(route))
   );
@@ -52,7 +52,7 @@ export const create = route => dispatch => {
 
 export const update = route => dispatch => {
   dispatch(updateRequest(route));
-  return api.update(route.id, route).then(
+  return Route.update(route.id, route).then(
     () => dispatch(updateSuccess(route)),
     () => dispatch(updateFailure(route))
   );

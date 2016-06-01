@@ -1,9 +1,3 @@
-import components from './components';
-import reducer from './reducer';
-import routes from './routes';
-
-export default {
-  components,
-  reducer,
-  routes
-};
+export { default as components } from './components';
+export { default as reducer } from './reducer';
+export { default as routes } from './routes';
