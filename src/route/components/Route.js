@@ -32,7 +32,7 @@ export default class Route extends Component {
     });
   }
 
-  handleChange(event, resultingRoute) {
+  handleChange(resultingRoute) {
     const { dispatch, isModified, originalRoute } = this.props;
     if (isModified && _.isEqual(resultingRoute, originalRoute)) {
       dispatch(unstageRoute(this.props.route.id));
@@ -91,7 +91,7 @@ export default class Route extends Component {
             route={this.props.route}
             onChange={this.handleChange}
             onReset={() => { dispatch(unstageRoute(id)) }}
-            onSubmit={() => { dispatch(update(this.props.route)) }}
+            onSubmit={(route) => { dispatch(update(route)) }}
             resetEnabled={isModified && !isUpdating}
             submitEnabled={isModified && !isUpdating}
             editable={!isUpdating}

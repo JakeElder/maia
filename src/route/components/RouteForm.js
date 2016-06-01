@@ -5,12 +5,21 @@ import serialize from 'form-serialize';
 import RaisedButton from 'material-ui/RaisedButton';
 
 import { METHODS } from '../constants';
+import { routeize } from '../model';
 
 export default class RouteForm extends Component {
   get formControls() {
-    const { disabled, onReset, resetEnabled, submitEnabled } = this.props;
+    const { hideControls, disabled, onReset, resetEnabled, submitEnabled } = this.props;
 
-    return <div className="Route--form-controls">
+    let style = {};
+    if (hideControls) {
+      style = {
+        visibility: 'hidden',
+        position: 'absolute'
+      };
+    }
+
+    return <div className="Route--form-controls" style={style}>
       <RaisedButton
         onMouseUp={onReset}
         disabled={!resetEnabled}
@@ -26,6 +35,15 @@ export default class RouteForm extends Component {
     </div>
   }
 
+  get route() {
+    return routeize(serialize(this.refs.form, { hash: true }));
+  }
+
+  submit() {
+    const { onSubmit } = this.props;
+    return onSubmit(this.route);
+  }
+
   render() {
     const { id, name, pattern, target, order } = this.props.route;
     const { onChange, onSubmit, editable } = this.props;
@@ -33,25 +51,15 @@ export default class RouteForm extends Component {
     return (
       <form
         ref="form"
-        onSubmit={(e) => {
-          e.preventDefault();
-          onSubmit();
-        }}
-        onChange={() => {
-          let route = serialize(this.refs.form, { hash: true })
-          route = {
-            ...route,
-            order: parseInt(route.order, 10),
-            methods: route.methods || []
-          };
-          onChange(event, route);
-        }}
+        onSubmit={(e) => { e.preventDefault(); onSubmit(this.route); }}
+        onChange={() => { onChange(this.route); }}
         autoComplete="off"
       >
         <input type="hidden" name="id" value={id} />
         <input type="hidden" name="order" value={order} />
         <div className="Route--row">
           <TextField
+            disabled={!editable}
             value={name}
             id="name"
             name="name"

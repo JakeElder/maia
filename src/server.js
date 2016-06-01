@@ -18,20 +18,23 @@ import route from './route';
 const server = express();
 
 function getInitialState() {
-  const syncedState = reduxSync.getSyncedState() || {};
-  return route.api.all().then(routes => {
-    if (syncedState) {
-      syncedState.routes = routes;
-      return syncedState;
-    }
-    return { routes };
-  });
+  const syncedState = reduxSync.getSyncedState();
+  return route.api.all().then(routes =>
+    syncedState ?  { ...syncedState, routes } : { routes }
+  );
 }
 
 server.use(bodyParser.json());
 server.use(reduxSync.expressMiddleware);
 
-server.post('/routes/:id', (req, res) => {
+server.post('/route', (req, res) => {
+  route.api.create(req.body).then(
+    id => res.send({ id }),
+    () => res.status(500).end()
+  );
+});
+
+server.put('/routes/:id', (req, res) => {
   route.api.update(req.params.id, req.body).then(
     () => res.status(200).end(),
     () => res.status(500).end()

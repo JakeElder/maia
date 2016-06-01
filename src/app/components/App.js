@@ -1,8 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import Snackbar from 'material-ui/Snackbar';
 import Header from './Header';
+import NewRoute from '../../route/components/NewRoute';
 import DevTools from '../../DevTools';
-import { UPDATE_SUCCESS } from '../../route/actions';
+import { UPDATE_SUCCESS, CREATE_SUCCESS } from '../../route/actions';
 import './App.scss';
 
 export default class App extends Component {
@@ -12,18 +13,27 @@ export default class App extends Component {
 
   constructor() {
     super(...arguments);
-    const { store } = this.context;
     this.state = {
       showSnackbar: false,
-      snackbarMessage: 'Words'
+      snackbarMessage: ''
     };
-    store.subscribe(() => {
+  }
+
+  componentDidMount() {
+    const { store } = this.context;
+    this.unsubscribe = store.subscribe(() => {
       const action = store.getState().lastAction;
       switch (action.type) {
+        case CREATE_SUCCESS:
+          this.flash(`Route "${action.route.name}" created`);
         case UPDATE_SUCCESS:
-          this.flash(`Route "${action.route.name}" saved`);
+          this.flash(`Route "${action.route.name}" updated`);
       }
     });
+  }
+
+  componentWillUnmount() {
+    this.unsubscribe();
   }
 
   flash(message) {
@@ -39,6 +49,7 @@ export default class App extends Component {
       <div>
         <DevTools />
         <Header />
+        <NewRoute />
         {this.props.children}
         <Snackbar
           open={this.state.showSnackbar}

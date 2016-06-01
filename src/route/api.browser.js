@@ -1,11 +1,13 @@
-import Promise from 'bluebird';
 import fetch from 'isomorphic-fetch';
-import findIndex from 'lodash.findindex';
 
-export function update(id, route) {
-  return fetch(`/routes/${id}`, {
-    method: 'post',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(route)
-  });
-}
+export const create = route => fetch('/route', {
+  method: 'post',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify(route)
+}).then(res => res.json()).then(res => res.id);
+
+export const update = (id, route) => fetch(`/routes/${id}`, {
+  method: 'put',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify(route)
+});

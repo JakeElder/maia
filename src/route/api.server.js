@@ -27,7 +27,8 @@ export function all() {
 export function create(route) {
   return new Promise((resolve, reject) => {
     const id = uuid.v4();
-    redis.hmset(makeRouteKey(id), { id, ...route }, (err, route) => {
+    route.methods = JSON.stringify(route.methods || []);
+    redis.hmset(makeRouteKey(id), { ...route, id }, (err, route) => {
       if (err) { return reject(err); }
       resolve(id);
     });

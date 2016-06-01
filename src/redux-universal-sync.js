@@ -8,11 +8,7 @@ const isNode = typeof window === 'undefined';
 
 export const expressMiddleware = (req, res, next) => {
   const innerState = cookie.parse(req.get('Cookie') || '').rs_state;
-  try {
-    state = JSON.parse(innerState);
-  } catch(e) {
-    state = false;
-  }
+  try { state = JSON.parse(innerState); } catch(e) {}
 
   const originalSend = res.send;
   res.send = function(body) {
@@ -31,10 +27,10 @@ export const reduxMiddleware = ({ getState }) => {
   if (isNode) { state = getState(); }
   return next => action => {
     next(action);
-    if (!isNode) {
-      browserCookies.set('rs_state', JSON.stringify(getState()));
-    } else {
+    if (isNode) {
       state = getState();
+    } else {
+      browserCookies.set('rs_state', JSON.stringify(getState()));
     }
   }
 }
