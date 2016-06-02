@@ -40,4 +40,25 @@ describe('socket', () => {
       });
     }).then(killServer);
   });
+
+  it('re emits all routes when a change occurs', () => {
+    return startServer().then(({ server, url }) => {
+      const client = sioClient(url);
+      client.on('connect', () => {
+        // Client is now connected
+        // Simulate change so we can check routes are emitted twice
+        Route.emit('change');
+      });
+      return new Promise(resolve => {
+        let callCount = 0;
+        client.on('routes', routes => {
+          callCount++;
+          if (callCount === 2) {
+            // We're only interested to see if the event is emitted twice
+            resolve(server);
+          }
+        });
+      });
+    }).then(killServer);
+  });
 });
