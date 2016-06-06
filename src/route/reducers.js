@@ -14,17 +14,24 @@ import {
   DRAFT_NEW,
   BROWSE_ALL,
   STAGE_DRAFT,
-  UNSTAGE_DRAFT
+  UNSTAGE_DRAFT,
+  MOVE
 } from './actions';
 
 export function routes(state = [], action) {
   switch(action.type) {
     case CREATE_SUCCESS:
-      return [action.route, ...state];
+      return [action.route, ...state.map(route => ({ ...route, order: route.order + 1 }))];
     case UPDATE_SUCCESS:
       return state.map(route => {
         return route.id === action.route.id ? action.route : route;
       });
+    case MOVE:
+      let index = _.findIndex(state, { id: action.id });
+      let nextState = [...state];
+      let movedRoute = nextState.splice(index, 1)[0];
+      nextState.splice(action.newOrder, 0, movedRoute);
+      return nextState.map((route, index) => ({ ...route, order: index }));
     default:
       return state;
   }

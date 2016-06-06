@@ -7,11 +7,16 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  cursor: move;
 }
 
 .Route--heading-label {
   display: flex;
   align-items: center;
+}
+
+.Route--toggle-icon {
+  cursor: pointer;
 }
 
 .Route--modified-label {

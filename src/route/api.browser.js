@@ -11,3 +11,7 @@ export const update = (id, route) => fetch(`/api/routes/${id}`, {
   headers: { 'Content-Type': 'application/json' },
   body: JSON.stringify(route)
 });
+
+export const move = (id, order) => fetch(`/api/routes/${id}/move/${order}`, {
+  method: 'put'
+});

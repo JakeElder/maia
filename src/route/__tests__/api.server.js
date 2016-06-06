@@ -59,7 +59,7 @@ describe('create', () => {
           expect({
             ...retrievedRoute,
             order: parseInt(retrievedRoute.order, 10)
-          }).toEqual({ id, ...route });
+          }).toEqual({ ...route, id, order: 0 });
           resolve();
         });
       });

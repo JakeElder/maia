@@ -29,16 +29,22 @@ export function all() {
   });
 }
 
+export function first() {
+  return all().then(routes => routes[0]);
+}
+
 export function create(route) {
   return new Promise((resolve, reject) => {
     const id = uuid.v4();
     route.methods = JSON.stringify(route.methods || []);
-    redis.hmset(makeRouteKey(id), { ...route, id }, (err, route) => {
+    redis.hmset(makeRouteKey(id), { ...route, id, order: -1 }, (err, route) => {
       if (err) { return reject(err); }
-      emit('change');
-      resolve(id);
+      reorder().then(
+        () => { resolve(id); emit('change') },
+        reject
+      );
     });
-  });
+  })
 }
 
 export function update(id, route) {
@@ -51,4 +57,34 @@ export function update(id, route) {
       resolve();
     });
   });
+}
+
+function reorder() {
+  return all().then(routes =>
+    routes.map((route, index) => ({ ...route, order: index }))
+  ).then(routes => 
+    Promise.all(routes.map(route => update(route.id, route)))
+  );
+}
+
+export function move(id, newPosition) {
+  return new Promise((resolve, reject) => {
+    all().then(routes => {
+      let index = findIndex(routes, { id });
+      let movedRoute = routes.splice(index, 1)[0];
+      routes.splice(newPosition, 0, movedRoute);
+      return routes.map((route, index) => ({ ...route, order: index }));
+    }).then(routes =>
+      Promise.all(routes.map(route => update(route.id, route)))
+    ).then(
+      () => resolve(),
+      err => reject(err)
+    )
+  });
+}
+
+export function deleteAll() {
+  return redis.keysAsync(`${ROUTE_QUALIFIER}*`).then(keys =>
+    Promise.all(keys.map(key => redis.delAsync(key)))
+  );
 }

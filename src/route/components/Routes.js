@@ -1,6 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 import _ from 'lodash';
 import { connect } from 'react-redux';
+import { DragDropContext } from 'react-dnd';
+import HTML5Backend from 'react-dnd-html5-backend';
 import Route from './Route';
 import './Routes.scss';
 
@@ -12,6 +14,7 @@ function mapStateToProps(state) {
   }
 }
 
+@DragDropContext(HTML5Backend)
 @connect(mapStateToProps)
 export default class Routes extends Component {
   static propTypes = {
@@ -26,7 +29,7 @@ export default class Routes extends Component {
           {routes.map((route) => {
             return (
               <li className="RouteList--route" key={route.id}>
-                <Route route={route} />
+                <Route order={route.order} route={route} />
               </li>
             );
           })}

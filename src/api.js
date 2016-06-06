@@ -13,6 +13,13 @@ api.post('/route', (req, res) => {
   );
 });
 
+api.put('/routes/:id/move/:order', (req, res) => {
+  Route.move(req.params.id, req.params.order).then(
+    () => res.status(200).end(),
+    () => res.status(500).end()
+  );
+});
+
 api.put('/routes/:id', (req, res) => {
   Route.update(req.params.id, req.body).then(
     () => res.status(200).end(),
