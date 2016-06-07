@@ -1,0 +1,24 @@
+web: &web
+  image: docker.sqexeu.com/onlinedev/hermes
+  ports:
+    - '3000:3000'
+  environment:
+    # Required
+    - NODE_ENV=development
+    - NEW_RELIC_APP_NAME=Maia
+    - REDIS_URL=redis://localhost:6379
+    - GRAYLOG_URL=graylog://a:sdfasdf.com:1234
+    - SELF_HOST=http://localhost:3000
+
+    # Optional (used on GO only)
+    - GO_HOST
+    - GO_USER
+    - GO_PWD
+
+test:
+  <<: *web
+  entrypoint: /bin/bash
+  command: /u/app/run-tests.sh
+  environment:
+    - NODE_ENV=test
+    - REDIS_URL=redis://localhost:6379
