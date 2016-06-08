@@ -3,12 +3,13 @@ import express from 'express';
 import { match, RouterContext } from 'react-router';
 import { getMuiTheme, MuiThemeProvider } from 'material-ui/styles';
 import { renderToString } from 'react-dom/server';
-import { Provider } from 'react-redux';
+import { Provider as StoreProvider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
 
 import * as Route from 'route-api';
 import { routes, reducer } from './app';
 import DevTools from './DevTools';
+import InsertCssProvider from './InsertCssProvider';
 import * as reduxSync from './redux-universal-sync';
 
 const getInitialState = () => {
@@ -38,13 +39,14 @@ hi.get('*', (req, res) => {
         userAgent: req.headers['user-agent']
       });
       const appHtml = renderToString(
-        <MuiThemeProvider muiTheme={muiTheme}>
-          <Provider store={store}>
-            <RouterContext {...props} />
-          </Provider>
-        </MuiThemeProvider>
+        <InsertCssProvider isServer={true}>
+          <MuiThemeProvider muiTheme={muiTheme}>
+            <StoreProvider store={store}>
+              <RouterContext {...props} />
+            </StoreProvider>
+          </MuiThemeProvider>
+        </InsertCssProvider>
       );
-
       res.send(`
         <!doctype html>
         <html>
@@ -52,6 +54,7 @@ hi.get('*', (req, res) => {
           <title>Maia</title>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500' rel='stylesheet' type='text/css'>
+          <style>${InsertCssProvider.styles.join(' ')}</style>
         </head>
         <body>
           <div id="root">${appHtml}</div>

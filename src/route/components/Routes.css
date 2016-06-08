@@ -1,9 +1,9 @@
-.Routes {
+.routes {
   padding: 24px;
   max-width: 800px;
   margin: auto;
 }
 
-.RouteList--route {
+.route {
   margin-bottom: 20px;
 }

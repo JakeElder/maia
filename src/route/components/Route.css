@@ -1,4 +1,4 @@
-.Route--heading {
+.heading {
   font-size: 16px;
   height: 44px;
   padding-left: 14px;
@@ -10,16 +10,16 @@
   cursor: move;
 }
 
-.Route--heading-label {
+.headingLabel {
   display: flex;
   align-items: center;
 }
 
-.Route--toggle-icon {
+.toggleIcon {
   cursor: pointer;
 }
 
-.Route--modified-label {
+.modifiedLabel {
   text-transform: uppercase;
   font-size: 10px;
   display: inline-block;
@@ -30,35 +30,30 @@
   color: #fff;
 }
 
-.Route--heading-info {
+.headingInfo {
   font-size: 14px;
   font-weight: 300;
 }
 
-.Route--seperator {
+.seperator {
   padding-left: 4px;
   padding-right: 4px;
   color: #1E88E5;
   letter-spacing: -1px;
 }
 
-.Route--body {
+.body {
   padding: 14px;
   font-size: 14px;
   background-color: #f5f5f5;
   display: none;
 }
 
-.Route--body.is-expanded {
+.expandedBody {
+  composes: body;
   display: block;
 }
 
-.Route--methods {
+.methods {
   padding-top: 16px;
-}
-
-.Route--form-controls {
-  padding-top: 14px;
-  display: flex;
-  justify-content: flex-end;
 }

@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { findDOMNode } from 'react-dom';
+import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import _ from 'lodash';
 import { connect } from 'react-redux';
 import classnames from 'classnames';
@@ -9,7 +10,7 @@ import { DragSource, DropTarget } from 'react-dnd';
 
 import RouteForm from './RouteForm';
 import { expandRoute, contractRoute, stageRoute, unstageRoute, update, move, commitMove } from '../actions';
-import './Route.scss';
+import s from './Route.css';
 
 function mapStateToProps(state, ownProps) {
   const originalRoute = _.find(state.routes, { id: ownProps.route.id });
@@ -76,6 +77,7 @@ const cardTarget = {
   }
 };
 
+@withStyles(s)
 @connect(mapStateToProps)
 @DropTarget('route', cardTarget, connect => ({
   connectDropTarget: connect.dropTarget()
@@ -91,9 +93,7 @@ export default class Route extends Component {
   }
 
   get bodyClassName() {
-    return classnames('Route--body', {
-      'is-expanded': this.props.isExpanded
-    });
+    return this.props.isExpanded ? s.expandedBody : s.body;
   }
 
   handleChange(resultingRoute) {
@@ -109,7 +109,7 @@ export default class Route extends Component {
     const { id } = this.props.route;
     const { dispatch, isExpanded } = this.props;
     if (isExpanded) {
-      return <div className="Route--toggle-icon">
+      return <div className={s.toggleIcon}>
         <ArrowUp
           style={{ marginRight: 6 }}
           onClick={() => { dispatch(contractRoute(id)) }}
@@ -117,7 +117,7 @@ export default class Route extends Component {
       </div>
 
     } else {
-      return <div className="Route--toggle-icon">
+      return <div className={s.toggleIcon}>
         <ArrowDown
           style={{ marginRight: 6 }}
           onClick={() => { dispatch(expandRoute(id)) }}
@@ -129,12 +129,12 @@ export default class Route extends Component {
   get modifiedStateIndicator() {
     const { isModified, isUpdating } = this.props;
     if (isUpdating) {
-      return <span className="Route--modified-label">posting</span>;
+      return <span className={s.modifiedLabel}>posting</span>;
     }
     if (isModified) {
-      return <span className="Route--modified-label">modified</span>;
+      return <span className={s.modifiedLabel}>modified</span>;
     }
-    return <span className="Route--modified-label">👌</span>;
+    return <span className={s.modifiedLabel}>👌</span>;
   }
 
   render() {
@@ -150,17 +150,17 @@ export default class Route extends Component {
     const style = { opacity: isDragging ? 0 : 1 };
 
     return connectDragSource(connectDropTarget(
-      <div className="Route" style={style}>
-        <h2 className="Route--heading">
-          <div className="Route--heading-label">
+      <div className={s.root} style={style}>
+        <h2 className={s.heading}>
+          <div className={s.headingLabel}>
             { this.toggleIcon }
             { this.modifiedStateIndicator }
             {name}
           </div>
-          <div className="Route--heading-info">
-            <span className="Route--pattern">{pattern}</span>
-            <span className="Route--seperator"> => </span>
-            <span className="Route--target">{target}</span>
+          <div className={s.headingInfo}>
+            <span className={s.pattern}>{pattern}</span>
+            <span className={s.seperator}> => </span>
+            <span className={s.target}>{target}</span>
           </div>
         </h2>
         <div className={this.bodyClassName}>

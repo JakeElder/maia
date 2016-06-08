@@ -27,16 +27,17 @@ export default {
       loader: 'babel',
       include: path.resolve(__dirname, '..', 'src')
     }, {
-      test: /\.scss$/,
-      loaders: ['style', 'css', 'sass']
+      test: /\.css$/,
+      loaders: [
+        'isomorphic-style',
+        'css?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]'
+      ]
     }]
-  },
-  sassLoader: {
-    includePaths: [path.resolve(__dirname, '..', 'node_modules')]
   },
   resolve: {
     alias: {
       'route-api': path.resolve(__dirname, '..', 'src', 'route', 'api.browser')
     }
-  }
+  },
+  debug: true
 };

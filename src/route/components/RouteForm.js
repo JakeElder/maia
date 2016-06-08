@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import TextField from 'material-ui/TextField';
 import Checkbox from 'material-ui/Checkbox';
 import serialize from 'form-serialize';
@@ -6,7 +7,9 @@ import RaisedButton from 'material-ui/RaisedButton';
 
 import { METHODS } from '../constants';
 import { routeize } from '../model';
+import s from './RouteForm.css';
 
+@withStyles(s)
 export default class RouteForm extends Component {
   get formControls() {
     const { hideControls, disabled, onReset, resetEnabled, submitEnabled } = this.props;
@@ -19,7 +22,7 @@ export default class RouteForm extends Component {
       };
     }
 
-    return <div className="Route--form-controls" style={style}>
+    return <div className={s.controls} style={style}>
       <RaisedButton
         onMouseUp={onReset}
         disabled={!resetEnabled}

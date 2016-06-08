@@ -25,8 +25,11 @@ export default {
       ],
       loader: 'babel'
     }, {
-      test: /\.scss$/,
-      loader: 'null'
+      test: /\.css$/,
+      loaders: [
+        'isomorphic-style',
+        'css?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]'
+      ]
     }]
   },
   externals: externals({ whitelist: ['webpack/hot/poll?1000'] }),

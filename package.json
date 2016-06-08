@@ -29,6 +29,8 @@
     "babel-preset-react-hmre": "^1.1.1",
     "concurrently": "^2.1.0",
     "css-loader": "^0.23.1",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "isomorphic-style-loader": "^1.0.0",
     "jest-cli": "^12.1.1",
     "just-wait": "^1.0.5",
     "node-reset-scss": "^1.0.1",
@@ -73,6 +75,7 @@
     "redis": "^2.6.0-2",
     "redux": "^3.5.2",
     "redux-thunk": "^2.1.0",
+    "reset-css": "^2.0.2011012603",
     "socket.io": "^1.4.6"
   },
   "jest": {

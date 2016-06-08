@@ -1,10 +1,11 @@
 import React, { Component, PropTypes } from 'react';
+import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import _ from 'lodash';
 import { connect } from 'react-redux';
 import { DragDropContext } from 'react-dnd';
 import HTML5Backend from 'react-dnd-html5-backend';
 import Route from './Route';
-import './Routes.scss';
+import s from './Routes.css';
 
 function mapStateToProps(state) {
   return {
@@ -14,6 +15,7 @@ function mapStateToProps(state) {
   }
 }
 
+@withStyles(s)
 @DragDropContext(HTML5Backend)
 @connect(mapStateToProps)
 export default class Routes extends Component {
@@ -24,11 +26,11 @@ export default class Routes extends Component {
   render() {
     const { routes, dispatch } = this.props;
     return (
-      <section className="Routes">
-        <ol className="RouteList">
+      <section className={s.routes}>
+        <ol>
           {routes.map((route) => {
             return (
-              <li className="RouteList--route" key={route.id}>
+              <li className={s.route} key={route.id}>
                 <Route order={route.order} route={route} />
               </li>
             );

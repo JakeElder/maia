@@ -1,17 +1,19 @@
 import React, { Component, PropTypes } from 'react';
+import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import Snackbar from 'material-ui/Snackbar';
 import Header from './Header';
 import NewRoute from '../../route/components/NewRoute';
 import DevTools from '../../DevTools';
 import { UPDATE_SUCCESS, CREATE_SUCCESS } from '../../route/actions';
-import './App.scss';
+import s from './App.css';
 
-export default class App extends Component {
+class App extends Component {
   static contextTypes = {
-    store: PropTypes.object
+    store: PropTypes.object,
+    insertCss: PropTypes.func
   }
 
-  constructor() {
+  constructor(props, context) {
     super(...arguments);
     this.state = {
       showSnackbar: false,
@@ -61,3 +63,5 @@ export default class App extends Component {
     );
   }
 };
+
+export default withStyles(s)(App);
