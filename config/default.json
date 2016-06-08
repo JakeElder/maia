@@ -1,5 +1,6 @@
 {
   "db": {
-    "name": "maia"
+    "name": "maia",
+    "url": "redis://localhost:6379"
   }
 }
