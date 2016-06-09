@@ -6,9 +6,8 @@ unless branch
 end
 
 puts case branch
-when 'develop' then 'stage'
-when 'stage' then 'stage'
-when 'preprod' then 'preprod'
-when 'master'  then 'prod'
+  when 'develop' then 'stage'
+  when 'master'  then 'prod'
 end
+
 exit 0

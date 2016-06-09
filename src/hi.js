@@ -16,7 +16,7 @@ import config from '../config';
 
 const scriptUrl = config.get('env') === 'development' ? 
   'http://localhost:8080/dist/app.js' :
-  '//localhost:3000/app.js';
+  '/app.js';
 
 const getInitialState = () => {
   const syncedState = reduxSync.getSyncedState();

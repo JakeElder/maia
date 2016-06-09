@@ -1,5 +1,5 @@
 web: &web
-  image: docker.sqexeu.com/onlinedev/hermes
+  image: docker.sqexeu.com/onlinedev/maia
   ports:
     - '3000:3000'
   environment:
@@ -18,7 +18,7 @@ web: &web
 test:
   <<: *web
   entrypoint: /bin/bash
-  command: /u/app/run-tests.sh
+  command: npm test
   environment:
     - NODE_ENV=test
     - REDIS_URL=redis://localhost:6379

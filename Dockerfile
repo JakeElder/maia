@@ -14,12 +14,10 @@ RUN DEBIAN_FRONTEND=noninteractive \
     rm -f ${NODE_FILE}
 
 WORKDIR /u/app
-
 ADD . /u/app
-RUN npm --no-color install
 
-ADD .git/refs/heads/ /tmp/git/heads
-ADD .git/HEAD /tmp/git/HEAD
+RUN npm --no-color install
+RUN npm run build
 
 EXPOSE 3000
 
