@@ -2,11 +2,9 @@ import React from 'react';
 import thunk from 'redux-thunk';
 import { render } from 'react-dom';
 import { createStore, compose, applyMiddleware } from 'redux';
-import { Provider as StoreProvider } from 'react-redux';
 import { Router, browserHistory } from 'react-router';
-import { getMuiTheme, MuiThemeProvider } from  'material-ui/styles';
 
-import InsertCssProvider from './InsertCssProvider';
+import ContextProvider from './ContextProvider';
 import { reducer, routes } from './app';
 
 const store = createStore(
@@ -19,13 +17,9 @@ const store = createStore(
 );
 
 const App = (
-  <InsertCssProvider>
-    <MuiThemeProvider muiTheme={getMuiTheme()}>
-      <StoreProvider store={store}>
-        <Router history={browserHistory}>{routes}</Router>
-      </StoreProvider>
-    </MuiThemeProvider>
-  </InsertCssProvider>
+  <ContextProvider store={store}>
+    <Router history={browserHistory}>{routes}</Router>
+  </ContextProvider>
 );
 
 render(App, document.getElementById('root'));
