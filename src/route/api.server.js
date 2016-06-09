@@ -7,7 +7,7 @@ import EventEmitter from 'events';
 import bindAll from 'lodash.bindall';
 
 import { client as redis } from '../database';
-import config from '../config'
+import config from '../../config'
 
 export const ROUTE_QUALIFIER = `${config.get('db:name')}:routes:`;
 export const makeRouteKey = routeId => `${ROUTE_QUALIFIER}${routeId}`;

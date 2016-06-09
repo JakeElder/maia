@@ -5,12 +5,18 @@ import { getMuiTheme, MuiThemeProvider } from 'material-ui/styles';
 import { renderToString } from 'react-dom/server';
 import { Provider as StoreProvider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
+import path from 'path';
 
 import * as Route from 'route-api';
 import { routes, reducer } from './app';
 import DevTools from './DevTools';
 import InsertCssProvider from './InsertCssProvider';
 import * as reduxSync from './redux-universal-sync';
+import config from '../config';
+
+const scriptUrl = config.get('env') === 'development' ? 
+  'http://localhost:8080/dist/app.js' :
+  '//localhost:3000/app.js';
 
 const getInitialState = () => {
   const syncedState = reduxSync.getSyncedState();
@@ -22,6 +28,12 @@ const getInitialState = () => {
 const hi = express();
 
 hi.use(reduxSync.expressMiddleware);
+
+if (config.get('env') !== 'development') {
+  hi.get('/app.js', (req, res) => {
+    res.sendFile(path.resolve(__dirname, '..', 'dist', 'client', 'app.js'));
+  });
+}
 
 hi.get('*', (req, res) => {
   match({ routes, location: req.url }, (error, redirect, props) => {
@@ -58,7 +70,7 @@ hi.get('*', (req, res) => {
         </head>
         <body>
           <div id="root">${appHtml}</div>
-          <script src="http://localhost:8080/dist/app.js"></script>
+          <script src="${scriptUrl}"></script>
         </body>
         </html>
       `);

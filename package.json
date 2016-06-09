@@ -4,14 +4,14 @@
   "description": "Route manager",
   "scripts": {
     "start": "./node_modules/.bin/forever --minUptime 1000 --spinSleepTime 1000 -c \"node --harmony\" ./dist/server/server.js",
-    "dev-server": "./node_modules/.bin/webpack --watch --verbose --colors --display-error-details --config ./config/webpack.server.dev.babel.js",
-    "dev-server-start": "node ./node_modules/just-wait --pattern \"./dist/server/server.js\" && npm run start",
-    "dev-client": "./node_modules/.bin/webpack-dev-server --config ./config/webpack.client.dev.babel.js",
+    "build-server": "NODE_ENV=production ./node_modules/.bin/webpack --display-error-details --config ./webpack.server.babel.js",
+    "build-client": "NODE_ENV=production ./node_modules/.bin/webpack --display-error-details --config ./webpack.client.babel.js",
+    "build": "./node_modules/.bin/concurrently \"npm run build-server\" \"npm run build-client\"",
+    "dev-server": "./node_modules/.bin/webpack --watch --verbose --colors --display-error-details --config ./webpack.server.babel.js",
+    "dev-server-start": "./node_modules/.bin/just-wait --pattern \"./dist/server/server.js\" && npm run start",
+    "dev-client": "./node_modules/.bin/webpack-dev-server --config ./webpack.client.babel.js",
     "dev": "./node_modules/.bin/concurrently --kill-others \"npm run dev-client\" \"npm run dev-server-start\" \"npm run dev-server\"",
     "test": "NODE_ENV=test ./node_modules/.bin/jest"
-  },
-  "browser": {
-    "./src/route/api": "./src/route/api.browser.js"
   },
   "keywords": [],
   "author": "",

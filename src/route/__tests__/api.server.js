@@ -1,7 +1,7 @@
 import Promise from 'bluebird';
 import omit from 'lodash.omit';
 import { ROUTE_QUALIFIER, makeRouteKey, all, create, update } from '../api.server';
-import config from '../../config';
+import config from '../../../config';
 import * as db from '../../database';
 
 jest.unmock('../api.server');
