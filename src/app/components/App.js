@@ -3,7 +3,6 @@ import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import Snackbar from 'material-ui/Snackbar';
 import Header from './Header';
 import NewRoute from '../../route/components/NewRoute';
-import DevTools from '../../DevTools';
 import { UPDATE_SUCCESS, CREATE_SUCCESS } from '../../route/actions';
 import s from './App.css';
 
@@ -49,7 +48,6 @@ class App extends Component {
     const { routes } = this.props;
     return (
       <div>
-        <DevTools />
         <Header />
         <NewRoute />
         {this.props.children}

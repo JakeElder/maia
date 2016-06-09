@@ -9,7 +9,6 @@ import path from 'path';
 
 import * as Route from 'route-api';
 import { routes, reducer } from './app';
-import DevTools from './DevTools';
 import InsertCssProvider from './InsertCssProvider';
 import * as reduxSync from './redux-universal-sync';
 import config from '../config';
@@ -45,7 +44,7 @@ hi.get('*', (req, res) => {
       const store = createStore(
           reducer,
           state,
-          compose(applyMiddleware(reduxSync.reduxMiddleware), DevTools.instrument())
+          compose(applyMiddleware(reduxSync.reduxMiddleware))
       );
       const muiTheme = getMuiTheme({}, {
         userAgent: req.headers['user-agent']
