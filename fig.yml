@@ -6,8 +6,6 @@ web: &web
     # Required
     - NODE_ENV=development
     - NEW_RELIC_APP_NAME=Maia
-    - REDIS_URL=redis://localhost:6379
-    - GRAYLOG_URL=graylog://a:sdfasdf.com:1234
     - SELF_HOST=http://localhost:3000
 
     # Optional (used on GO only)
@@ -17,8 +15,8 @@ web: &web
 
 test:
   <<: *web
-  entrypoint: /bin/bash
-  command: npm test
+  entrypoint: /usr/bin/npm
+  command: test
   environment:
     - NODE_ENV=test
-    - REDIS_URL=redis://localhost:6379
+    - db__url=redis://canwebstage05.canweb.eidos.com:6379/3
