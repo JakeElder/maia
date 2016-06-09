@@ -10,23 +10,13 @@ import path from 'path';
 import * as Route from 'route-api';
 import { routes, reducer } from './app';
 import InsertCssProvider from './InsertCssProvider';
-import * as reduxSync from './redux-universal-sync';
 import config from '../config';
 
 const scriptUrl = config.get('env') === 'development' ? 
   'http://localhost:8080/dist/app.js' :
   '/app.js';
 
-const getInitialState = () => {
-  const syncedState = reduxSync.getSyncedState();
-  return Route.all().then(routes =>
-    syncedState ? { ...syncedState, routes } : { routes }
-  );
-}
-
 const hi = express();
-
-hi.use(reduxSync.expressMiddleware);
 
 if (config.get('env') !== 'development') {
   hi.get('/app.js', (req, res) => {
@@ -40,12 +30,8 @@ hi.get('*', (req, res) => {
     if (error) { return res.status(500).send(error.message); }
     if (!props) { return res.status(404).send('Not Found'); }
       
-    getInitialState().then((state) => {
-      const store = createStore(
-          reducer,
-          state,
-          compose(applyMiddleware(reduxSync.reduxMiddleware))
-      );
+    Route.all().then((routes) => {
+      const store = createStore(reducer, { routes });
       const muiTheme = getMuiTheme({}, {
         userAgent: req.headers['user-agent']
       });
@@ -58,6 +44,7 @@ hi.get('*', (req, res) => {
           </MuiThemeProvider>
         </InsertCssProvider>
       );
+      const stringifiedState = JSON.stringify(store.getState());
       res.send(`
         <!doctype html>
         <html>
@@ -69,6 +56,7 @@ hi.get('*', (req, res) => {
         </head>
         <body>
           <div id="root">${appHtml}</div>
+          <script>window.__REDUX_STATE__ = ${stringifiedState}</script>
           <script src="${scriptUrl}"></script>
         </body>
         </html>

@@ -7,14 +7,13 @@ import { Router, browserHistory } from 'react-router';
 import { getMuiTheme, MuiThemeProvider } from  'material-ui/styles';
 
 import InsertCssProvider from './InsertCssProvider';
-import { getSyncedState, reduxMiddleware as syncMiddleware } from './redux-universal-sync';
 import { reducer, routes } from './app';
 
 const store = createStore(
   reducer,
-  getSyncedState(),
+  window.__REDUX_STATE__,
   compose(
-    applyMiddleware(syncMiddleware, thunk),
+    applyMiddleware(thunk),
     window.devToolsExtension ? window.devToolsExtension() : f => f
   )
 );
