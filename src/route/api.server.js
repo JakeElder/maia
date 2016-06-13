@@ -47,13 +47,13 @@ export function create(route) {
   })
 }
 
-export function update(id, route) {
+export function update(id, route, silent = false) {
   return new Promise((resolve, reject) => {
     const id = route.id;
     route.methods = JSON.stringify(route.methods || []);
     redis.hmset(makeRouteKey(id), route, (err, route) => {
       if (err) { return reject(err); }
-      emit('change');
+      if (!silent) { emit('change'); }
       resolve();
     });
   });
@@ -62,9 +62,11 @@ export function update(id, route) {
 function reorder() {
   return all().then(routes =>
     routes.map((route, index) => ({ ...route, order: index }))
-  ).then(routes => 
-    Promise.all(routes.map(route => update(route.id, route)))
-  );
+  ).then(routes => {
+    return Promise.all(
+      routes.map(route => update(route.id, route, true))
+    )
+  });
 }
 
 export function move(id, newPosition) {
@@ -75,9 +77,9 @@ export function move(id, newPosition) {
       routes.splice(newPosition, 0, movedRoute);
       return routes.map((route, index) => ({ ...route, order: index }));
     }).then(routes =>
-      Promise.all(routes.map(route => update(route.id, route)))
+      Promise.all(routes.map(route => update(route.id, route, true)))
     ).then(
-      () => resolve(),
+      () => { emit('change'); resolve() },
       err => reject(err)
     )
   });
