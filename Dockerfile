@@ -11,12 +11,16 @@ RUN DEBIAN_FRONTEND=noninteractive \
     rm -rf /var/lib/apt/lists/* && \
     curl ${NODE_URL} -o ${NODE_FILE} && \
     dpkg -i ${NODE_FILE} && \
-    rm -f ${NODE_FILE}
+    rm -f ${NODE_FILE} && \
+    rm -rf /var/lib/apt/lists/* && \
+    mkdir -p /u/app
 
 WORKDIR /u/app
-ADD . /u/app
 
+ADD package.json /u/app
 RUN npm --no-color install
+
+ADD . /u/app
 RUN npm run build
 
 EXPOSE 3000
