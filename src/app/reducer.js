@@ -7,7 +7,8 @@ import {
   updatingRoutes,
   currentAction,
   draftRoute,
-  routeBeingDrafted
+  routeBeingDrafted,
+  stagedMove
 } from '../route/reducers';
 
 export default combineReducers({
@@ -19,5 +20,6 @@ export default combineReducers({
   currentAction,
   draftRoute,
   routeBeingDrafted,
+  stagedMove,
   lastAction: (state = null, action) => action
 });

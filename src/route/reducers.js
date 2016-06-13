@@ -11,11 +11,12 @@ import {
   CREATE_FAILURE,
   UPDATE_REQUEST,
   UPDATE_SUCCESS,
+  MOVE_SUCCESS,
   DRAFT_NEW,
   BROWSE_ALL,
   STAGE_DRAFT,
   UNSTAGE_DRAFT,
-  MOVE
+  STAGE_MOVE
 } from './actions';
 
 export function routes(state = [], action) {
@@ -26,11 +27,11 @@ export function routes(state = [], action) {
       return state.map(route => {
         return route.id === action.route.id ? action.route : route;
       });
-    case MOVE:
+    case MOVE_SUCCESS:
       let index = _.findIndex(state, { id: action.id });
       let nextState = [...state];
       let movedRoute = nextState.splice(index, 1)[0];
-      nextState.splice(action.newOrder, 0, movedRoute);
+      nextState.splice(action.order, 0, movedRoute);
       return nextState.map((route, index) => ({ ...route, order: index }));
     default:
       return state;
@@ -114,6 +115,15 @@ export function routeBeingDrafted(state = false, action) {
     case UNSTAGE_DRAFT:
     case CREATE_SUCCESS:
       return false;
+    default:
+      return state;
+  }
+}
+
+export function stagedMove(state = false, action) {
+  switch(action.type) {
+    case STAGE_MOVE:
+      return { id: action.id, order: action.order };
     default:
       return state;
   }

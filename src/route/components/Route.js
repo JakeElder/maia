@@ -8,8 +8,8 @@ import ArrowDown from 'material-ui/svg-icons/hardware/keyboard-arrow-down';
 import ArrowUp from 'material-ui/svg-icons/hardware/keyboard-arrow-up';
 import { DragSource, DropTarget } from 'react-dnd';
 
-import RouteForm from './RouteForm';
-import { expandRoute, contractRoute, stageRoute, unstageRoute, update, move, commitMove } from '../actions';
+import { RouteForm } from './RouteForm';
+import { expandRoute, contractRoute, stageRoute, unstageRoute, update, stageMove, move } from '../actions';
 import s from './Route.css';
 
 function mapStateToProps(state, ownProps) {
@@ -26,23 +26,23 @@ const cardSource = {
   beginDrag(props) {
     return {
       id: props.route.id,
-      order: props.order
+      index: props.index
     };
   },
 
-  endDrag(props) {
-    const { id, order } = props.originalRoute;
-    props.dispatch(commitMove(id, order));
+  endDrag(props, monitor) {
+    const { id, index } = monitor.getItem();
+    props.dispatch(move(id, index));
   }
 };
 
 const cardTarget = {
   hover(props, monitor, component) {
     const dragItem = monitor.getItem();
-    const hoverItemOrder = props.order;
+    const hoverItemIndex = props.index;
 
     // Don't replace items with themselves
-    if (dragItem.order === hoverItemOrder) { return; }
+    if (dragItem.index === hoverItemIndex) { return; }
 
     // Determine rectangle on screen
     const hoverBoundingRect = findDOMNode(component).getBoundingClientRect();
@@ -61,19 +61,19 @@ const cardTarget = {
     // When dragging upwards, only move when the cursor is above 50%
 
     // Dragging downwards
-    if (dragItem.order < hoverItemOrder && hoverClientY < hoverMiddleY) {
+    if (dragItem.index < hoverItemIndex && hoverClientY < hoverMiddleY) {
       return;
     }
 
     // Dragging upwards
-    if (dragItem.order > hoverItemOrder && hoverClientY > hoverMiddleY) {
+    if (dragItem.index > hoverItemIndex && hoverClientY > hoverMiddleY) {
       return;
     }
 
     // Actually perform the move action
-    props.dispatch(move(dragItem.id, hoverItemOrder));
+    props.dispatch(stageMove(dragItem.id, hoverItemIndex));
 
-    dragItem.order = hoverItemOrder;
+    dragItem.index = hoverItemIndex;
   }
 };
 

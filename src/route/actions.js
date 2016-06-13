@@ -14,9 +14,9 @@ export const UPDATE_REQUEST = 'route/UPDATE_REQUEST';
 export const UPDATE_SUCCESS = 'route/UPDATE_SUCCESS';
 export const UPDATE_FAILURE = 'route/UPDATE_FAILURE';
 
-export const COMMIT_MOVE_REQUEST = 'route/COMMIT_MOVE_REQUEST';
-export const COMMIT_MOVE_SUCCESS = 'route/COMMIT_MOVE_SUCCESS';
-export const COMMIT_MOVE_FAILURE = 'route/COMMIT_MOVE_FAILURE';
+export const MOVE_REQUEST = 'route/MOVE_REQUEST';
+export const MOVE_SUCCESS = 'route/MOVE_SUCCESS';
+export const MOVE_FAILURE = 'route/MOVE_FAILURE';
 
 export const DRAFT_NEW = 'route/DRAFT_NEW';
 export const BROWSE_ALL = 'route/BROWSE_ALL';
@@ -24,7 +24,7 @@ export const BROWSE_ALL = 'route/BROWSE_ALL';
 export const STAGE_DRAFT = 'route/STAGE_DRAFT';
 export const UNSTAGE_DRAFT = 'route/UNSTAGE_DRAFT';
 
-export const MOVE = 'route/MOVE';
+export const STAGE_MOVE = 'route/STAGE_MOVE';
 
 
 export const expandRoute = id => ({ type: EXPAND_ROUTE, id });
@@ -41,9 +41,9 @@ export const updateRequest = route => ({ type: UPDATE_REQUEST, route });
 export const updateSuccess = route => ({ type: UPDATE_SUCCESS, route });
 export const updateFailure = route => ({ type: UPDATE_FAILURE, route });
 
-export const commitMoveRequest = (id, order) => ({ type: COMMIT_MOVE_REQUEST, id, order });
-export const commitMoveSuccess = (id, order) => ({ type: COMMIT_MOVE_SUCCESS, id, order });
-export const commitMoveFailure = (id, order) => ({ type: COMMIT_MOVE_FAILURE, id, order });
+export const moveRequest = (id, order) => ({ type: MOVE_REQUEST, id, order });
+export const moveSuccess = (id, order) => ({ type: MOVE_SUCCESS, id, order });
+export const moveFailure = (id, order) => ({ type: MOVE_FAILURE, id, order });
 
 export const draftNew = () => ({ type: DRAFT_NEW });
 export const browseAll = () => ({ type: BROWSE_ALL });
@@ -51,7 +51,7 @@ export const browseAll = () => ({ type: BROWSE_ALL });
 export const stageDraft = route => ({ type: STAGE_DRAFT, route });
 export const unstageDraft = () => ({ type: UNSTAGE_DRAFT });
 
-export const move = (id, newOrder) => ({ type: MOVE, id, newOrder });
+export const stageMove = (id, order) => ({ type: STAGE_MOVE, id, order });
 
 
 export const create = route => dispatch => {
@@ -70,10 +70,10 @@ export const update = route => dispatch => {
   );
 }
 
-export const commitMove = (id, order) => dispatch => {
-  dispatch(commitMoveRequest(id, order));
+export const move = (id, order) => dispatch => {
+  dispatch(moveRequest(id, order));
   return Route.move(id, order).then(
-    () => dispatch(commitMoveSuccess(id, order)),
-    () => dispatch(commitMoveFailure(id, order))
+    () => dispatch(moveSuccess(id, order)),
+    () => dispatch(moveFailure(id, order))
   );
 }

@@ -11,7 +11,8 @@ function mapStateToProps(state) {
   return {
     routes: state.routes.map((route) => {
       return _.find(state.stagedRoutes, { id: route.id }) || route;
-    })
+    }),
+    stagedMove: state.stagedMove
   }
 }
 
@@ -24,14 +25,19 @@ export default class Routes extends Component {
   }
 
   render() {
-    const { routes, dispatch } = this.props;
+    const { routes, stagedMove } = this.props;
+    if (stagedMove) {
+      let index = _.findIndex(routes, { id: stagedMove.id });
+      let movedRoute = routes.splice(index, 1)[0];
+      routes.splice(stagedMove.order, 0, movedRoute);
+    }
     return (
       <section className={s.routes}>
         <ol>
-          {routes.map((route) => {
+          {routes.map((route, index) => {
             return (
               <li className={s.route} key={route.id}>
-                <Route order={route.order} route={route} />
+                <Route index={index} route={route} />
               </li>
             );
           })}

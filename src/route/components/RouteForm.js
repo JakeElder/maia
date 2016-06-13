@@ -10,54 +10,58 @@ import { routeize } from '../model';
 import s from './RouteForm.css';
 
 @withStyles(s)
-export default class RouteForm extends Component {
+export class RouteFormControls extends Component {
+  render() {
+    const { onReset, resetEnabled, submitEnabled, form } = this.props;
+    const { onSubmit, id } = this.props;
+    return (
+      <div className={s.controls}>
+        <RaisedButton
+          onMouseUp={onReset}
+          disabled={!resetEnabled}
+          style={{ marginRight: 10 }}
+          label="Reset"
+        />
+        <RaisedButton
+          primary={true}
+          disabled={!submitEnabled}
+          label="Submit"
+          type="submit"
+          form={form}
+        />
+      </div>
+    )
+  }
+}
+
+@withStyles(s)
+export class RouteForm extends Component {
   get formControls() {
-    const { hideControls, disabled, onReset, resetEnabled, submitEnabled } = this.props;
-
-    let style = {};
-    if (hideControls) {
-      style = {
-        visibility: 'hidden',
-        position: 'absolute'
-      };
+    if (!this.props.hideControls) {
+      return <RouteFormControls
+        onReset={this.props.onReset}
+        resetEnabled={this.props.resetEnabled}
+        submitEnabled={this.props.submitEnabled}
+      />
     }
-
-    return <div className={s.controls} style={style}>
-      <RaisedButton
-        onMouseUp={onReset}
-        disabled={!resetEnabled}
-        style={{ marginRight: 10 }}
-        label="Reset"
-      />
-      <RaisedButton
-        primary={true}
-        disabled={!submitEnabled}
-        label="Submit"
-        type="submit"
-      />
-    </div>
   }
 
   get route() {
     return routeize(serialize(this.refs.form, { hash: true }));
   }
 
-  submit() {
-    const { onSubmit } = this.props;
-    return onSubmit(this.route);
-  }
-
   render() {
     const { id, name, pattern, target, order } = this.props.route;
-    const { onChange, onSubmit, editable } = this.props;
+    const { editable, onChange, onSubmit, elId } = this.props;
 
     return (
       <form
-        ref="form"
-        onSubmit={(e) => { e.preventDefault(); onSubmit(this.route); }}
-        onChange={() => { onChange(this.route); }}
-        autoComplete="off"
-      >
+          ref="form"
+          id={elId}
+          onSubmit={(e) => { e.preventDefault(); onSubmit(this.route); }}
+          onChange={() => { onChange(this.route); }}
+          autoComplete="off"
+        >
         <input type="hidden" name="id" value={id} />
         <input type="hidden" name="order" value={order} />
         <div className="Route--row">
