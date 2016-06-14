@@ -4,12 +4,13 @@ import { connect } from 'react-redux';
 import { DragDropContext } from 'react-dnd';
 import HTML5Backend from 'react-dnd-html5-backend';
 import Route from './Route';
+import { getVisibleRoutes } from '../selectors';
 
 function mapStateToProps(state) {
   return {
-    routes: state.routes.map((route) => {
-      return _.find(state.stagedRoutes, { id: route.id }) || route;
-    }),
+    routes: getVisibleRoutes(state).map(route =>
+      _.find(state.stagedRoutes, { id: route.id }) || route
+    ),
     stagedMove: state.stagedMove
   }
 }
