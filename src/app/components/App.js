@@ -3,6 +3,7 @@ import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import Snackbar from 'material-ui/Snackbar';
 import Header from './Header';
 import Sidebar from './Sidebar';
+import GroupFilterList from '../../group/components/GroupFilterList';
 import NewRoute from '../../route/components/NewRoute';
 import { UPDATE_SUCCESS, CREATE_SUCCESS } from '../../route/actions';
 import s from './App.css';
@@ -55,6 +56,7 @@ class App extends Component {
         <NewRoute />
         <div className={s.sidebar}>
           <Sidebar>
+            <GroupFilterList />
           </Sidebar>
         </div>
         <div className={s.content}>

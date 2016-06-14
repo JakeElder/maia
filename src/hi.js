@@ -7,6 +7,7 @@ import path from 'path';
 
 import * as Route from 'route-api';
 import { routes, reducer } from './app';
+import { UNTAGGED } from './group/constants';
 import ContextProvider from './ContextProvider';
 import config from '../config';
 
@@ -29,7 +30,13 @@ hi.get('*', (req, res) => {
     if (!props) { return res.status(404).send('Not Found'); }
       
     Route.all().then((routes) => {
-      const store = createStore(reducer, { routes });
+      const state = {
+        routes,
+        groups: [
+          { id: 1, name: 'Untagged', type: UNTAGGED, showMembers: true }
+        ]
+      }
+      const store = createStore(reducer, state);
       const ua = req.headers['user-agent'];
       const appHtml = renderToString(
         <ContextProvider isServer={true} store={store} userAgent={ua}>
