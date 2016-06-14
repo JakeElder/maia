@@ -9,7 +9,7 @@ import bindAll from 'lodash.bindall';
 import { client as redis } from '../database';
 import config from '../../config'
 
-export const ROUTE_QUALIFIER = `${config.get('db:name')}:routes:`;
+export const ROUTE_QUALIFIER = `${config.get('db:name')}:route:`;
 export const makeRouteKey = routeId => `${ROUTE_QUALIFIER}${routeId}`;
 
 const pubsub = bindAll(new EventEmitter(), ['on', 'emit']);
@@ -23,7 +23,8 @@ export function all() {
     routes = routes.map(route => ({
       ...route,
       order: parseInt(route.order, 10),
-      methods: JSON.parse(route.methods || '[]')
+      methods: JSON.parse(route.methods || '[]'),
+      secure: JSON.parse(route.secure || 'true')
     }));
     return sortBy(routes, 'order');
   });
@@ -37,6 +38,7 @@ export function create(route) {
   return new Promise((resolve, reject) => {
     const id = uuid.v4();
     route.methods = JSON.stringify(route.methods || []);
+    route.secure = JSON.stringify(route.secure);
     redis.hmset(makeRouteKey(id), { ...route, id, order: -1 }, (err, route) => {
       if (err) { return reject(err); }
       reorder().then(
@@ -51,6 +53,7 @@ export function update(id, route, silent = false) {
   return new Promise((resolve, reject) => {
     const id = route.id;
     route.methods = JSON.stringify(route.methods || []);
+    route.secure = JSON.stringify(route.secure);
     redis.hmset(makeRouteKey(id), route, (err, route) => {
       if (err) { return reject(err); }
       if (!silent) { emit('change'); }

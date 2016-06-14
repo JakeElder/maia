@@ -47,7 +47,8 @@ export class RouteForm extends Component {
   }
 
   get route() {
-    return routeize(serialize(this.refs.form, { hash: true }));
+    const route = serialize(this.refs.form, { hash: true });
+    return routeize({ ...route, secure: 'secure' in route });
   }
 
   render() {
@@ -88,6 +89,17 @@ export class RouteForm extends Component {
             name="target"
             floatingLabelText="target"
           />
+        </div>
+        <div className="Route--row">
+          <div className="Route--methods">
+            <Checkbox
+              disabled={!editable}
+              name="secure"
+              label="Secure"
+              value="true"
+              checked={this.props.route.secure}
+            />
+          </div>
         </div>
         <div className="Route--row">
           <div className="Route--methods">

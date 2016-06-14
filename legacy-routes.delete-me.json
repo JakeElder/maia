@@ -1,0 +1,4952 @@
+[
+	{
+		"methods": [
+			"GET"
+		],
+		"pattern": "^/api/hydra/api(.*)",
+		"secure": true,
+		"target": "https://api.hydra.sqexeu.com/api$1",
+		"name": "Hydra API (1)"
+	},
+	{
+		"methods": [
+			"GET"
+		],
+		"pattern": "^/preprod/api/hydra/api(.*)",
+		"secure": true,
+		"target": "https://api-pp.hydra.sqexeu.com/api$1",
+		"name": "Hydra API (1)"
+	},
+	{
+		"methods": [
+			"GET"
+		],
+		"pattern": "^/stage/api/hydra/api(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-hydra-api-stage.netops.eidosinteractive.com/api$1",
+		"name": "Hydra API (1)"
+	},
+	{
+		"methods": [
+			"GET"
+		],
+		"pattern": "^/api/hydra/cms/status(.*)",
+		"secure": true,
+		"target": "https://cms.hydra.sqexeu.com/status$1",
+		"name": "Hydra CMS (1)"
+	},
+	{
+		"methods": [
+			"GET"
+		],
+		"pattern": "^/api/vapour/mingus/status(.*)",
+		"secure": true,
+		"target": "https://mingus.hydra.sqexeu.com/health/alive$1",
+		"name": "Mingus (1)"
+	},
+	{
+		"methods": [
+			"GET"
+		],
+		"pattern": "^/api/auth/fast/redis(.*)",
+		"secure": true,
+		"target": "https://fast-check.hydra.sqexeu.com/node/api/redis_check$1",
+		"name": "Fast Check (1)"
+	},
+	{
+		"methods": [
+			"GET"
+		],
+		"pattern": "^/api/auth/fast/status(.*)",
+		"secure": true,
+		"target": "https://fast-check.hydra.sqexeu.com/node/api/health_check$1",
+		"name": "Fast Check (2)"
+	},
+	{
+		"methods": [
+			"GET"
+		],
+		"pattern": "^/api/auth/fast/token(.*)",
+		"secure": true,
+		"target": "https://fast-check.hydra.sqexeu.com/node/api/token/$1",
+		"name": "Fast Check (3)"
+	},
+	{
+		"methods": [
+			"GET"
+		],
+		"pattern": "^/api/auth/mem/status(.*)",
+		"secure": true,
+		"target": "https://membership.square-enix.com/health$1",
+		"name": "Membership (1)"
+	},
+	{
+		"methods": [
+			"GET"
+		],
+		"pattern": "^/api/auth/app(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-app-check-stage.netops.eidosinteractive.com/$1",
+		"name": "App-check (1)"
+	},
+	{
+		"methods": [
+			"GET"
+		],
+		"pattern": "^/api/tonberry(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-tonberry-stage.netops.eidosinteractive.com/index.php%3Fp=/$1",
+		"name": "Tonberry (1)"
+	},
+	{
+		"methods": [
+			"GET"
+		],
+		"pattern": "^/api/ufg/status",
+		"secure": true,
+		"target": "https://web.services.triadwars.com/core/api/v1/healthcheck",
+		"name": "UFG (1)"
+	},
+	{
+		"methods": [
+			"GET"
+		],
+		"pattern": "^/status",
+		"secure": true,
+		"target": "http://localhost:3000/status",
+		"name": "Status (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/avatar(.*)",
+		"secure": true,
+		"target": "https://avatar.sqexeu.com/$1",
+		"name": "Avatar API (1)"
+	},
+	{
+		"methods": [
+			"GET"
+		],
+		"pattern": "^/auth/token(.*)",
+		"secure": true,
+		"target": "https://fast-check.hydra.sqexeu.com/node/api/token$1",
+		"name": "Fastcheck token auth (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/triad-wars/presence(.*)",
+		"secure": true,
+		"target": "https://zephyrus.hydra.sqexeu.com/triad/presence$1",
+		"name": "Triad Wars web presence API (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/triad-wars/maintenance",
+		"secure": true,
+		"target": "https://arke.hydra.sqexeu.com/triad/services/maintenance",
+		"name": "Triad Wars debug API (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/triad-wars/store(.*)",
+		"secure": true,
+		"target": "https://arke.hydra.sqexeu.com/triad/store$1",
+		"name": "Triad Wars game-to-web/web-to-game API (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/triad-wars/debug",
+		"secure": true,
+		"target": "https://arke.hydra.sqexeu.com/status/debug",
+		"name": "Triad Wars debug API (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/triad-wars/game/leaderboards(.*)",
+		"secure": true,
+		"target": "https://arke.hydra.sqexeu.com/triad/leaderboards$1",
+		"name": "Triad Wars game-to-web/web-to-game API (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/triad-wars/game/status(.*)",
+		"secure": true,
+		"target": "https://arke.hydra.sqexeu.com/triad/status$1",
+		"name": "Triad Wars game-to-web/web-to-game API (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/triad-wars/game/accounts(.*)",
+		"secure": true,
+		"target": "https://arke.hydra.sqexeu.com/triad/accounts$1",
+		"name": "Triad Wars game-to-web/web-to-game API (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/triad-wars/game/users(.*)",
+		"secure": true,
+		"target": "https://arke.hydra.sqexeu.com/triad/users$1",
+		"name": "Triad Wars game-to-web/web-to-game API (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/triad-wars/temp/(.*)",
+		"secure": true,
+		"target": "https://api.hydra.sqexeu.com/api/projects/triad/$1",
+		"name": "Triad Wars content API (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/triad-wars/accounts/(.*)",
+		"secure": true,
+		"target": "https://arke.hydra.sqexeu.com/triad/accounts/$1",
+		"name": "Triad Wars accounts API (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/triad-wars/metrics/(.*)",
+		"secure": true,
+		"target": "https://arke.hydra.sqexeu.com/triad/metrics/$1",
+		"name": "Triad Wars metrics API (1)"
+	},
+	{
+		"methods": [
+			"POST"
+		],
+		"pattern": "^/triad-wars/collector(.*)",
+		"secure": true,
+		"target": "https://zephyrus.hydra.sqexeu.com/collector/triad$1",
+		"name": "Triad Wars Influence API (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/triad-wars/influence(.*)",
+		"secure": true,
+		"target": "https://zephyrus.hydra.sqexeu.com/triad/influence$1",
+		"name": "Triad Wars Influence API (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/triad-wars/content/blog(.*)",
+		"secure": true,
+		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/blog$1",
+		"name": "Triad Wars content API (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/triad-wars/content/video(.*)",
+		"secure": true,
+		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/video$1",
+		"name": "Triad Wars content API (2)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/triad-wars/content/image(.*)",
+		"secure": true,
+		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/image$1",
+		"name": "Triad Wars content API (3)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/triad-wars/content/qa-test-entity(.*)",
+		"secure": true,
+		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/qa-test-entity$1",
+		"name": "Triad Wars content API (4)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/triad-wars/content/information(.*)",
+		"secure": true,
+		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/information$1",
+		"name": "Triad Wars content API (5)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/triad-wars/content/about(.*)",
+		"secure": true,
+		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/about$1",
+		"name": "Triad Wars content API (6)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/triad-wars/content/page(.*)",
+		"secure": true,
+		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/page$1",
+		"name": "Triad Wars content API (7)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/triad-wars/content/gallery(.*)",
+		"secure": true,
+		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/gallery$1",
+		"name": "Triad Wars content API (8)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/triad-wars/content/blog(.*)",
+		"secure": true,
+		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/blog$1",
+		"name": "Triad Wars content API (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/triad-wars/content/video(.*)",
+		"secure": true,
+		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/video$1",
+		"name": "Triad Wars content API (2)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/triad-wars/content/image(.*)",
+		"secure": true,
+		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/image$1",
+		"name": "Triad Wars content API (3)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/triad-wars/content/qa-test-entity(.*)",
+		"secure": true,
+		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/qa-test-entity$1",
+		"name": "Triad Wars content API (4)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/triad-wars/content/information(.*)",
+		"secure": true,
+		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/information$1",
+		"name": "Triad Wars content API (5)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/triad-wars/content/about(.*)",
+		"secure": true,
+		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/about$1",
+		"name": "Triad Wars content API (6)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/triad-wars/content/page(.*)",
+		"secure": true,
+		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/page$1",
+		"name": "Triad Wars content API (7)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/triad-wars/content/gallery(.*)",
+		"secure": true,
+		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/gallery$1",
+		"name": "Triad Wars content API (8)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/triad-wars/content/blog(.*)",
+		"secure": true,
+		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/blog$1",
+		"name": "Triad Wars content API (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/triad-wars/content/video(.*)",
+		"secure": true,
+		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/video$1",
+		"name": "Triad Wars content API (2)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/triad-wars/content/image(.*)",
+		"secure": true,
+		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/image$1",
+		"name": "Triad Wars content API (3)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/triad-wars/content/qa-test-entity(.*)",
+		"secure": true,
+		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/qa-test-entity$1",
+		"name": "Triad Wars content API (4)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/triad-wars/content/information(.*)",
+		"secure": true,
+		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/information$1",
+		"name": "Triad Wars content API (5)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/triad-wars/content/about(.*)",
+		"secure": true,
+		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/about$1",
+		"name": "Triad Wars content API (6)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/triad-wars/content/page(.*)",
+		"secure": true,
+		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/page$1",
+		"name": "Triad Wars content API (7)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/triad-wars/content/gallery(.*)",
+		"secure": true,
+		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/gallery$1",
+		"name": "Triad Wars content API (8)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/triad-wars/content/blog(.*)",
+		"secure": true,
+		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/blog$1",
+		"name": "Triad Wars content API (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/triad-wars/content/video(.*)",
+		"secure": true,
+		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/video$1",
+		"name": "Triad Wars content API (2)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/triad-wars/content/image(.*)",
+		"secure": true,
+		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/image$1",
+		"name": "Triad Wars content API (3)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/triad-wars/content/qa-test-entity(.*)",
+		"secure": true,
+		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/qa-test-entity$1",
+		"name": "Triad Wars content API (4)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/triad-wars/content/information(.*)",
+		"secure": true,
+		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/information$1",
+		"name": "Triad Wars content API (5)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/triad-wars/content/about(.*)",
+		"secure": true,
+		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/about$1",
+		"name": "Triad Wars content API (6)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/triad-wars/content/page(.*)",
+		"secure": true,
+		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/page$1",
+		"name": "Triad Wars content API (7)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/triad-wars/content/gallery(.*)",
+		"secure": true,
+		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/gallery$1",
+		"name": "Triad Wars content API (8)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/triad-wars/content/blog(.*)",
+		"secure": true,
+		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/blog$1",
+		"name": "Triad Wars content API (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/triad-wars/content/video(.*)",
+		"secure": true,
+		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/video$1",
+		"name": "Triad Wars content API (2)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/triad-wars/content/image(.*)",
+		"secure": true,
+		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/image$1",
+		"name": "Triad Wars content API (3)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/triad-wars/content/qa-test-entity(.*)",
+		"secure": true,
+		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/qa-test-entity$1",
+		"name": "Triad Wars content API (4)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/triad-wars/content/information(.*)",
+		"secure": true,
+		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/information$1",
+		"name": "Triad Wars content API (5)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/triad-wars/content/about(.*)",
+		"secure": true,
+		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/about$1",
+		"name": "Triad Wars content API (6)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/triad-wars/content/page(.*)",
+		"secure": true,
+		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/page$1",
+		"name": "Triad Wars content API (7)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/triad-wars/content/gallery(.*)",
+		"secure": true,
+		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/gallery$1",
+		"name": "Triad Wars content API (8)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/triad-wars/content/blog(.*)",
+		"secure": true,
+		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/blog$1",
+		"name": "Triad Wars content API (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/triad-wars/content/video(.*)",
+		"secure": true,
+		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/video$1",
+		"name": "Triad Wars content API (2)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/triad-wars/content/image(.*)",
+		"secure": true,
+		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/image$1",
+		"name": "Triad Wars content API (3)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/triad-wars/content/qa-test-entity(.*)",
+		"secure": true,
+		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/qa-test-entity$1",
+		"name": "Triad Wars content API (4)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/triad-wars/content/information(.*)",
+		"secure": true,
+		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/information$1",
+		"name": "Triad Wars content API (5)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/triad-wars/content/about(.*)",
+		"secure": true,
+		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/about$1",
+		"name": "Triad Wars content API (6)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/triad-wars/content/page(.*)",
+		"secure": true,
+		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/page$1",
+		"name": "Triad Wars content API (7)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/triad-wars/content/gallery(.*)",
+		"secure": true,
+		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/gallery$1",
+		"name": "Triad Wars content API (8)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/triad-wars/content/blog(.*)",
+		"secure": true,
+		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/blog$1",
+		"name": "Triad Wars content API (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/triad-wars/content/video(.*)",
+		"secure": true,
+		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/video$1",
+		"name": "Triad Wars content API (2)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/triad-wars/content/image(.*)",
+		"secure": true,
+		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/image$1",
+		"name": "Triad Wars content API (3)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/triad-wars/content/qa-test-entity(.*)",
+		"secure": true,
+		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/qa-test-entity$1",
+		"name": "Triad Wars content API (4)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/triad-wars/content/information(.*)",
+		"secure": true,
+		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/information$1",
+		"name": "Triad Wars content API (5)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/triad-wars/content/about(.*)",
+		"secure": true,
+		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/about$1",
+		"name": "Triad Wars content API (6)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/triad-wars/content/page(.*)",
+		"secure": true,
+		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/page$1",
+		"name": "Triad Wars content API (7)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/triad-wars/content/gallery(.*)",
+		"secure": true,
+		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/gallery$1",
+		"name": "Triad Wars content API (8)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/triad-wars/content/blog(.*)",
+		"secure": true,
+		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/blog$1",
+		"name": "Triad Wars content API (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/triad-wars/content/video(.*)",
+		"secure": true,
+		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/video$1",
+		"name": "Triad Wars content API (2)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/triad-wars/content/image(.*)",
+		"secure": true,
+		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/image$1",
+		"name": "Triad Wars content API (3)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/triad-wars/content/qa-test-entity(.*)",
+		"secure": true,
+		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/qa-test-entity$1",
+		"name": "Triad Wars content API (4)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/triad-wars/content/information(.*)",
+		"secure": true,
+		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/information$1",
+		"name": "Triad Wars content API (5)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/triad-wars/content/about(.*)",
+		"secure": true,
+		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/about$1",
+		"name": "Triad Wars content API (6)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/triad-wars/content/page(.*)",
+		"secure": true,
+		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/page$1",
+		"name": "Triad Wars content API (7)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/triad-wars/content/gallery(.*)",
+		"secure": true,
+		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/gallery$1",
+		"name": "Triad Wars content API (8)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/triad-wars/content/timelines(.*)",
+		"secure": true,
+		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/timelines$1",
+		"name": "Triad Wars content API (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/triad-wars/content/fillers(.*)",
+		"secure": true,
+		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/timelines/fillers$1",
+		"name": "Triad Wars content API (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/triad-wars/content/store(.*)",
+		"secure": true,
+		"target": "https://api.hydra.sqexeu.com/api/triad/store$1",
+		"name": "Triad Wars content API (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/triad-wars/content/entities(.*)",
+		"secure": true,
+		"target": "https://api.hydra.sqexeu.com/api/projects/triad/entities$1",
+		"name": "Triad Wars content API (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/triad-wars/session",
+		"secure": true,
+		"target": "https://arke.hydra.sqexeu.com/triad/user",
+		"name": "Triad Wars session API (1)"
+	},
+	{
+		"methods": [
+			"GET"
+		],
+		"pattern": "^/proxy.*",
+		"secure": false,
+		"target": "https://membership.square-enix.com/static/proxy.html",
+		"name": "Membership (1)"
+	},
+	{
+		"methods": [
+			"GET"
+		],
+		"pattern": "^/hitman/proxy.*",
+		"secure": false,
+		"target": "https://membership.square-enix.com/static/proxy.html",
+		"name": "Membership (2)"
+	},
+	{
+		"methods": [
+			"GET"
+		],
+		"pattern": "^/just-cause-3/proxy.*",
+		"secure": false,
+		"target": "https://membership.square-enix.com/static/proxy.html",
+		"name": "Membership (3)"
+	},
+	{
+		"methods": [
+			"GET"
+		],
+		"pattern": "^/triad-wars/proxy.*",
+		"secure": false,
+		"target": "https://membership.square-enix.com/static/proxy.html",
+		"name": "Membership (4)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/just-cause-3/mailing_list(.*)",
+		"secure": true,
+		"target": "https://api.hydra.sqexeu.com/api/bluew/mailing_list$1",
+		"name": "Just Cause 3 mailing list API (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/just-cause-3/content/entities(.*)",
+		"secure": true,
+		"target": "https://api.hydra.sqexeu.com/api/projects/bluew/entities$1",
+		"name": "Just Cause 3 content API (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/just-cause-3/content/medici(.*)",
+		"secure": true,
+		"target": "https://api.hydra.sqexeu.com/api/projects/bluew/medici$1",
+		"name": "Just Cause 3 content API (2)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/just-cause-3/content/(.*)",
+		"secure": true,
+		"target": "https://api.hydra.sqexeu.com/api/bluew/$1",
+		"name": "Just Cause 3 content API (3)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/just-cause-3/session",
+		"secure": true,
+		"target": "https://api.hydra.sqexeu.com/api/bluew/session",
+		"name": "Just Cause 3 session API (1)"
+	},
+	{
+		"methods": [
+			"GET"
+		],
+		"pattern": "^/proxy.*",
+		"secure": false,
+		"target": "https://membership.square-enix.com/static/proxy.html",
+		"name": "Membership (1)"
+	},
+	{
+		"methods": [
+			"GET"
+		],
+		"pattern": "^/hitman/proxy.*",
+		"secure": false,
+		"target": "https://membership.square-enix.com/static/proxy.html",
+		"name": "Membership (2)"
+	},
+	{
+		"methods": [
+			"GET"
+		],
+		"pattern": "^/just-cause-3/proxy.*",
+		"secure": false,
+		"target": "https://membership.square-enix.com/static/proxy.html",
+		"name": "Membership (3)"
+	},
+	{
+		"methods": [
+			"GET"
+		],
+		"pattern": "^/triad-wars/proxy.*",
+		"secure": false,
+		"target": "https://membership.square-enix.com/static/proxy.html",
+		"name": "Membership (4)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/hitman/join_mailing_list(.*)",
+		"secure": true,
+		"target": "https://arke.hydra.sqexeu.com/hitman/join_mailing_list$1",
+		"name": "Hitman Web join mailing list API (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/hitman/mailing_list(.*)",
+		"secure": true,
+		"target": "https://arke.hydra.sqexeu.com/hitman/mailing_list$1",
+		"name": "Hitman Web mailing list API (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/hitman/content/static_copies(.*)",
+		"secure": true,
+		"target": "https://api.hydra.sqexeu.com/api/projects/hitman/static_copies$1",
+		"name": "Hitman Web content API (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/hitman/content/entities(.*)",
+		"secure": true,
+		"target": "https://api.hydra.sqexeu.com/api/projects/hitman/entities$1",
+		"name": "Hitman Web content API (2)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/hitman/content/(.*)",
+		"secure": true,
+		"target": "https://api.hydra.sqexeu.com/api/hitman/$1",
+		"name": "Hitman Web content API (3)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/hitman/session",
+		"secure": true,
+		"target": "https://api.hydra.sqexeu.com/api/hitman/session",
+		"name": "Hitman Web session API (1)"
+	},
+	{
+		"methods": [
+			"GET"
+		],
+		"pattern": "^/proxy.*",
+		"secure": false,
+		"target": "https://membership.square-enix.com/static/proxy.html",
+		"name": "Membership (1)"
+	},
+	{
+		"methods": [
+			"GET"
+		],
+		"pattern": "^/hitman/proxy.*",
+		"secure": false,
+		"target": "https://membership.square-enix.com/static/proxy.html",
+		"name": "Membership (2)"
+	},
+	{
+		"methods": [
+			"GET"
+		],
+		"pattern": "^/just-cause-3/proxy.*",
+		"secure": false,
+		"target": "https://membership.square-enix.com/static/proxy.html",
+		"name": "Membership (3)"
+	},
+	{
+		"methods": [
+			"GET"
+		],
+		"pattern": "^/triad-wars/proxy.*",
+		"secure": false,
+		"target": "https://membership.square-enix.com/static/proxy.html",
+		"name": "Membership (4)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/augaware/content/(.*)",
+		"secure": true,
+		"target": "https://iris.hydra.sqexeu.com/projects/augaware/content/$1",
+		"name": "Augaware content API (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/auth/users/permissions(.*)",
+		"secure": true,
+		"target": "https://fast-check.hydra.sqexeu.com/permissions$1",
+		"name": "Fast Check Permissions (1)"
+	},
+	{
+		"methods": [
+			"GET"
+		],
+		"pattern": "^/proxy.*",
+		"secure": false,
+		"target": "https://membership.square-enix.com/static/proxy.html",
+		"name": "Membership (1)"
+	},
+	{
+		"methods": [
+			"GET"
+		],
+		"pattern": "^/hitman/proxy.*",
+		"secure": false,
+		"target": "https://membership.square-enix.com/static/proxy.html",
+		"name": "Membership (2)"
+	},
+	{
+		"methods": [
+			"GET"
+		],
+		"pattern": "^/just-cause-3/proxy.*",
+		"secure": false,
+		"target": "https://membership.square-enix.com/static/proxy.html",
+		"name": "Membership (3)"
+	},
+	{
+		"methods": [
+			"GET"
+		],
+		"pattern": "^/triad-wars/proxy.*",
+		"secure": false,
+		"target": "https://membership.square-enix.com/static/proxy.html",
+		"name": "Membership (4)"
+	},
+	{
+		"methods": [
+			"GET"
+		],
+		"pattern": "^/assets?/(.*)",
+		"secure": false,
+		"target": "https://nimbus.hydra.sqexeu.com/asset/$1",
+		"name": "CDN origin server (prod) (1)"
+	},
+	{
+		"methods": [
+			"GET"
+		],
+		"pattern": "^/assets?/(.*)",
+		"secure": false,
+		"target": "https://nimbus.hydra.sqexeu.com/asset/$1",
+		"name": "CDN origin server (prod) (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/triad-wars/presence(.*)",
+		"secure": true,
+		"target": "https://zephyrus-pp.hydra.sqexeu.com/triad/presence$1",
+		"name": "Triad Wars web presence API (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/triad-wars/maintenance",
+		"secure": true,
+		"target": "https://arke-pp.hydra.sqexeu.com/triad/services/maintenance",
+		"name": "Triad Wars debug API (preprod) (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/triad-wars/store(.*)",
+		"secure": true,
+		"target": "https://arke-pp.hydra.sqexeu.com/triad/store$1",
+		"name": "Triad Wars game-to-web/web-to-game API (preprod) (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/triad-wars/debug",
+		"secure": true,
+		"target": "https://arke-pp.hydra.sqexeu.com/status/debug",
+		"name": "Triad Wars debug API (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/triad-wars/game/leaderboards(.*)",
+		"secure": true,
+		"target": "https://arke-pp.hydra.sqexeu.com/triad/leaderboards$1",
+		"name": "Triad Wars game-to-web/web-to-game API (preprod) (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/triad-wars/game/status(.*)",
+		"secure": true,
+		"target": "https://arke-pp.hydra.sqexeu.com/triad/status$1",
+		"name": "Triad Wars game-to-web/web-to-game API (preprod) (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/triad-wars/game/accounts(.*)",
+		"secure": true,
+		"target": "https://arke-pp.hydra.sqexeu.com/triad/accounts$1",
+		"name": "Triad Wars game-to-web/web-to-game API (preprod) (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/triad-wars/game/users(.*)",
+		"secure": true,
+		"target": "https://arke-pp.hydra.sqexeu.com/triad/users$1",
+		"name": "Triad Wars game-to-web/web-to-game API (preprod) (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/triad-wars/temp/(.*)",
+		"secure": true,
+		"target": "https://api-pp.hydra.sqexeu.com/api/projects/triad/$1",
+		"name": "Triad Wars content API (preprod) (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/triad-wars/accounts/(.*)",
+		"secure": true,
+		"target": "https://arke-pp.hydra.sqexeu.com/triad/accounts/$1",
+		"name": "Triad Wars accounts API (preprod) (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/triad-wars/metrics/(.*)",
+		"secure": true,
+		"target": "https://arke-pp.hydra.sqexeu.com/triad/metrics/$1",
+		"name": "Triad Wars metrics API (preprod) (1)"
+	},
+	{
+		"methods": [
+			"POST"
+		],
+		"pattern": "^/preprod/triad-wars/collector(.*)",
+		"secure": true,
+		"target": "https://zephyrus-pp.hydra.sqexeu.com/collector/triad$1",
+		"name": "Triad Wars Influence API (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/triad-wars/influence(.*)",
+		"secure": true,
+		"target": "https://zephyrus-pp.hydra.sqexeu.com/triad/influence$1",
+		"name": "Triad Wars Influence API (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/triad-wars/content/blog(.*)",
+		"secure": true,
+		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/blog$1",
+		"name": "Triad Wars content API (preprod) (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/triad-wars/content/video(.*)",
+		"secure": true,
+		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/video$1",
+		"name": "Triad Wars content API (preprod) (2)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/triad-wars/content/image(.*)",
+		"secure": true,
+		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/image$1",
+		"name": "Triad Wars content API (preprod) (3)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/triad-wars/content/qa-test-entity(.*)",
+		"secure": true,
+		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/qa-test-entity$1",
+		"name": "Triad Wars content API (preprod) (4)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/triad-wars/content/information(.*)",
+		"secure": true,
+		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/information$1",
+		"name": "Triad Wars content API (preprod) (5)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/triad-wars/content/about(.*)",
+		"secure": true,
+		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/about$1",
+		"name": "Triad Wars content API (preprod) (6)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/triad-wars/content/page(.*)",
+		"secure": true,
+		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/page$1",
+		"name": "Triad Wars content API (preprod) (7)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/triad-wars/content/gallery(.*)",
+		"secure": true,
+		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/gallery$1",
+		"name": "Triad Wars content API (preprod) (8)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/triad-wars/content/blog(.*)",
+		"secure": true,
+		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/blog$1",
+		"name": "Triad Wars content API (preprod) (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/triad-wars/content/video(.*)",
+		"secure": true,
+		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/video$1",
+		"name": "Triad Wars content API (preprod) (2)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/triad-wars/content/image(.*)",
+		"secure": true,
+		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/image$1",
+		"name": "Triad Wars content API (preprod) (3)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/triad-wars/content/qa-test-entity(.*)",
+		"secure": true,
+		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/qa-test-entity$1",
+		"name": "Triad Wars content API (preprod) (4)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/triad-wars/content/information(.*)",
+		"secure": true,
+		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/information$1",
+		"name": "Triad Wars content API (preprod) (5)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/triad-wars/content/about(.*)",
+		"secure": true,
+		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/about$1",
+		"name": "Triad Wars content API (preprod) (6)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/triad-wars/content/page(.*)",
+		"secure": true,
+		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/page$1",
+		"name": "Triad Wars content API (preprod) (7)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/triad-wars/content/gallery(.*)",
+		"secure": true,
+		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/gallery$1",
+		"name": "Triad Wars content API (preprod) (8)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/triad-wars/content/blog(.*)",
+		"secure": true,
+		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/blog$1",
+		"name": "Triad Wars content API (preprod) (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/triad-wars/content/video(.*)",
+		"secure": true,
+		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/video$1",
+		"name": "Triad Wars content API (preprod) (2)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/triad-wars/content/image(.*)",
+		"secure": true,
+		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/image$1",
+		"name": "Triad Wars content API (preprod) (3)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/triad-wars/content/qa-test-entity(.*)",
+		"secure": true,
+		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/qa-test-entity$1",
+		"name": "Triad Wars content API (preprod) (4)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/triad-wars/content/information(.*)",
+		"secure": true,
+		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/information$1",
+		"name": "Triad Wars content API (preprod) (5)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/triad-wars/content/about(.*)",
+		"secure": true,
+		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/about$1",
+		"name": "Triad Wars content API (preprod) (6)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/triad-wars/content/page(.*)",
+		"secure": true,
+		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/page$1",
+		"name": "Triad Wars content API (preprod) (7)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/triad-wars/content/gallery(.*)",
+		"secure": true,
+		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/gallery$1",
+		"name": "Triad Wars content API (preprod) (8)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/triad-wars/content/blog(.*)",
+		"secure": true,
+		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/blog$1",
+		"name": "Triad Wars content API (preprod) (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/triad-wars/content/video(.*)",
+		"secure": true,
+		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/video$1",
+		"name": "Triad Wars content API (preprod) (2)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/triad-wars/content/image(.*)",
+		"secure": true,
+		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/image$1",
+		"name": "Triad Wars content API (preprod) (3)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/triad-wars/content/qa-test-entity(.*)",
+		"secure": true,
+		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/qa-test-entity$1",
+		"name": "Triad Wars content API (preprod) (4)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/triad-wars/content/information(.*)",
+		"secure": true,
+		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/information$1",
+		"name": "Triad Wars content API (preprod) (5)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/triad-wars/content/about(.*)",
+		"secure": true,
+		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/about$1",
+		"name": "Triad Wars content API (preprod) (6)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/triad-wars/content/page(.*)",
+		"secure": true,
+		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/page$1",
+		"name": "Triad Wars content API (preprod) (7)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/triad-wars/content/gallery(.*)",
+		"secure": true,
+		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/gallery$1",
+		"name": "Triad Wars content API (preprod) (8)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/triad-wars/content/blog(.*)",
+		"secure": true,
+		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/blog$1",
+		"name": "Triad Wars content API (preprod) (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/triad-wars/content/video(.*)",
+		"secure": true,
+		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/video$1",
+		"name": "Triad Wars content API (preprod) (2)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/triad-wars/content/image(.*)",
+		"secure": true,
+		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/image$1",
+		"name": "Triad Wars content API (preprod) (3)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/triad-wars/content/qa-test-entity(.*)",
+		"secure": true,
+		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/qa-test-entity$1",
+		"name": "Triad Wars content API (preprod) (4)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/triad-wars/content/information(.*)",
+		"secure": true,
+		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/information$1",
+		"name": "Triad Wars content API (preprod) (5)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/triad-wars/content/about(.*)",
+		"secure": true,
+		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/about$1",
+		"name": "Triad Wars content API (preprod) (6)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/triad-wars/content/page(.*)",
+		"secure": true,
+		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/page$1",
+		"name": "Triad Wars content API (preprod) (7)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/triad-wars/content/gallery(.*)",
+		"secure": true,
+		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/gallery$1",
+		"name": "Triad Wars content API (preprod) (8)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/triad-wars/content/blog(.*)",
+		"secure": true,
+		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/blog$1",
+		"name": "Triad Wars content API (preprod) (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/triad-wars/content/video(.*)",
+		"secure": true,
+		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/video$1",
+		"name": "Triad Wars content API (preprod) (2)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/triad-wars/content/image(.*)",
+		"secure": true,
+		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/image$1",
+		"name": "Triad Wars content API (preprod) (3)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/triad-wars/content/qa-test-entity(.*)",
+		"secure": true,
+		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/qa-test-entity$1",
+		"name": "Triad Wars content API (preprod) (4)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/triad-wars/content/information(.*)",
+		"secure": true,
+		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/information$1",
+		"name": "Triad Wars content API (preprod) (5)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/triad-wars/content/about(.*)",
+		"secure": true,
+		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/about$1",
+		"name": "Triad Wars content API (preprod) (6)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/triad-wars/content/page(.*)",
+		"secure": true,
+		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/page$1",
+		"name": "Triad Wars content API (preprod) (7)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/triad-wars/content/gallery(.*)",
+		"secure": true,
+		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/gallery$1",
+		"name": "Triad Wars content API (preprod) (8)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/triad-wars/content/blog(.*)",
+		"secure": true,
+		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/blog$1",
+		"name": "Triad Wars content API (preprod) (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/triad-wars/content/video(.*)",
+		"secure": true,
+		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/video$1",
+		"name": "Triad Wars content API (preprod) (2)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/triad-wars/content/image(.*)",
+		"secure": true,
+		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/image$1",
+		"name": "Triad Wars content API (preprod) (3)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/triad-wars/content/qa-test-entity(.*)",
+		"secure": true,
+		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/qa-test-entity$1",
+		"name": "Triad Wars content API (preprod) (4)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/triad-wars/content/information(.*)",
+		"secure": true,
+		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/information$1",
+		"name": "Triad Wars content API (preprod) (5)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/triad-wars/content/about(.*)",
+		"secure": true,
+		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/about$1",
+		"name": "Triad Wars content API (preprod) (6)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/triad-wars/content/page(.*)",
+		"secure": true,
+		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/page$1",
+		"name": "Triad Wars content API (preprod) (7)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/triad-wars/content/gallery(.*)",
+		"secure": true,
+		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/gallery$1",
+		"name": "Triad Wars content API (preprod) (8)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/triad-wars/content/blog(.*)",
+		"secure": true,
+		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/blog$1",
+		"name": "Triad Wars content API (preprod) (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/triad-wars/content/video(.*)",
+		"secure": true,
+		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/video$1",
+		"name": "Triad Wars content API (preprod) (2)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/triad-wars/content/image(.*)",
+		"secure": true,
+		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/image$1",
+		"name": "Triad Wars content API (preprod) (3)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/triad-wars/content/qa-test-entity(.*)",
+		"secure": true,
+		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/qa-test-entity$1",
+		"name": "Triad Wars content API (preprod) (4)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/triad-wars/content/information(.*)",
+		"secure": true,
+		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/information$1",
+		"name": "Triad Wars content API (preprod) (5)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/triad-wars/content/about(.*)",
+		"secure": true,
+		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/about$1",
+		"name": "Triad Wars content API (preprod) (6)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/triad-wars/content/page(.*)",
+		"secure": true,
+		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/page$1",
+		"name": "Triad Wars content API (preprod) (7)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/triad-wars/content/gallery(.*)",
+		"secure": true,
+		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/gallery$1",
+		"name": "Triad Wars content API (preprod) (8)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/triad-wars/content/timelines(.*)",
+		"secure": true,
+		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/timelines$1",
+		"name": "Triad Wars content API (preprod) (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/triad-wars/content/fillers(.*)",
+		"secure": true,
+		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/timelines/fillers$1",
+		"name": "Triad Wars content API (preprod) (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/triad-wars/content/store(.*)",
+		"secure": true,
+		"target": "https://api-pp.hydra.sqexeu.com/api/triad/store$1",
+		"name": "Triad Wars content API (preprod) (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/triad-wars/content/entities(.*)",
+		"secure": true,
+		"target": "https://api-pp.hydra.sqexeu.com/api/projects/triad/entities$1",
+		"name": "Triad Wars content API (preprod) (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/triad-wars/session",
+		"secure": true,
+		"target": "https://arke-pp.hydra.sqexeu.com/triad/user",
+		"name": "Triad Wars session API (preprod) (1)"
+	},
+	{
+		"methods": [
+			"GET"
+		],
+		"pattern": "^/preprod/proxy.*",
+		"secure": false,
+		"target": "https://membership.square-enix.com/static/proxy.html",
+		"name": "Membership (1)"
+	},
+	{
+		"methods": [
+			"GET"
+		],
+		"pattern": "^/preprod/hitman/proxy.*",
+		"secure": false,
+		"target": "https://membership.square-enix.com/static/proxy.html",
+		"name": "Membership (2)"
+	},
+	{
+		"methods": [
+			"GET"
+		],
+		"pattern": "^/preprod/just-cause-3/proxy.*",
+		"secure": false,
+		"target": "https://membership.square-enix.com/static/proxy.html",
+		"name": "Membership (3)"
+	},
+	{
+		"methods": [
+			"GET"
+		],
+		"pattern": "^/preprod/triad-wars/proxy.*",
+		"secure": false,
+		"target": "https://membership.square-enix.com/static/proxy.html",
+		"name": "Membership (4)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/tomb-raider/session",
+		"secure": true,
+		"target": "https://arke-pp.hydra.sqexeu.com/common/session",
+		"name": "Tomb Raider session API (preprod) (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/just-cause-3/mailing_list(.*)",
+		"secure": true,
+		"target": "https://api-pp.hydra.sqexeu.com/api/bluew/mailing_list$1",
+		"name": "Just Cause 3 mailing list API (preprod) (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/just-cause-3/content/entities(.*)",
+		"secure": true,
+		"target": "https://api-pp.hydra.sqexeu.com/api/projects/bluew/entities$1",
+		"name": "Just Cause 3 content API (preprod) (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/just-cause-3/content/medici(.*)",
+		"secure": true,
+		"target": "https://api-pp.hydra.sqexeu.com/api/projects/bluew/medici$1",
+		"name": "Just Cause 3 content API (preprod) (2)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/just-cause-3/content/(.*)",
+		"secure": true,
+		"target": "https://api-pp.hydra.sqexeu.com/api/bluew/$1",
+		"name": "Just Cause 3 content API (preprod) (3)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/just-cause-3/session",
+		"secure": true,
+		"target": "https://api-pp.hydra.sqexeu.com/api/bluew/session",
+		"name": "Just Cause 3 session API (preprod) (1)"
+	},
+	{
+		"methods": [
+			"GET"
+		],
+		"pattern": "^/preprod/proxy.*",
+		"secure": false,
+		"target": "https://membership.square-enix.com/static/proxy.html",
+		"name": "Membership (1)"
+	},
+	{
+		"methods": [
+			"GET"
+		],
+		"pattern": "^/preprod/hitman/proxy.*",
+		"secure": false,
+		"target": "https://membership.square-enix.com/static/proxy.html",
+		"name": "Membership (2)"
+	},
+	{
+		"methods": [
+			"GET"
+		],
+		"pattern": "^/preprod/just-cause-3/proxy.*",
+		"secure": false,
+		"target": "https://membership.square-enix.com/static/proxy.html",
+		"name": "Membership (3)"
+	},
+	{
+		"methods": [
+			"GET"
+		],
+		"pattern": "^/preprod/triad-wars/proxy.*",
+		"secure": false,
+		"target": "https://membership.square-enix.com/static/proxy.html",
+		"name": "Membership (4)"
+	},
+	{
+		"methods": [
+			"([A-Z]+)"
+		],
+		"pattern": "^/preprod/hitman/join_mailing_list(.*)",
+		"secure": true,
+		"target": "https://arke-pp.hydra.sqexeu.com/hitman/join_mailing_list$2",
+		"name": "Hitman Web join mailing list API (preprod) (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/hitman/mailing_list(.*)",
+		"secure": true,
+		"target": "https://arke-pp.hydra.sqexeu.com/api/hitman/mailing_list$1",
+		"name": "Hitman Web mailing list API (preprod) (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/hitman/content/static_copies(.*)",
+		"secure": true,
+		"target": "https://api-pp.hydra.sqexeu.com/api/projects/hitman/static_copies$1",
+		"name": "Hitman Web content API (preprod) (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/hitman/content/entities(.*)",
+		"secure": true,
+		"target": "https://api-pp.hydra.sqexeu.com/api/projects/hitman/entities$1",
+		"name": "Hitman Web content API (preprod) (2)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/hitman/content/(.*)",
+		"secure": true,
+		"target": "https://api-pp.hydra.sqexeu.com/api/hitman/$1",
+		"name": "Hitman Web content API (preprod) (3)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/hitman/session",
+		"secure": true,
+		"target": "https://api-pp.hydra.sqexeu.com/api/hitman/session",
+		"name": "Hitman Web session API (preprod) (1)"
+	},
+	{
+		"methods": [
+			"GET"
+		],
+		"pattern": "^/preprod/proxy.*",
+		"secure": false,
+		"target": "https://membership.square-enix.com/static/proxy.html",
+		"name": "Membership (1)"
+	},
+	{
+		"methods": [
+			"GET"
+		],
+		"pattern": "^/preprod/hitman/proxy.*",
+		"secure": false,
+		"target": "https://membership.square-enix.com/static/proxy.html",
+		"name": "Membership (2)"
+	},
+	{
+		"methods": [
+			"GET"
+		],
+		"pattern": "^/preprod/just-cause-3/proxy.*",
+		"secure": false,
+		"target": "https://membership.square-enix.com/static/proxy.html",
+		"name": "Membership (3)"
+	},
+	{
+		"methods": [
+			"GET"
+		],
+		"pattern": "^/preprod/triad-wars/proxy.*",
+		"secure": false,
+		"target": "https://membership.square-enix.com/static/proxy.html",
+		"name": "Membership (4)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/augaware/content/(.*)",
+		"secure": true,
+		"target": "https://iris-pp.hydra.sqexeu.com/projects/augaware/content/$1",
+		"name": "Augaware content API (preprod) (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/preprod/auth/users/permissions(.*)",
+		"secure": true,
+		"target": "https://fast-check.hydra.sqexeu.com/permissions$1",
+		"name": "Fast Check Permissions (preprod) (1)"
+	},
+	{
+		"methods": [
+			"GET"
+		],
+		"pattern": "^/preprod/proxy.*",
+		"secure": false,
+		"target": "https://membership.square-enix.com/static/proxy.html",
+		"name": "Membership (1)"
+	},
+	{
+		"methods": [
+			"GET"
+		],
+		"pattern": "^/preprod/hitman/proxy.*",
+		"secure": false,
+		"target": "https://membership.square-enix.com/static/proxy.html",
+		"name": "Membership (2)"
+	},
+	{
+		"methods": [
+			"GET"
+		],
+		"pattern": "^/preprod/just-cause-3/proxy.*",
+		"secure": false,
+		"target": "https://membership.square-enix.com/static/proxy.html",
+		"name": "Membership (3)"
+	},
+	{
+		"methods": [
+			"GET"
+		],
+		"pattern": "^/preprod/triad-wars/proxy.*",
+		"secure": false,
+		"target": "https://membership.square-enix.com/static/proxy.html",
+		"name": "Membership (4)"
+	},
+	{
+		"methods": [
+			"GET"
+		],
+		"pattern": "^/preprod/assets?/(.*)",
+		"secure": false,
+		"target": "https://nimbus-pp.hydra.sqexeu.com/asset/$1",
+		"name": "CDN origin server (preprod) (1)"
+	},
+	{
+		"methods": [
+			"GET"
+		],
+		"pattern": "^/preprod/assets?/(.*)",
+		"secure": false,
+		"target": "https://nimbus-pp.hydra.sqexeu.com/asset/$1",
+		"name": "CDN origin server (preprod) (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/avatar(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-avatar-stage.netops.eidosinteractive.com/$1",
+		"name": "Avatar API (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/billing/customer/(.*)",
+		"secure": true,
+		"target": "https://stagebilling.sqexeu.com/api/v1/fe/customer/$1",
+		"name": "Billing API (1)"
+	},
+	{
+		"methods": [
+			"GET"
+		],
+		"pattern": "^/stage/billing/token(.*)",
+		"secure": false,
+		"target": "http://fast-check-stage.netops.eidosinteractive.com/node/api/token$1",
+		"name": "Token check (1)"
+	},
+	{
+		"methods": [
+			"GET"
+		],
+		"pattern": "^/stage/auth/token(.*)",
+		"secure": true,
+		"target": "http://fast-check-stage.netops.eidosinteractive.com/node/api/token$1",
+		"name": "Fastcheck token auth (stage) (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/triad-wars/presence(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-zephyrus-stage.netops.eidosinteractive.com/triad/presence$1",
+		"name": "Triad Wars web presence API (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/triad-wars/maintenance",
+		"secure": true,
+		"target": "http://docker-onlinedev-arke-stage.netops.eidosinteractive.com/triad/services/maintenance",
+		"name": "Triad Wars debug API (stage) (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/triad-wars/debug",
+		"secure": true,
+		"target": "http://docker-onlinedev-arke-stage.netops.eidosinteractive.com/status/debug",
+		"name": "Triad Wars debug API (stage) (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/triad-wars/game/leaderboards(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-arke-stage.netops.eidosinteractive.com/triad/leaderboards$1",
+		"name": "Triad Wars game-to-web/web-to-game API (stage) (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/triad-wars/game/status(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-arke-stage.netops.eidosinteractive.com/triad/status$1",
+		"name": "Triad Wars game-to-web/web-to-game API (stage) (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/triad-wars/game/accounts(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-arke-stage.netops.eidosinteractive.com/triad/accounts$1",
+		"name": "Triad Wars game-to-web/web-to-game API (stage) (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/triad-wars/game/users(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-arke-stage.netops.eidosinteractive.com/triad/users$1",
+		"name": "Triad Wars game-to-web/web-to-game API (stage) (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/triad-wars/temp/(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-hydra-api-stage.netops.eidosinteractive.com/api/projects/triad/$1",
+		"name": "Triad Wars content API (stage) (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/triad-wars/accounts/(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-arke-stage.netops.eidosinteractive.com/triad/accounts/$1",
+		"name": "Triad Wars accounts API (stage) (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/triad-wars/metrics/(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-arke-stage.netops.eidosinteractive.com/triad/metrics/$1",
+		"name": "Triad Wars metrics API (stage) (1)"
+	},
+	{
+		"methods": [
+			"POST"
+		],
+		"pattern": "^/stage/triad-wars/collector(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-zephyrus-stage.netops.eidosinteractive.com/collector/triad$1",
+		"name": "Triad Wars Influence API (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/triad-wars/influence(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-zephyrus-stage.netops.eidosinteractive.com/triad/influence$1",
+		"name": "Triad Wars Influence API (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/triad-wars/content/blog(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/blog$1",
+		"name": "Triad Wars content API (stage) (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/triad-wars/content/video(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/video$1",
+		"name": "Triad Wars content API (stage) (2)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/triad-wars/content/image(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/image$1",
+		"name": "Triad Wars content API (stage) (3)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/triad-wars/content/qa-test-entity(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/qa-test-entity$1",
+		"name": "Triad Wars content API (stage) (4)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/triad-wars/content/information(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/information$1",
+		"name": "Triad Wars content API (stage) (5)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/triad-wars/content/about(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/about$1",
+		"name": "Triad Wars content API (stage) (6)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/triad-wars/content/page(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/page$1",
+		"name": "Triad Wars content API (stage) (7)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/triad-wars/content/gallery(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/gallery$1",
+		"name": "Triad Wars content API (stage) (8)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/triad-wars/content/blog(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/blog$1",
+		"name": "Triad Wars content API (stage) (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/triad-wars/content/video(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/video$1",
+		"name": "Triad Wars content API (stage) (2)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/triad-wars/content/image(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/image$1",
+		"name": "Triad Wars content API (stage) (3)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/triad-wars/content/qa-test-entity(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/qa-test-entity$1",
+		"name": "Triad Wars content API (stage) (4)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/triad-wars/content/information(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/information$1",
+		"name": "Triad Wars content API (stage) (5)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/triad-wars/content/about(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/about$1",
+		"name": "Triad Wars content API (stage) (6)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/triad-wars/content/page(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/page$1",
+		"name": "Triad Wars content API (stage) (7)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/triad-wars/content/gallery(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/gallery$1",
+		"name": "Triad Wars content API (stage) (8)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/triad-wars/content/blog(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/blog$1",
+		"name": "Triad Wars content API (stage) (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/triad-wars/content/video(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/video$1",
+		"name": "Triad Wars content API (stage) (2)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/triad-wars/content/image(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/image$1",
+		"name": "Triad Wars content API (stage) (3)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/triad-wars/content/qa-test-entity(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/qa-test-entity$1",
+		"name": "Triad Wars content API (stage) (4)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/triad-wars/content/information(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/information$1",
+		"name": "Triad Wars content API (stage) (5)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/triad-wars/content/about(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/about$1",
+		"name": "Triad Wars content API (stage) (6)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/triad-wars/content/page(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/page$1",
+		"name": "Triad Wars content API (stage) (7)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/triad-wars/content/gallery(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/gallery$1",
+		"name": "Triad Wars content API (stage) (8)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/triad-wars/content/blog(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/blog$1",
+		"name": "Triad Wars content API (stage) (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/triad-wars/content/video(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/video$1",
+		"name": "Triad Wars content API (stage) (2)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/triad-wars/content/image(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/image$1",
+		"name": "Triad Wars content API (stage) (3)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/triad-wars/content/qa-test-entity(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/qa-test-entity$1",
+		"name": "Triad Wars content API (stage) (4)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/triad-wars/content/information(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/information$1",
+		"name": "Triad Wars content API (stage) (5)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/triad-wars/content/about(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/about$1",
+		"name": "Triad Wars content API (stage) (6)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/triad-wars/content/page(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/page$1",
+		"name": "Triad Wars content API (stage) (7)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/triad-wars/content/gallery(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/gallery$1",
+		"name": "Triad Wars content API (stage) (8)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/triad-wars/content/blog(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/blog$1",
+		"name": "Triad Wars content API (stage) (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/triad-wars/content/video(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/video$1",
+		"name": "Triad Wars content API (stage) (2)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/triad-wars/content/image(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/image$1",
+		"name": "Triad Wars content API (stage) (3)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/triad-wars/content/qa-test-entity(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/qa-test-entity$1",
+		"name": "Triad Wars content API (stage) (4)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/triad-wars/content/information(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/information$1",
+		"name": "Triad Wars content API (stage) (5)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/triad-wars/content/about(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/about$1",
+		"name": "Triad Wars content API (stage) (6)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/triad-wars/content/page(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/page$1",
+		"name": "Triad Wars content API (stage) (7)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/triad-wars/content/gallery(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/gallery$1",
+		"name": "Triad Wars content API (stage) (8)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/triad-wars/content/blog(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/blog$1",
+		"name": "Triad Wars content API (stage) (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/triad-wars/content/video(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/video$1",
+		"name": "Triad Wars content API (stage) (2)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/triad-wars/content/image(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/image$1",
+		"name": "Triad Wars content API (stage) (3)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/triad-wars/content/qa-test-entity(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/qa-test-entity$1",
+		"name": "Triad Wars content API (stage) (4)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/triad-wars/content/information(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/information$1",
+		"name": "Triad Wars content API (stage) (5)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/triad-wars/content/about(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/about$1",
+		"name": "Triad Wars content API (stage) (6)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/triad-wars/content/page(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/page$1",
+		"name": "Triad Wars content API (stage) (7)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/triad-wars/content/gallery(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/gallery$1",
+		"name": "Triad Wars content API (stage) (8)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/triad-wars/content/blog(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/blog$1",
+		"name": "Triad Wars content API (stage) (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/triad-wars/content/video(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/video$1",
+		"name": "Triad Wars content API (stage) (2)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/triad-wars/content/image(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/image$1",
+		"name": "Triad Wars content API (stage) (3)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/triad-wars/content/qa-test-entity(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/qa-test-entity$1",
+		"name": "Triad Wars content API (stage) (4)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/triad-wars/content/information(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/information$1",
+		"name": "Triad Wars content API (stage) (5)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/triad-wars/content/about(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/about$1",
+		"name": "Triad Wars content API (stage) (6)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/triad-wars/content/page(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/page$1",
+		"name": "Triad Wars content API (stage) (7)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/triad-wars/content/gallery(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/gallery$1",
+		"name": "Triad Wars content API (stage) (8)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/triad-wars/content/blog(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/blog$1",
+		"name": "Triad Wars content API (stage) (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/triad-wars/content/video(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/video$1",
+		"name": "Triad Wars content API (stage) (2)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/triad-wars/content/image(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/image$1",
+		"name": "Triad Wars content API (stage) (3)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/triad-wars/content/qa-test-entity(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/qa-test-entity$1",
+		"name": "Triad Wars content API (stage) (4)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/triad-wars/content/information(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/information$1",
+		"name": "Triad Wars content API (stage) (5)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/triad-wars/content/about(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/about$1",
+		"name": "Triad Wars content API (stage) (6)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/triad-wars/content/page(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/page$1",
+		"name": "Triad Wars content API (stage) (7)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/triad-wars/content/gallery(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/gallery$1",
+		"name": "Triad Wars content API (stage) (8)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/triad-wars/content/timelines(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/timelines$1",
+		"name": "Triad Wars content API (stage) (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/triad-wars/content/fillers(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/timelines/fillers$1",
+		"name": "Triad Wars content API (stage) (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/triad-wars/store(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-arke-stage.netops.eidosinteractive.com/triad/store$1",
+		"name": "Triad Wars game-to-web/web-to-game API (stage) (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/triad-wars/content/entities(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-hydra-api-stage.netops.eidosinteractive.com/api/projects/triad/entities$1",
+		"name": "Triad Wars content API (stage) (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/triad-wars/session",
+		"secure": true,
+		"target": "http://docker-onlinedev-arke-stage.netops.eidosinteractive.com/triad/user",
+		"name": "Triad Wars session API (stage) (1)"
+	},
+	{
+		"methods": [
+			"GET"
+		],
+		"pattern": "^/stage/proxy.*",
+		"secure": false,
+		"target": "https://test-membership.square-enix.com/static/proxy.html",
+		"name": "Membership (stage) (1)"
+	},
+	{
+		"methods": [
+			"GET"
+		],
+		"pattern": "^/stage/hitman/proxy.*",
+		"secure": false,
+		"target": "https://test-membership.square-enix.com/static/proxy.html",
+		"name": "Membership (stage) (2)"
+	},
+	{
+		"methods": [
+			"GET"
+		],
+		"pattern": "^/stage/just-cause-3/proxy.*",
+		"secure": false,
+		"target": "https://test-membership.square-enix.com/static/proxy.html",
+		"name": "Membership (stage) (3)"
+	},
+	{
+		"methods": [
+			"GET"
+		],
+		"pattern": "^/stage/triad-wars/proxy.*",
+		"secure": false,
+		"target": "https://test-membership.square-enix.com/static/proxy.html",
+		"name": "Membership (stage) (4)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/tomb-raider/session",
+		"secure": true,
+		"target": "http://docker-onlinedev-arke-stage.netops.eidosinteractive.com/common/session",
+		"name": "Tomb Raider session API (stage) (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/just-cause-3/mailing_list(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-hydra-api-stage.netops.eidosinteractive.com/api/bluew/mailing_list$1",
+		"name": "Just Cause 3 mailing list API (stage) (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/just-cause-3/content/entities(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-hydra-api-stage.netops.eidosinteractive.com/api/projects/bluew/entities$1",
+		"name": "Just Cause 3 content API (stage) (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/just-cause-3/content/medici(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-hydra-api-stage.netops.eidosinteractive.com/api/projects/bluew/medici$1",
+		"name": "Just Cause 3 content API (stage) (2)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/just-cause-3/content/(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-hydra-api-stage.netops.eidosinteractive.com/api/bluew/$1",
+		"name": "Just Cause 3 content API (stage) (3)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/just-cause-3/session",
+		"secure": true,
+		"target": "http://docker-onlinedev-hydra-api-stage.netops.eidosinteractive.com/api/bluew/session",
+		"name": "Just Cause 3 session API (stage) (1)"
+	},
+	{
+		"methods": [
+			"GET"
+		],
+		"pattern": "^/stage/proxy.*",
+		"secure": false,
+		"target": "https://test-membership.square-enix.com/static/proxy.html",
+		"name": "Membership (stage) (1)"
+	},
+	{
+		"methods": [
+			"GET"
+		],
+		"pattern": "^/stage/hitman/proxy.*",
+		"secure": false,
+		"target": "https://test-membership.square-enix.com/static/proxy.html",
+		"name": "Membership (stage) (2)"
+	},
+	{
+		"methods": [
+			"GET"
+		],
+		"pattern": "^/stage/just-cause-3/proxy.*",
+		"secure": false,
+		"target": "https://test-membership.square-enix.com/static/proxy.html",
+		"name": "Membership (stage) (3)"
+	},
+	{
+		"methods": [
+			"GET"
+		],
+		"pattern": "^/stage/triad-wars/proxy.*",
+		"secure": false,
+		"target": "https://test-membership.square-enix.com/static/proxy.html",
+		"name": "Membership (stage) (4)"
+	},
+	{
+		"methods": [
+			"([A-Z]+)"
+		],
+		"pattern": "^/stage/hitman/join_mailing_list(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-arke-stage.netops.eidosinteractive.com/hitman/join_mailing_list$2",
+		"name": "Hitman Web join mailing list API (stage) (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/hitman/mailing_list(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-arke-stage.netops.eidosinteractive.com/api/hitman/mailing_list$1",
+		"name": "Hitman Web mailing list API (stage) (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/hitman/content/static_copies(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-hydra-api-stage.netops.eidosinteractive.com/api/projects/hitman/static_copies$1",
+		"name": "Hitman Web content API (stage) (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/hitman/content/entities(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-hydra-api-stage.netops.eidosinteractive.com/api/projects/hitman/entities$1",
+		"name": "Hitman Web content API (stage) (2)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/hitman/content/(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-hydra-api-stage.netops.eidosinteractive.com/api/hitman/$1",
+		"name": "Hitman Web content API (stage) (3)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/hitman/session",
+		"secure": true,
+		"target": "http://docker-onlinedev-hydra-api-stage.netops.eidosinteractive.com/api/hitman/session",
+		"name": "Hitman Web session API (stage) (1)"
+	},
+	{
+		"methods": [
+			"GET"
+		],
+		"pattern": "^/stage/proxy.*",
+		"secure": false,
+		"target": "https://test-membership.square-enix.com/static/proxy.html",
+		"name": "Membership (stage) (1)"
+	},
+	{
+		"methods": [
+			"GET"
+		],
+		"pattern": "^/stage/hitman/proxy.*",
+		"secure": false,
+		"target": "https://test-membership.square-enix.com/static/proxy.html",
+		"name": "Membership (stage) (2)"
+	},
+	{
+		"methods": [
+			"GET"
+		],
+		"pattern": "^/stage/just-cause-3/proxy.*",
+		"secure": false,
+		"target": "https://test-membership.square-enix.com/static/proxy.html",
+		"name": "Membership (stage) (3)"
+	},
+	{
+		"methods": [
+			"GET"
+		],
+		"pattern": "^/stage/triad-wars/proxy.*",
+		"secure": false,
+		"target": "https://test-membership.square-enix.com/static/proxy.html",
+		"name": "Membership (stage) (4)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/tomb_raider/content/(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/tomb_raider/content/$1",
+		"name": "Augaware content API (stage) (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/augaware/content/(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/augaware/content/$1",
+		"name": "Augaware content API (stage) (1)"
+	},
+	{
+		"methods": [
+			"GET",
+			"POST",
+			"PUT",
+			"PATCH",
+			"DELETE",
+			"HEAD",
+			"OPTIONS"
+		],
+		"pattern": "^/stage/auth/users/permissions(.*)",
+		"secure": false,
+		"target": "http://docker-onlinedev-fast-check-stage.netops.eidosinteractive.com/permissions$1",
+		"name": "Fast Check Permissions (stage) (1)"
+	},
+	{
+		"methods": [
+			"GET"
+		],
+		"pattern": "^/stage/proxy.*",
+		"secure": false,
+		"target": "https://test-membership.square-enix.com/static/proxy.html",
+		"name": "Membership (stage) (1)"
+	},
+	{
+		"methods": [
+			"GET"
+		],
+		"pattern": "^/stage/hitman/proxy.*",
+		"secure": false,
+		"target": "https://test-membership.square-enix.com/static/proxy.html",
+		"name": "Membership (stage) (2)"
+	},
+	{
+		"methods": [
+			"GET"
+		],
+		"pattern": "^/stage/just-cause-3/proxy.*",
+		"secure": false,
+		"target": "https://test-membership.square-enix.com/static/proxy.html",
+		"name": "Membership (stage) (3)"
+	},
+	{
+		"methods": [
+			"GET"
+		],
+		"pattern": "^/stage/triad-wars/proxy.*",
+		"secure": false,
+		"target": "https://test-membership.square-enix.com/static/proxy.html",
+		"name": "Membership (stage) (4)"
+	},
+	{
+		"methods": [
+			"GET"
+		],
+		"pattern": "^/stage/assets?/(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-nimbus-stage.netops.eidosinteractive.com/asset/$1",
+		"name": "CDN origin server (stage) (1)"
+	},
+	{
+		"methods": [
+			"GET"
+		],
+		"pattern": "^/stage/assets?/(.*)",
+		"secure": true,
+		"target": "http://docker-onlinedev-nimbus-stage.netops.eidosinteractive.com/asset/$1",
+		"name": "CDN origin server (stage) (1)"
+	}
+]

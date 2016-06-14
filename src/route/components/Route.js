@@ -137,16 +137,28 @@ export default class Route extends Component {
     return <span className={s.modifiedLabel}>👌</span>;
   }
 
+  get body() {
+    if (!this.props.isExpanded) { return; }
+
+    const { id } = this.props.route;
+    const { dispatch, isModified, isUpdating } = this.props;
+
+    return <div className={this.bodyClassName}>
+      <RouteForm
+        route={this.props.route}
+        onChange={this.handleChange}
+        onReset={() => { dispatch(unstageRoute(id)) }}
+        onSubmit={(route) => { dispatch(update(route)) }}
+        resetEnabled={isModified && !isUpdating}
+        submitEnabled={isModified && !isUpdating}
+        editable={!isUpdating}
+      />
+    </div>
+  }
+
   render() {
     const { id, name, pattern, target } = this.props.route;
-    const {
-      dispatch,
-      isModified,
-      isUpdating,
-      connectDragSource,
-      connectDropTarget,
-      isDragging
-    } = this.props;
+    const { connectDragSource, connectDropTarget, isDragging } = this.props;
     const style = { opacity: isDragging ? 0 : 1 };
 
     return connectDragSource(connectDropTarget(
@@ -163,17 +175,7 @@ export default class Route extends Component {
             <span className={s.target}>{target}</span>
           </div>
         </h2>
-        <div className={this.bodyClassName}>
-          <RouteForm
-            route={this.props.route}
-            onChange={this.handleChange}
-            onReset={() => { dispatch(unstageRoute(id)) }}
-            onSubmit={(route) => { dispatch(update(route)) }}
-            resetEnabled={isModified && !isUpdating}
-            submitEnabled={isModified && !isUpdating}
-            editable={!isUpdating}
-          />
-        </div>
+        { this.body }
       </div>
     ));
   }

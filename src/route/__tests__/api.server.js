@@ -13,6 +13,7 @@ const routes = [{
   name: 'Test Route',
   methods: JSON.stringify(['GET', 'POST']),
   pattern: '/test(.*)',
+  secure: false,
   target: 'http://example.com/$1'
 }, {
   id: '11dc3c19-9553-4dd2-9f09-554b51d7c71b',
@@ -20,6 +21,7 @@ const routes = [{
   name: 'Another Test Route',
   methods: JSON.stringify(['GET', 'POST', 'PUT', 'DELETE']),
   pattern: '/another-test(.*)',
+  secure: true,
   target: 'http://another-example.com/$1'
 }];
 
