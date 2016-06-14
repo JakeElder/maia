@@ -1,7 +1,5 @@
-import Promise from 'bluebird';
 import omit from 'lodash.omit';
 import { ROUTE_QUALIFIER, makeRouteKey, all, create, update } from '../api.server';
-import config from '../../../config';
 import * as db from '../../database';
 
 jest.unmock('../api.server');
@@ -33,7 +31,7 @@ const clearRoutes = () => {
   return db.awaitConnection.then(() => {
     return new Promise((resolve, reject) => {
       db.client.keys(`${ROUTE_QUALIFIER}*`, (err, keys) => {
-        keys.forEach(key => db.client.del(key, resolve));
+        db.client.del(...keys, resolve);
       });
     });
   });

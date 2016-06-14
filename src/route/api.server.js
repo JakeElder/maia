@@ -1,5 +1,4 @@
 import Promise from 'bluebird';
-import fetch from 'isomorphic-fetch';
 import findIndex from 'lodash.findindex';
 import sortBy from 'lodash.sortby';
 import uuid from 'uuid';
