@@ -111,7 +111,6 @@ export default class Route extends Component {
     if (isExpanded) {
       return <div className={s.toggleIcon}>
         <ArrowUp
-          style={{ marginRight: 6 }}
           onClick={() => { dispatch(contractRoute(id)) }}
         />
       </div>
@@ -119,7 +118,6 @@ export default class Route extends Component {
     } else {
       return <div className={s.toggleIcon}>
         <ArrowDown
-          style={{ marginRight: 6 }}
           onClick={() => { dispatch(expandRoute(id)) }}
         />
       </div>
@@ -164,14 +162,16 @@ export default class Route extends Component {
     return connectDragSource(connectDropTarget(
       <div className={s.root} style={style}>
         <h2 className={s.heading}>
-          <div className={s.headingLabel}>
-            { this.toggleIcon }
-            {name}
-          </div>
-          <div className={s.headingInfo}>
-            <span className={s.pattern}>{pattern}</span>
-            <span className={s.seperator}> => </span>
-            <span className={s.target}>{target}</span>
+          { this.toggleIcon }
+          <div className={s.headingCopy}>
+            <div className={s.headingLabel}>
+              {name}
+            </div>
+            <div className={s.headingInfo}>
+              <span className={s.pattern}>{pattern}</span>
+              <span className={s.seperator}> => </span>
+              <span className={s.target}>{target}</span>
+            </div>
           </div>
         </h2>
         { this.body }

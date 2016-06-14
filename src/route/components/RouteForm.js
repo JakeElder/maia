@@ -82,6 +82,8 @@ export class RouteForm extends Component {
             name="pattern"
             floatingLabelText="pattern"
           />
+        </div>
+        <div className="Route--row">
           <TextField
             disabled={!editable}
             value={target}
