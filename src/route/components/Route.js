@@ -166,7 +166,6 @@ export default class Route extends Component {
         <h2 className={s.heading}>
           <div className={s.headingLabel}>
             { this.toggleIcon }
-            { this.modifiedStateIndicator }
             {name}
           </div>
           <div className={s.headingInfo}>

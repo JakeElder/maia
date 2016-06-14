@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import Snackbar from 'material-ui/Snackbar';
 import Header from './Header';
+import Sidebar from './Sidebar';
 import NewRoute from '../../route/components/NewRoute';
 import { UPDATE_SUCCESS, CREATE_SUCCESS } from '../../route/actions';
 import s from './App.css';
@@ -48,9 +49,17 @@ class App extends Component {
     const { routes } = this.props;
     return (
       <div>
-        <Header />
+        <div className={s.header}>
+          <Header />
+        </div>
         <NewRoute />
-        {this.props.children}
+        <div className={s.sidebar}>
+          <Sidebar>
+          </Sidebar>
+        </div>
+        <div className={s.content}>
+          {this.props.children}
+        </div>
         <Snackbar
           open={this.state.showSnackbar}
           message={this.state.snackbarMessage}

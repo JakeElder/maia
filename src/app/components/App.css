@@ -3,3 +3,24 @@
 body {
   font-family: 'Roboto', sans-serif;
 }
+
+.header {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  width: 100%;
+  height: 65px;
+}
+
+.sidebar {
+  position: fixed;
+  top: 65px;
+  left: 0;
+  bottom: 0;
+  width: 250px;
+}
+
+.content {
+  padding-top: 65px;
+  padding-left: 250px;
+}

@@ -1,11 +1,9 @@
 import React, { Component, PropTypes } from 'react';
-import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import _ from 'lodash';
 import { connect } from 'react-redux';
 import { DragDropContext } from 'react-dnd';
 import HTML5Backend from 'react-dnd-html5-backend';
 import Route from './Route';
-import s from './Routes.css';
 
 function mapStateToProps(state) {
   return {
@@ -16,7 +14,6 @@ function mapStateToProps(state) {
   }
 }
 
-@withStyles(s)
 @DragDropContext(HTML5Backend)
 @connect(mapStateToProps)
 export default class Routes extends Component {
@@ -32,11 +29,11 @@ export default class Routes extends Component {
       routes.splice(stagedMove.order, 0, movedRoute);
     }
     return (
-      <section className={s.routes}>
+      <section>
         <ol>
           {routes.map((route, index) => {
             return (
-              <li className={s.route} key={route.id}>
+              <li key={route.id}>
                 <Route index={index} route={route} />
               </li>
             );

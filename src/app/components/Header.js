@@ -22,6 +22,7 @@ export default class Header extends Component {
           title="Maia"
           showMenuIconButton={false}
           iconElementRight={addButton}
+          style={{ boxShadow: 'none', borderBottom: '1px solid #2da7b7' }}
         />
       </header>
     );
