@@ -9,7 +9,7 @@
   height: 60px;
 }
 
-.headingLabel {
+.label {
   display: flex;
   margin-bottom: 5px;
   align-items: center;
@@ -37,13 +37,13 @@
   color: #fff;
 }
 
-.headingCopy {
+.copy {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.headingInfo {
+.info {
   font-size: 13px;
   font-weight: 300;
 }
@@ -53,6 +53,25 @@
   padding-right: 4px;
   color: #1E88E5;
   letter-spacing: -1px;
+}
+
+.tags {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.tag {
+  font-size: 9px;
+  font-weight: bold;
+  padding: 3px 4px 2px 4px;
+  background-color: #fff;
+  border-radius: 2px;
+  border: 1px solid #aaa;
+  text-align: center;
+  color: #555;
+  text-transform: uppercase;
+  margin-left: 3px;
 }
 
 .body {

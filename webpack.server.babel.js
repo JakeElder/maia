@@ -33,7 +33,8 @@ const base = {
   },
   resolve: {
     alias: {
-      'route-api': path.resolve(__dirname, 'src', 'route', 'api.server')
+      'route-api': path.resolve(__dirname, 'src', 'route', 'api.server'),
+      'tag-api': path.resolve(__dirname, 'src', 'tag', 'api.server')
     }
   }
 };

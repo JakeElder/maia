@@ -25,9 +25,10 @@ export function all() {
       ...route,
       order: parseInt(route.order, 10),
       methods: JSON.parse(route.methods || '[]'),
+      tags: JSON.parse(route.tags || '[]'),
       secure: JSON.parse(route.secure || 'true')
     }));
-    return sortBy(routes, 'order');
+    return sortBy(routes.splice(0, 50), 'order');
   });
 }
 
@@ -39,6 +40,7 @@ export function create(route) {
   return new Promise((resolve, reject) => {
     const id = uuid.v4();
     route.methods = JSON.stringify(route.methods || []);
+    route.tags = JSON.stringify(route.tags || []);
     route.secure = JSON.stringify(route.secure);
     redis.hmset(makeRouteKey(id), { ...route, id, order: -1 }, (err, route) => {
       if (err) { return reject(err); }
@@ -54,6 +56,7 @@ export function update(id, route, silent = false) {
   return new Promise((resolve, reject) => {
     const id = route.id;
     route.methods = JSON.stringify(route.methods || []);
+    route.tags = JSON.stringify(route.tags || []);
     route.secure = JSON.stringify(route.secure);
     redis.hmset(makeRouteKey(id), route, (err, route) => {
       if (err) { return reject(err); }

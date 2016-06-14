@@ -16,6 +16,7 @@ function mapStateToProps(state, ownProps) {
   const originalRoute = _.find(state.routes, { id: ownProps.route.id });
   return {
     originalRoute,
+    tags: originalRoute.tags.map((id) => _.find(state.tags, { id })),
     isUpdating: _.includes(state.updatingRoutes, originalRoute.id),
     isExpanded: _.includes(state.expandedRoutes, originalRoute.id),
     isModified: _.some(state.stagedRoutes, { id: originalRoute.id })
@@ -154,6 +155,16 @@ export default class Route extends Component {
     </div>
   }
 
+  get tags() {
+    return <ul className={s.tags}>
+      {this.props.tags.map((tag, idx) => {
+        return <li className={s.tag} key={idx}>
+          { tag.name }
+        </li>;
+      })}
+    </ul>;
+  }
+
   render() {
     const { id, name, pattern, target } = this.props.route;
     const { connectDragSource, connectDropTarget, isDragging } = this.props;
@@ -163,16 +174,17 @@ export default class Route extends Component {
       <div className={s.root} style={style}>
         <h2 className={s.heading}>
           { this.toggleIcon }
-          <div className={s.headingCopy}>
-            <div className={s.headingLabel}>
+          <div className={s.copy}>
+            <div className={s.label}>
               {name}
             </div>
-            <div className={s.headingInfo}>
+            <div className={s.info}>
               <span className={s.pattern}>{pattern}</span>
               <span className={s.seperator}> => </span>
               <span className={s.target}>{target}</span>
             </div>
           </div>
+          { this.tags }
         </h2>
         { this.body }
       </div>

@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
 import { groups } from '../group/reducers';
+import { tags } from '../tag/reducers';
 import {
   routes,
   expandedRoutes,
@@ -23,5 +24,6 @@ export default combineReducers({
   routeBeingDrafted,
   stagedMove,
   groups,
+  tags,
   lastAction: (state = null, action) => action
 });

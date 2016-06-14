@@ -26,7 +26,8 @@ const base = {
   },
   resolve: {
     alias: {
-      'route-api': path.resolve(__dirname, 'src', 'route', 'api.browser')
+      'route-api': path.resolve(__dirname, 'src', 'route', 'api.browser'),
+      'tag-api': path.resolve(__dirname, 'src', 'tag', 'api.browser')
     }
   }
 };

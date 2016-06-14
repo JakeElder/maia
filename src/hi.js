@@ -1,4 +1,5 @@
 import React from 'react';
+import Promise from 'bluebird';
 import express from 'express';
 import { match, RouterContext } from 'react-router';
 import { renderToString } from 'react-dom/server';
@@ -6,6 +7,7 @@ import { createStore } from 'redux';
 import path from 'path';
 
 import * as Route from 'route-api';
+import * as Tag from 'tag-api';
 import { routes, reducer } from './app';
 import { UNTAGGED } from './group/constants';
 import ContextProvider from './ContextProvider';
@@ -29,9 +31,10 @@ hi.get('*', (req, res) => {
     if (error) { return res.status(500).send(error.message); }
     if (!props) { return res.status(404).send('Not Found'); }
       
-    Route.all().then((routes) => {
+    Promise.all([Route.all(), Tag.all()]).spread((routes, tags) => {
       const state = {
         routes,
+        tags,
         groups: [
           { id: 1, name: 'Untagged', type: UNTAGGED, showMembers: true }
         ]

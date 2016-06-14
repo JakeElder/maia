@@ -1,122 +1,140 @@
 [
 	{
+		"name": "Hydra API",
 		"methods": [
 			"GET"
 		],
 		"pattern": "^/api/hydra/api(.*)",
 		"secure": true,
 		"target": "https://api.hydra.sqexeu.com/api$1",
-		"name": "Hydra API (1)"
+		"tags": []
 	},
 	{
+		"name": "Hydra API",
 		"methods": [
 			"GET"
 		],
 		"pattern": "^/preprod/api/hydra/api(.*)",
 		"secure": true,
 		"target": "https://api-pp.hydra.sqexeu.com/api$1",
-		"name": "Hydra API (1)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446"
+		]
 	},
 	{
+		"name": "Hydra API",
 		"methods": [
 			"GET"
 		],
 		"pattern": "^/stage/api/hydra/api(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-hydra-api-stage.netops.eidosinteractive.com/api$1",
-		"name": "Hydra API (1)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894"
+		]
 	},
 	{
+		"name": "Hydra CMS",
 		"methods": [
 			"GET"
 		],
 		"pattern": "^/api/hydra/cms/status(.*)",
 		"secure": true,
 		"target": "https://cms.hydra.sqexeu.com/status$1",
-		"name": "Hydra CMS (1)"
+		"tags": []
 	},
 	{
+		"name": "Mingus",
 		"methods": [
 			"GET"
 		],
 		"pattern": "^/api/vapour/mingus/status(.*)",
 		"secure": true,
 		"target": "https://mingus.hydra.sqexeu.com/health/alive$1",
-		"name": "Mingus (1)"
+		"tags": []
 	},
 	{
+		"name": "Fast Check",
 		"methods": [
 			"GET"
 		],
 		"pattern": "^/api/auth/fast/redis(.*)",
 		"secure": true,
 		"target": "https://fast-check.hydra.sqexeu.com/node/api/redis_check$1",
-		"name": "Fast Check (1)"
+		"tags": []
 	},
 	{
+		"name": "Fast Check",
 		"methods": [
 			"GET"
 		],
 		"pattern": "^/api/auth/fast/status(.*)",
 		"secure": true,
 		"target": "https://fast-check.hydra.sqexeu.com/node/api/health_check$1",
-		"name": "Fast Check (2)"
+		"tags": []
 	},
 	{
+		"name": "Fast Check",
 		"methods": [
 			"GET"
 		],
 		"pattern": "^/api/auth/fast/token(.*)",
 		"secure": true,
 		"target": "https://fast-check.hydra.sqexeu.com/node/api/token/$1",
-		"name": "Fast Check (3)"
+		"tags": []
 	},
 	{
+		"name": "Membership",
 		"methods": [
 			"GET"
 		],
 		"pattern": "^/api/auth/mem/status(.*)",
 		"secure": true,
 		"target": "https://membership.square-enix.com/health$1",
-		"name": "Membership (1)"
+		"tags": []
 	},
 	{
+		"name": "App-check",
 		"methods": [
 			"GET"
 		],
 		"pattern": "^/api/auth/app(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-app-check-stage.netops.eidosinteractive.com/$1",
-		"name": "App-check (1)"
+		"tags": []
 	},
 	{
+		"name": "Tonberry",
 		"methods": [
 			"GET"
 		],
 		"pattern": "^/api/tonberry(.*)",
 		"secure": true,
-		"target": "http://docker-onlinedev-tonberry-stage.netops.eidosinteractive.com/index.php%3Fp=/$1",
-		"name": "Tonberry (1)"
+		"target": "http://docker-onlinedev-tonberry-stage.netops.eidosinteractive.com/index.php?p=/$1",
+		"tags": []
 	},
 	{
+		"name": "UFG",
 		"methods": [
 			"GET"
 		],
 		"pattern": "^/api/ufg/status",
 		"secure": true,
 		"target": "https://web.services.triadwars.com/core/api/v1/healthcheck",
-		"name": "UFG (1)"
+		"tags": []
 	},
 	{
+		"name": "Status",
 		"methods": [
 			"GET"
 		],
 		"pattern": "^/status",
 		"secure": true,
 		"target": "http://localhost:3000/status",
-		"name": "Status (1)"
+		"tags": []
 	},
 	{
+		"name": "Avatar API",
 		"methods": [
 			"GET",
 			"POST",
@@ -128,19 +146,21 @@
 		],
 		"pattern": "^/avatar(.*)",
 		"secure": true,
-		"target": "https://avatar.sqexeu.com/$1",
-		"name": "Avatar API (1)"
+		"target": "https://avatar.sqexeu.com$1",
+		"tags": []
 	},
 	{
+		"name": "Fastcheck token auth",
 		"methods": [
 			"GET"
 		],
 		"pattern": "^/auth/token(.*)",
 		"secure": true,
 		"target": "https://fast-check.hydra.sqexeu.com/node/api/token$1",
-		"name": "Fastcheck token auth (1)"
+		"tags": []
 	},
 	{
+		"name": "Triad Wars web presence API",
 		"methods": [
 			"GET",
 			"POST",
@@ -153,9 +173,12 @@
 		"pattern": "^/triad-wars/presence(.*)",
 		"secure": true,
 		"target": "https://zephyrus.hydra.sqexeu.com/triad/presence$1",
-		"name": "Triad Wars web presence API (1)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars debug API",
 		"methods": [
 			"GET",
 			"POST",
@@ -168,9 +191,12 @@
 		"pattern": "^/triad-wars/maintenance",
 		"secure": true,
 		"target": "https://arke.hydra.sqexeu.com/triad/services/maintenance",
-		"name": "Triad Wars debug API (1)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars game-to-web/web-to-game API",
 		"methods": [
 			"GET",
 			"POST",
@@ -183,9 +209,12 @@
 		"pattern": "^/triad-wars/store(.*)",
 		"secure": true,
 		"target": "https://arke.hydra.sqexeu.com/triad/store$1",
-		"name": "Triad Wars game-to-web/web-to-game API (1)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars debug API",
 		"methods": [
 			"GET",
 			"POST",
@@ -198,9 +227,12 @@
 		"pattern": "^/triad-wars/debug",
 		"secure": true,
 		"target": "https://arke.hydra.sqexeu.com/status/debug",
-		"name": "Triad Wars debug API (1)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars game-to-web/web-to-game API",
 		"methods": [
 			"GET",
 			"POST",
@@ -213,9 +245,12 @@
 		"pattern": "^/triad-wars/game/leaderboards(.*)",
 		"secure": true,
 		"target": "https://arke.hydra.sqexeu.com/triad/leaderboards$1",
-		"name": "Triad Wars game-to-web/web-to-game API (1)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars game-to-web/web-to-game API",
 		"methods": [
 			"GET",
 			"POST",
@@ -228,9 +263,12 @@
 		"pattern": "^/triad-wars/game/status(.*)",
 		"secure": true,
 		"target": "https://arke.hydra.sqexeu.com/triad/status$1",
-		"name": "Triad Wars game-to-web/web-to-game API (1)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars game-to-web/web-to-game API",
 		"methods": [
 			"GET",
 			"POST",
@@ -243,9 +281,12 @@
 		"pattern": "^/triad-wars/game/accounts(.*)",
 		"secure": true,
 		"target": "https://arke.hydra.sqexeu.com/triad/accounts$1",
-		"name": "Triad Wars game-to-web/web-to-game API (1)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars game-to-web/web-to-game API",
 		"methods": [
 			"GET",
 			"POST",
@@ -258,9 +299,12 @@
 		"pattern": "^/triad-wars/game/users(.*)",
 		"secure": true,
 		"target": "https://arke.hydra.sqexeu.com/triad/users$1",
-		"name": "Triad Wars game-to-web/web-to-game API (1)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -273,9 +317,12 @@
 		"pattern": "^/triad-wars/temp/(.*)",
 		"secure": true,
 		"target": "https://api.hydra.sqexeu.com/api/projects/triad/$1",
-		"name": "Triad Wars content API (1)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars accounts API",
 		"methods": [
 			"GET",
 			"POST",
@@ -288,9 +335,12 @@
 		"pattern": "^/triad-wars/accounts/(.*)",
 		"secure": true,
 		"target": "https://arke.hydra.sqexeu.com/triad/accounts/$1",
-		"name": "Triad Wars accounts API (1)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars metrics API",
 		"methods": [
 			"GET",
 			"POST",
@@ -303,18 +353,24 @@
 		"pattern": "^/triad-wars/metrics/(.*)",
 		"secure": true,
 		"target": "https://arke.hydra.sqexeu.com/triad/metrics/$1",
-		"name": "Triad Wars metrics API (1)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars Influence API",
 		"methods": [
 			"POST"
 		],
 		"pattern": "^/triad-wars/collector(.*)",
 		"secure": true,
 		"target": "https://zephyrus.hydra.sqexeu.com/collector/triad$1",
-		"name": "Triad Wars Influence API (1)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars Influence API",
 		"methods": [
 			"GET",
 			"POST",
@@ -327,9 +383,12 @@
 		"pattern": "^/triad-wars/influence(.*)",
 		"secure": true,
 		"target": "https://zephyrus.hydra.sqexeu.com/triad/influence$1",
-		"name": "Triad Wars Influence API (1)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -342,9 +401,12 @@
 		"pattern": "^/triad-wars/content/blog(.*)",
 		"secure": true,
 		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/blog$1",
-		"name": "Triad Wars content API (1)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -357,9 +419,12 @@
 		"pattern": "^/triad-wars/content/video(.*)",
 		"secure": true,
 		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/video$1",
-		"name": "Triad Wars content API (2)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -372,9 +437,12 @@
 		"pattern": "^/triad-wars/content/image(.*)",
 		"secure": true,
 		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/image$1",
-		"name": "Triad Wars content API (3)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -387,9 +455,12 @@
 		"pattern": "^/triad-wars/content/qa-test-entity(.*)",
 		"secure": true,
 		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/qa-test-entity$1",
-		"name": "Triad Wars content API (4)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -402,9 +473,12 @@
 		"pattern": "^/triad-wars/content/information(.*)",
 		"secure": true,
 		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/information$1",
-		"name": "Triad Wars content API (5)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -417,9 +491,12 @@
 		"pattern": "^/triad-wars/content/about(.*)",
 		"secure": true,
 		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/about$1",
-		"name": "Triad Wars content API (6)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -432,9 +509,12 @@
 		"pattern": "^/triad-wars/content/page(.*)",
 		"secure": true,
 		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/page$1",
-		"name": "Triad Wars content API (7)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -447,9 +527,12 @@
 		"pattern": "^/triad-wars/content/gallery(.*)",
 		"secure": true,
 		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/gallery$1",
-		"name": "Triad Wars content API (8)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -462,9 +545,12 @@
 		"pattern": "^/triad-wars/content/blog(.*)",
 		"secure": true,
 		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/blog$1",
-		"name": "Triad Wars content API (1)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -477,9 +563,12 @@
 		"pattern": "^/triad-wars/content/video(.*)",
 		"secure": true,
 		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/video$1",
-		"name": "Triad Wars content API (2)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -492,9 +581,12 @@
 		"pattern": "^/triad-wars/content/image(.*)",
 		"secure": true,
 		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/image$1",
-		"name": "Triad Wars content API (3)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -507,9 +599,12 @@
 		"pattern": "^/triad-wars/content/qa-test-entity(.*)",
 		"secure": true,
 		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/qa-test-entity$1",
-		"name": "Triad Wars content API (4)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -522,9 +617,12 @@
 		"pattern": "^/triad-wars/content/information(.*)",
 		"secure": true,
 		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/information$1",
-		"name": "Triad Wars content API (5)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -537,9 +635,12 @@
 		"pattern": "^/triad-wars/content/about(.*)",
 		"secure": true,
 		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/about$1",
-		"name": "Triad Wars content API (6)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -552,9 +653,12 @@
 		"pattern": "^/triad-wars/content/page(.*)",
 		"secure": true,
 		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/page$1",
-		"name": "Triad Wars content API (7)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -567,9 +671,12 @@
 		"pattern": "^/triad-wars/content/gallery(.*)",
 		"secure": true,
 		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/gallery$1",
-		"name": "Triad Wars content API (8)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -582,9 +689,12 @@
 		"pattern": "^/triad-wars/content/blog(.*)",
 		"secure": true,
 		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/blog$1",
-		"name": "Triad Wars content API (1)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -597,9 +707,12 @@
 		"pattern": "^/triad-wars/content/video(.*)",
 		"secure": true,
 		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/video$1",
-		"name": "Triad Wars content API (2)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -612,9 +725,12 @@
 		"pattern": "^/triad-wars/content/image(.*)",
 		"secure": true,
 		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/image$1",
-		"name": "Triad Wars content API (3)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -627,9 +743,12 @@
 		"pattern": "^/triad-wars/content/qa-test-entity(.*)",
 		"secure": true,
 		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/qa-test-entity$1",
-		"name": "Triad Wars content API (4)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -642,9 +761,12 @@
 		"pattern": "^/triad-wars/content/information(.*)",
 		"secure": true,
 		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/information$1",
-		"name": "Triad Wars content API (5)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -657,9 +779,12 @@
 		"pattern": "^/triad-wars/content/about(.*)",
 		"secure": true,
 		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/about$1",
-		"name": "Triad Wars content API (6)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -672,9 +797,12 @@
 		"pattern": "^/triad-wars/content/page(.*)",
 		"secure": true,
 		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/page$1",
-		"name": "Triad Wars content API (7)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -687,9 +815,12 @@
 		"pattern": "^/triad-wars/content/gallery(.*)",
 		"secure": true,
 		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/gallery$1",
-		"name": "Triad Wars content API (8)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -702,9 +833,12 @@
 		"pattern": "^/triad-wars/content/blog(.*)",
 		"secure": true,
 		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/blog$1",
-		"name": "Triad Wars content API (1)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -717,9 +851,12 @@
 		"pattern": "^/triad-wars/content/video(.*)",
 		"secure": true,
 		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/video$1",
-		"name": "Triad Wars content API (2)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -732,9 +869,12 @@
 		"pattern": "^/triad-wars/content/image(.*)",
 		"secure": true,
 		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/image$1",
-		"name": "Triad Wars content API (3)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -747,9 +887,12 @@
 		"pattern": "^/triad-wars/content/qa-test-entity(.*)",
 		"secure": true,
 		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/qa-test-entity$1",
-		"name": "Triad Wars content API (4)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -762,9 +905,12 @@
 		"pattern": "^/triad-wars/content/information(.*)",
 		"secure": true,
 		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/information$1",
-		"name": "Triad Wars content API (5)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -777,9 +923,12 @@
 		"pattern": "^/triad-wars/content/about(.*)",
 		"secure": true,
 		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/about$1",
-		"name": "Triad Wars content API (6)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -792,9 +941,12 @@
 		"pattern": "^/triad-wars/content/page(.*)",
 		"secure": true,
 		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/page$1",
-		"name": "Triad Wars content API (7)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -807,9 +959,12 @@
 		"pattern": "^/triad-wars/content/gallery(.*)",
 		"secure": true,
 		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/gallery$1",
-		"name": "Triad Wars content API (8)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -822,9 +977,12 @@
 		"pattern": "^/triad-wars/content/blog(.*)",
 		"secure": true,
 		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/blog$1",
-		"name": "Triad Wars content API (1)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -837,9 +995,12 @@
 		"pattern": "^/triad-wars/content/video(.*)",
 		"secure": true,
 		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/video$1",
-		"name": "Triad Wars content API (2)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -852,9 +1013,12 @@
 		"pattern": "^/triad-wars/content/image(.*)",
 		"secure": true,
 		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/image$1",
-		"name": "Triad Wars content API (3)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -867,9 +1031,12 @@
 		"pattern": "^/triad-wars/content/qa-test-entity(.*)",
 		"secure": true,
 		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/qa-test-entity$1",
-		"name": "Triad Wars content API (4)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -882,9 +1049,12 @@
 		"pattern": "^/triad-wars/content/information(.*)",
 		"secure": true,
 		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/information$1",
-		"name": "Triad Wars content API (5)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -897,9 +1067,12 @@
 		"pattern": "^/triad-wars/content/about(.*)",
 		"secure": true,
 		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/about$1",
-		"name": "Triad Wars content API (6)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -912,9 +1085,12 @@
 		"pattern": "^/triad-wars/content/page(.*)",
 		"secure": true,
 		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/page$1",
-		"name": "Triad Wars content API (7)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -927,9 +1103,12 @@
 		"pattern": "^/triad-wars/content/gallery(.*)",
 		"secure": true,
 		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/gallery$1",
-		"name": "Triad Wars content API (8)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -942,9 +1121,12 @@
 		"pattern": "^/triad-wars/content/blog(.*)",
 		"secure": true,
 		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/blog$1",
-		"name": "Triad Wars content API (1)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -957,9 +1139,12 @@
 		"pattern": "^/triad-wars/content/video(.*)",
 		"secure": true,
 		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/video$1",
-		"name": "Triad Wars content API (2)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -972,9 +1157,12 @@
 		"pattern": "^/triad-wars/content/image(.*)",
 		"secure": true,
 		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/image$1",
-		"name": "Triad Wars content API (3)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -987,9 +1175,12 @@
 		"pattern": "^/triad-wars/content/qa-test-entity(.*)",
 		"secure": true,
 		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/qa-test-entity$1",
-		"name": "Triad Wars content API (4)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -1002,9 +1193,12 @@
 		"pattern": "^/triad-wars/content/information(.*)",
 		"secure": true,
 		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/information$1",
-		"name": "Triad Wars content API (5)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -1017,9 +1211,12 @@
 		"pattern": "^/triad-wars/content/about(.*)",
 		"secure": true,
 		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/about$1",
-		"name": "Triad Wars content API (6)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -1032,9 +1229,12 @@
 		"pattern": "^/triad-wars/content/page(.*)",
 		"secure": true,
 		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/page$1",
-		"name": "Triad Wars content API (7)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -1047,9 +1247,12 @@
 		"pattern": "^/triad-wars/content/gallery(.*)",
 		"secure": true,
 		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/gallery$1",
-		"name": "Triad Wars content API (8)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -1062,9 +1265,12 @@
 		"pattern": "^/triad-wars/content/blog(.*)",
 		"secure": true,
 		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/blog$1",
-		"name": "Triad Wars content API (1)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -1077,9 +1283,12 @@
 		"pattern": "^/triad-wars/content/video(.*)",
 		"secure": true,
 		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/video$1",
-		"name": "Triad Wars content API (2)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -1092,9 +1301,12 @@
 		"pattern": "^/triad-wars/content/image(.*)",
 		"secure": true,
 		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/image$1",
-		"name": "Triad Wars content API (3)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -1107,9 +1319,12 @@
 		"pattern": "^/triad-wars/content/qa-test-entity(.*)",
 		"secure": true,
 		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/qa-test-entity$1",
-		"name": "Triad Wars content API (4)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -1122,9 +1337,12 @@
 		"pattern": "^/triad-wars/content/information(.*)",
 		"secure": true,
 		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/information$1",
-		"name": "Triad Wars content API (5)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -1137,9 +1355,12 @@
 		"pattern": "^/triad-wars/content/about(.*)",
 		"secure": true,
 		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/about$1",
-		"name": "Triad Wars content API (6)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -1152,9 +1373,12 @@
 		"pattern": "^/triad-wars/content/page(.*)",
 		"secure": true,
 		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/page$1",
-		"name": "Triad Wars content API (7)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -1167,9 +1391,12 @@
 		"pattern": "^/triad-wars/content/gallery(.*)",
 		"secure": true,
 		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/gallery$1",
-		"name": "Triad Wars content API (8)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -1182,9 +1409,12 @@
 		"pattern": "^/triad-wars/content/blog(.*)",
 		"secure": true,
 		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/blog$1",
-		"name": "Triad Wars content API (1)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -1197,9 +1427,12 @@
 		"pattern": "^/triad-wars/content/video(.*)",
 		"secure": true,
 		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/video$1",
-		"name": "Triad Wars content API (2)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -1212,9 +1445,12 @@
 		"pattern": "^/triad-wars/content/image(.*)",
 		"secure": true,
 		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/image$1",
-		"name": "Triad Wars content API (3)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -1227,9 +1463,12 @@
 		"pattern": "^/triad-wars/content/qa-test-entity(.*)",
 		"secure": true,
 		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/qa-test-entity$1",
-		"name": "Triad Wars content API (4)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -1242,9 +1481,12 @@
 		"pattern": "^/triad-wars/content/information(.*)",
 		"secure": true,
 		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/information$1",
-		"name": "Triad Wars content API (5)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -1257,9 +1499,12 @@
 		"pattern": "^/triad-wars/content/about(.*)",
 		"secure": true,
 		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/about$1",
-		"name": "Triad Wars content API (6)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -1272,9 +1517,12 @@
 		"pattern": "^/triad-wars/content/page(.*)",
 		"secure": true,
 		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/page$1",
-		"name": "Triad Wars content API (7)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -1287,9 +1535,12 @@
 		"pattern": "^/triad-wars/content/gallery(.*)",
 		"secure": true,
 		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/gallery$1",
-		"name": "Triad Wars content API (8)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -1302,9 +1553,12 @@
 		"pattern": "^/triad-wars/content/timelines(.*)",
 		"secure": true,
 		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/timelines$1",
-		"name": "Triad Wars content API (1)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -1317,9 +1571,12 @@
 		"pattern": "^/triad-wars/content/fillers(.*)",
 		"secure": true,
 		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/timelines/fillers$1",
-		"name": "Triad Wars content API (1)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -1332,9 +1589,12 @@
 		"pattern": "^/triad-wars/content/store(.*)",
 		"secure": true,
 		"target": "https://api.hydra.sqexeu.com/api/triad/store$1",
-		"name": "Triad Wars content API (1)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -1347,9 +1607,12 @@
 		"pattern": "^/triad-wars/content/entities(.*)",
 		"secure": true,
 		"target": "https://api.hydra.sqexeu.com/api/projects/triad/entities$1",
-		"name": "Triad Wars content API (1)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars session API",
 		"methods": [
 			"GET",
 			"POST",
@@ -1362,45 +1625,58 @@
 		"pattern": "^/triad-wars/session",
 		"secure": true,
 		"target": "https://arke.hydra.sqexeu.com/triad/user",
-		"name": "Triad Wars session API (1)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Membership",
 		"methods": [
 			"GET"
 		],
 		"pattern": "^/proxy.*",
 		"secure": false,
 		"target": "https://membership.square-enix.com/static/proxy.html",
-		"name": "Membership (1)"
+		"tags": []
 	},
 	{
+		"name": "Membership",
 		"methods": [
 			"GET"
 		],
 		"pattern": "^/hitman/proxy.*",
 		"secure": false,
 		"target": "https://membership.square-enix.com/static/proxy.html",
-		"name": "Membership (2)"
+		"tags": [
+			"99ed03c6-1a56-4e9a-95c4-fb8d9aad8543"
+		]
 	},
 	{
+		"name": "Membership",
 		"methods": [
 			"GET"
 		],
 		"pattern": "^/just-cause-3/proxy.*",
 		"secure": false,
 		"target": "https://membership.square-enix.com/static/proxy.html",
-		"name": "Membership (3)"
+		"tags": [
+			"63788d4a-c628-401d-9029-a53bb5a0f245"
+		]
 	},
 	{
+		"name": "Membership",
 		"methods": [
 			"GET"
 		],
 		"pattern": "^/triad-wars/proxy.*",
 		"secure": false,
 		"target": "https://membership.square-enix.com/static/proxy.html",
-		"name": "Membership (4)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Just Cause 3 mailing list API",
 		"methods": [
 			"GET",
 			"POST",
@@ -1413,9 +1689,12 @@
 		"pattern": "^/just-cause-3/mailing_list(.*)",
 		"secure": true,
 		"target": "https://api.hydra.sqexeu.com/api/bluew/mailing_list$1",
-		"name": "Just Cause 3 mailing list API (1)"
+		"tags": [
+			"63788d4a-c628-401d-9029-a53bb5a0f245"
+		]
 	},
 	{
+		"name": "Just Cause 3 content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -1428,9 +1707,12 @@
 		"pattern": "^/just-cause-3/content/entities(.*)",
 		"secure": true,
 		"target": "https://api.hydra.sqexeu.com/api/projects/bluew/entities$1",
-		"name": "Just Cause 3 content API (1)"
+		"tags": [
+			"63788d4a-c628-401d-9029-a53bb5a0f245"
+		]
 	},
 	{
+		"name": "Just Cause 3 content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -1443,9 +1725,12 @@
 		"pattern": "^/just-cause-3/content/medici(.*)",
 		"secure": true,
 		"target": "https://api.hydra.sqexeu.com/api/projects/bluew/medici$1",
-		"name": "Just Cause 3 content API (2)"
+		"tags": [
+			"63788d4a-c628-401d-9029-a53bb5a0f245"
+		]
 	},
 	{
+		"name": "Just Cause 3 content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -1458,9 +1743,12 @@
 		"pattern": "^/just-cause-3/content/(.*)",
 		"secure": true,
 		"target": "https://api.hydra.sqexeu.com/api/bluew/$1",
-		"name": "Just Cause 3 content API (3)"
+		"tags": [
+			"63788d4a-c628-401d-9029-a53bb5a0f245"
+		]
 	},
 	{
+		"name": "Just Cause 3 session API",
 		"methods": [
 			"GET",
 			"POST",
@@ -1473,45 +1761,58 @@
 		"pattern": "^/just-cause-3/session",
 		"secure": true,
 		"target": "https://api.hydra.sqexeu.com/api/bluew/session",
-		"name": "Just Cause 3 session API (1)"
+		"tags": [
+			"63788d4a-c628-401d-9029-a53bb5a0f245"
+		]
 	},
 	{
+		"name": "Membership",
 		"methods": [
 			"GET"
 		],
 		"pattern": "^/proxy.*",
 		"secure": false,
 		"target": "https://membership.square-enix.com/static/proxy.html",
-		"name": "Membership (1)"
+		"tags": []
 	},
 	{
+		"name": "Membership",
 		"methods": [
 			"GET"
 		],
 		"pattern": "^/hitman/proxy.*",
 		"secure": false,
 		"target": "https://membership.square-enix.com/static/proxy.html",
-		"name": "Membership (2)"
+		"tags": [
+			"99ed03c6-1a56-4e9a-95c4-fb8d9aad8543"
+		]
 	},
 	{
+		"name": "Membership",
 		"methods": [
 			"GET"
 		],
 		"pattern": "^/just-cause-3/proxy.*",
 		"secure": false,
 		"target": "https://membership.square-enix.com/static/proxy.html",
-		"name": "Membership (3)"
+		"tags": [
+			"63788d4a-c628-401d-9029-a53bb5a0f245"
+		]
 	},
 	{
+		"name": "Membership",
 		"methods": [
 			"GET"
 		],
 		"pattern": "^/triad-wars/proxy.*",
 		"secure": false,
 		"target": "https://membership.square-enix.com/static/proxy.html",
-		"name": "Membership (4)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Hitman Web join mailing list API",
 		"methods": [
 			"GET",
 			"POST",
@@ -1524,9 +1825,12 @@
 		"pattern": "^/hitman/join_mailing_list(.*)",
 		"secure": true,
 		"target": "https://arke.hydra.sqexeu.com/hitman/join_mailing_list$1",
-		"name": "Hitman Web join mailing list API (1)"
+		"tags": [
+			"99ed03c6-1a56-4e9a-95c4-fb8d9aad8543"
+		]
 	},
 	{
+		"name": "Hitman Web mailing list API",
 		"methods": [
 			"GET",
 			"POST",
@@ -1539,9 +1843,12 @@
 		"pattern": "^/hitman/mailing_list(.*)",
 		"secure": true,
 		"target": "https://arke.hydra.sqexeu.com/hitman/mailing_list$1",
-		"name": "Hitman Web mailing list API (1)"
+		"tags": [
+			"99ed03c6-1a56-4e9a-95c4-fb8d9aad8543"
+		]
 	},
 	{
+		"name": "Hitman Web content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -1554,9 +1861,12 @@
 		"pattern": "^/hitman/content/static_copies(.*)",
 		"secure": true,
 		"target": "https://api.hydra.sqexeu.com/api/projects/hitman/static_copies$1",
-		"name": "Hitman Web content API (1)"
+		"tags": [
+			"99ed03c6-1a56-4e9a-95c4-fb8d9aad8543"
+		]
 	},
 	{
+		"name": "Hitman Web content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -1569,9 +1879,12 @@
 		"pattern": "^/hitman/content/entities(.*)",
 		"secure": true,
 		"target": "https://api.hydra.sqexeu.com/api/projects/hitman/entities$1",
-		"name": "Hitman Web content API (2)"
+		"tags": [
+			"99ed03c6-1a56-4e9a-95c4-fb8d9aad8543"
+		]
 	},
 	{
+		"name": "Hitman Web content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -1584,9 +1897,12 @@
 		"pattern": "^/hitman/content/(.*)",
 		"secure": true,
 		"target": "https://api.hydra.sqexeu.com/api/hitman/$1",
-		"name": "Hitman Web content API (3)"
+		"tags": [
+			"99ed03c6-1a56-4e9a-95c4-fb8d9aad8543"
+		]
 	},
 	{
+		"name": "Hitman Web session API",
 		"methods": [
 			"GET",
 			"POST",
@@ -1599,45 +1915,58 @@
 		"pattern": "^/hitman/session",
 		"secure": true,
 		"target": "https://api.hydra.sqexeu.com/api/hitman/session",
-		"name": "Hitman Web session API (1)"
+		"tags": [
+			"99ed03c6-1a56-4e9a-95c4-fb8d9aad8543"
+		]
 	},
 	{
+		"name": "Membership",
 		"methods": [
 			"GET"
 		],
 		"pattern": "^/proxy.*",
 		"secure": false,
 		"target": "https://membership.square-enix.com/static/proxy.html",
-		"name": "Membership (1)"
+		"tags": []
 	},
 	{
+		"name": "Membership",
 		"methods": [
 			"GET"
 		],
 		"pattern": "^/hitman/proxy.*",
 		"secure": false,
 		"target": "https://membership.square-enix.com/static/proxy.html",
-		"name": "Membership (2)"
+		"tags": [
+			"99ed03c6-1a56-4e9a-95c4-fb8d9aad8543"
+		]
 	},
 	{
+		"name": "Membership",
 		"methods": [
 			"GET"
 		],
 		"pattern": "^/just-cause-3/proxy.*",
 		"secure": false,
 		"target": "https://membership.square-enix.com/static/proxy.html",
-		"name": "Membership (3)"
+		"tags": [
+			"63788d4a-c628-401d-9029-a53bb5a0f245"
+		]
 	},
 	{
+		"name": "Membership",
 		"methods": [
 			"GET"
 		],
 		"pattern": "^/triad-wars/proxy.*",
 		"secure": false,
 		"target": "https://membership.square-enix.com/static/proxy.html",
-		"name": "Membership (4)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Augaware content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -1650,9 +1979,12 @@
 		"pattern": "^/augaware/content/(.*)",
 		"secure": true,
 		"target": "https://iris.hydra.sqexeu.com/projects/augaware/content/$1",
-		"name": "Augaware content API (1)"
+		"tags": [
+			"79461030-dacf-4138-b1f8-ed3c058178c2"
+		]
 	},
 	{
+		"name": "Fast Check Permissions",
 		"methods": [
 			"GET",
 			"POST",
@@ -1665,63 +1997,76 @@
 		"pattern": "^/auth/users/permissions(.*)",
 		"secure": true,
 		"target": "https://fast-check.hydra.sqexeu.com/permissions$1",
-		"name": "Fast Check Permissions (1)"
+		"tags": []
 	},
 	{
+		"name": "Membership",
 		"methods": [
 			"GET"
 		],
 		"pattern": "^/proxy.*",
 		"secure": false,
 		"target": "https://membership.square-enix.com/static/proxy.html",
-		"name": "Membership (1)"
+		"tags": []
 	},
 	{
+		"name": "Membership",
 		"methods": [
 			"GET"
 		],
 		"pattern": "^/hitman/proxy.*",
 		"secure": false,
 		"target": "https://membership.square-enix.com/static/proxy.html",
-		"name": "Membership (2)"
+		"tags": [
+			"99ed03c6-1a56-4e9a-95c4-fb8d9aad8543"
+		]
 	},
 	{
+		"name": "Membership",
 		"methods": [
 			"GET"
 		],
 		"pattern": "^/just-cause-3/proxy.*",
 		"secure": false,
 		"target": "https://membership.square-enix.com/static/proxy.html",
-		"name": "Membership (3)"
+		"tags": [
+			"63788d4a-c628-401d-9029-a53bb5a0f245"
+		]
 	},
 	{
+		"name": "Membership",
 		"methods": [
 			"GET"
 		],
 		"pattern": "^/triad-wars/proxy.*",
 		"secure": false,
 		"target": "https://membership.square-enix.com/static/proxy.html",
-		"name": "Membership (4)"
+		"tags": [
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "CDN origin server",
 		"methods": [
 			"GET"
 		],
 		"pattern": "^/assets?/(.*)",
 		"secure": false,
 		"target": "https://nimbus.hydra.sqexeu.com/asset/$1",
-		"name": "CDN origin server (prod) (1)"
+		"tags": []
 	},
 	{
+		"name": "CDN origin server",
 		"methods": [
 			"GET"
 		],
 		"pattern": "^/assets?/(.*)",
 		"secure": false,
 		"target": "https://nimbus.hydra.sqexeu.com/asset/$1",
-		"name": "CDN origin server (prod) (1)"
+		"tags": []
 	},
 	{
+		"name": "Triad Wars web presence API",
 		"methods": [
 			"GET",
 			"POST",
@@ -1734,9 +2079,13 @@
 		"pattern": "^/preprod/triad-wars/presence(.*)",
 		"secure": true,
 		"target": "https://zephyrus-pp.hydra.sqexeu.com/triad/presence$1",
-		"name": "Triad Wars web presence API (1)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars debug API",
 		"methods": [
 			"GET",
 			"POST",
@@ -1749,9 +2098,13 @@
 		"pattern": "^/preprod/triad-wars/maintenance",
 		"secure": true,
 		"target": "https://arke-pp.hydra.sqexeu.com/triad/services/maintenance",
-		"name": "Triad Wars debug API (preprod) (1)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars game-to-web/web-to-game API",
 		"methods": [
 			"GET",
 			"POST",
@@ -1764,9 +2117,13 @@
 		"pattern": "^/preprod/triad-wars/store(.*)",
 		"secure": true,
 		"target": "https://arke-pp.hydra.sqexeu.com/triad/store$1",
-		"name": "Triad Wars game-to-web/web-to-game API (preprod) (1)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars debug API",
 		"methods": [
 			"GET",
 			"POST",
@@ -1779,9 +2136,13 @@
 		"pattern": "^/preprod/triad-wars/debug",
 		"secure": true,
 		"target": "https://arke-pp.hydra.sqexeu.com/status/debug",
-		"name": "Triad Wars debug API (1)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars game-to-web/web-to-game API",
 		"methods": [
 			"GET",
 			"POST",
@@ -1794,9 +2155,13 @@
 		"pattern": "^/preprod/triad-wars/game/leaderboards(.*)",
 		"secure": true,
 		"target": "https://arke-pp.hydra.sqexeu.com/triad/leaderboards$1",
-		"name": "Triad Wars game-to-web/web-to-game API (preprod) (1)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars game-to-web/web-to-game API",
 		"methods": [
 			"GET",
 			"POST",
@@ -1809,9 +2174,13 @@
 		"pattern": "^/preprod/triad-wars/game/status(.*)",
 		"secure": true,
 		"target": "https://arke-pp.hydra.sqexeu.com/triad/status$1",
-		"name": "Triad Wars game-to-web/web-to-game API (preprod) (1)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars game-to-web/web-to-game API",
 		"methods": [
 			"GET",
 			"POST",
@@ -1824,9 +2193,13 @@
 		"pattern": "^/preprod/triad-wars/game/accounts(.*)",
 		"secure": true,
 		"target": "https://arke-pp.hydra.sqexeu.com/triad/accounts$1",
-		"name": "Triad Wars game-to-web/web-to-game API (preprod) (1)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars game-to-web/web-to-game API",
 		"methods": [
 			"GET",
 			"POST",
@@ -1839,9 +2212,13 @@
 		"pattern": "^/preprod/triad-wars/game/users(.*)",
 		"secure": true,
 		"target": "https://arke-pp.hydra.sqexeu.com/triad/users$1",
-		"name": "Triad Wars game-to-web/web-to-game API (preprod) (1)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -1854,9 +2231,13 @@
 		"pattern": "^/preprod/triad-wars/temp/(.*)",
 		"secure": true,
 		"target": "https://api-pp.hydra.sqexeu.com/api/projects/triad/$1",
-		"name": "Triad Wars content API (preprod) (1)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars accounts API",
 		"methods": [
 			"GET",
 			"POST",
@@ -1869,9 +2250,13 @@
 		"pattern": "^/preprod/triad-wars/accounts/(.*)",
 		"secure": true,
 		"target": "https://arke-pp.hydra.sqexeu.com/triad/accounts/$1",
-		"name": "Triad Wars accounts API (preprod) (1)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars metrics API",
 		"methods": [
 			"GET",
 			"POST",
@@ -1884,18 +2269,26 @@
 		"pattern": "^/preprod/triad-wars/metrics/(.*)",
 		"secure": true,
 		"target": "https://arke-pp.hydra.sqexeu.com/triad/metrics/$1",
-		"name": "Triad Wars metrics API (preprod) (1)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars Influence API",
 		"methods": [
 			"POST"
 		],
 		"pattern": "^/preprod/triad-wars/collector(.*)",
 		"secure": true,
 		"target": "https://zephyrus-pp.hydra.sqexeu.com/collector/triad$1",
-		"name": "Triad Wars Influence API (1)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars Influence API",
 		"methods": [
 			"GET",
 			"POST",
@@ -1908,9 +2301,13 @@
 		"pattern": "^/preprod/triad-wars/influence(.*)",
 		"secure": true,
 		"target": "https://zephyrus-pp.hydra.sqexeu.com/triad/influence$1",
-		"name": "Triad Wars Influence API (1)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -1923,9 +2320,13 @@
 		"pattern": "^/preprod/triad-wars/content/blog(.*)",
 		"secure": true,
 		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/blog$1",
-		"name": "Triad Wars content API (preprod) (1)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -1938,9 +2339,13 @@
 		"pattern": "^/preprod/triad-wars/content/video(.*)",
 		"secure": true,
 		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/video$1",
-		"name": "Triad Wars content API (preprod) (2)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -1953,9 +2358,13 @@
 		"pattern": "^/preprod/triad-wars/content/image(.*)",
 		"secure": true,
 		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/image$1",
-		"name": "Triad Wars content API (preprod) (3)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -1968,9 +2377,13 @@
 		"pattern": "^/preprod/triad-wars/content/qa-test-entity(.*)",
 		"secure": true,
 		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/qa-test-entity$1",
-		"name": "Triad Wars content API (preprod) (4)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -1983,9 +2396,13 @@
 		"pattern": "^/preprod/triad-wars/content/information(.*)",
 		"secure": true,
 		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/information$1",
-		"name": "Triad Wars content API (preprod) (5)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -1998,9 +2415,13 @@
 		"pattern": "^/preprod/triad-wars/content/about(.*)",
 		"secure": true,
 		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/about$1",
-		"name": "Triad Wars content API (preprod) (6)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -2013,9 +2434,13 @@
 		"pattern": "^/preprod/triad-wars/content/page(.*)",
 		"secure": true,
 		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/page$1",
-		"name": "Triad Wars content API (preprod) (7)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -2028,9 +2453,13 @@
 		"pattern": "^/preprod/triad-wars/content/gallery(.*)",
 		"secure": true,
 		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/gallery$1",
-		"name": "Triad Wars content API (preprod) (8)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -2043,9 +2472,13 @@
 		"pattern": "^/preprod/triad-wars/content/blog(.*)",
 		"secure": true,
 		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/blog$1",
-		"name": "Triad Wars content API (preprod) (1)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -2058,9 +2491,13 @@
 		"pattern": "^/preprod/triad-wars/content/video(.*)",
 		"secure": true,
 		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/video$1",
-		"name": "Triad Wars content API (preprod) (2)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -2073,9 +2510,13 @@
 		"pattern": "^/preprod/triad-wars/content/image(.*)",
 		"secure": true,
 		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/image$1",
-		"name": "Triad Wars content API (preprod) (3)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -2088,9 +2529,13 @@
 		"pattern": "^/preprod/triad-wars/content/qa-test-entity(.*)",
 		"secure": true,
 		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/qa-test-entity$1",
-		"name": "Triad Wars content API (preprod) (4)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -2103,9 +2548,13 @@
 		"pattern": "^/preprod/triad-wars/content/information(.*)",
 		"secure": true,
 		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/information$1",
-		"name": "Triad Wars content API (preprod) (5)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -2118,9 +2567,13 @@
 		"pattern": "^/preprod/triad-wars/content/about(.*)",
 		"secure": true,
 		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/about$1",
-		"name": "Triad Wars content API (preprod) (6)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -2133,9 +2586,13 @@
 		"pattern": "^/preprod/triad-wars/content/page(.*)",
 		"secure": true,
 		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/page$1",
-		"name": "Triad Wars content API (preprod) (7)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -2148,9 +2605,13 @@
 		"pattern": "^/preprod/triad-wars/content/gallery(.*)",
 		"secure": true,
 		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/gallery$1",
-		"name": "Triad Wars content API (preprod) (8)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -2163,9 +2624,13 @@
 		"pattern": "^/preprod/triad-wars/content/blog(.*)",
 		"secure": true,
 		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/blog$1",
-		"name": "Triad Wars content API (preprod) (1)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -2178,9 +2643,13 @@
 		"pattern": "^/preprod/triad-wars/content/video(.*)",
 		"secure": true,
 		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/video$1",
-		"name": "Triad Wars content API (preprod) (2)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -2193,9 +2662,13 @@
 		"pattern": "^/preprod/triad-wars/content/image(.*)",
 		"secure": true,
 		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/image$1",
-		"name": "Triad Wars content API (preprod) (3)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -2208,9 +2681,13 @@
 		"pattern": "^/preprod/triad-wars/content/qa-test-entity(.*)",
 		"secure": true,
 		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/qa-test-entity$1",
-		"name": "Triad Wars content API (preprod) (4)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -2223,9 +2700,13 @@
 		"pattern": "^/preprod/triad-wars/content/information(.*)",
 		"secure": true,
 		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/information$1",
-		"name": "Triad Wars content API (preprod) (5)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -2238,9 +2719,13 @@
 		"pattern": "^/preprod/triad-wars/content/about(.*)",
 		"secure": true,
 		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/about$1",
-		"name": "Triad Wars content API (preprod) (6)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -2253,9 +2738,13 @@
 		"pattern": "^/preprod/triad-wars/content/page(.*)",
 		"secure": true,
 		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/page$1",
-		"name": "Triad Wars content API (preprod) (7)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -2268,9 +2757,13 @@
 		"pattern": "^/preprod/triad-wars/content/gallery(.*)",
 		"secure": true,
 		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/gallery$1",
-		"name": "Triad Wars content API (preprod) (8)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -2283,9 +2776,13 @@
 		"pattern": "^/preprod/triad-wars/content/blog(.*)",
 		"secure": true,
 		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/blog$1",
-		"name": "Triad Wars content API (preprod) (1)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -2298,9 +2795,13 @@
 		"pattern": "^/preprod/triad-wars/content/video(.*)",
 		"secure": true,
 		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/video$1",
-		"name": "Triad Wars content API (preprod) (2)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -2313,9 +2814,13 @@
 		"pattern": "^/preprod/triad-wars/content/image(.*)",
 		"secure": true,
 		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/image$1",
-		"name": "Triad Wars content API (preprod) (3)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -2328,9 +2833,13 @@
 		"pattern": "^/preprod/triad-wars/content/qa-test-entity(.*)",
 		"secure": true,
 		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/qa-test-entity$1",
-		"name": "Triad Wars content API (preprod) (4)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -2343,9 +2852,13 @@
 		"pattern": "^/preprod/triad-wars/content/information(.*)",
 		"secure": true,
 		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/information$1",
-		"name": "Triad Wars content API (preprod) (5)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -2358,9 +2871,13 @@
 		"pattern": "^/preprod/triad-wars/content/about(.*)",
 		"secure": true,
 		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/about$1",
-		"name": "Triad Wars content API (preprod) (6)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -2373,9 +2890,13 @@
 		"pattern": "^/preprod/triad-wars/content/page(.*)",
 		"secure": true,
 		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/page$1",
-		"name": "Triad Wars content API (preprod) (7)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -2388,9 +2909,13 @@
 		"pattern": "^/preprod/triad-wars/content/gallery(.*)",
 		"secure": true,
 		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/gallery$1",
-		"name": "Triad Wars content API (preprod) (8)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -2403,9 +2928,13 @@
 		"pattern": "^/preprod/triad-wars/content/blog(.*)",
 		"secure": true,
 		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/blog$1",
-		"name": "Triad Wars content API (preprod) (1)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -2418,9 +2947,13 @@
 		"pattern": "^/preprod/triad-wars/content/video(.*)",
 		"secure": true,
 		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/video$1",
-		"name": "Triad Wars content API (preprod) (2)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -2433,9 +2966,13 @@
 		"pattern": "^/preprod/triad-wars/content/image(.*)",
 		"secure": true,
 		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/image$1",
-		"name": "Triad Wars content API (preprod) (3)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -2448,9 +2985,13 @@
 		"pattern": "^/preprod/triad-wars/content/qa-test-entity(.*)",
 		"secure": true,
 		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/qa-test-entity$1",
-		"name": "Triad Wars content API (preprod) (4)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -2463,9 +3004,13 @@
 		"pattern": "^/preprod/triad-wars/content/information(.*)",
 		"secure": true,
 		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/information$1",
-		"name": "Triad Wars content API (preprod) (5)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -2478,9 +3023,13 @@
 		"pattern": "^/preprod/triad-wars/content/about(.*)",
 		"secure": true,
 		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/about$1",
-		"name": "Triad Wars content API (preprod) (6)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -2493,9 +3042,13 @@
 		"pattern": "^/preprod/triad-wars/content/page(.*)",
 		"secure": true,
 		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/page$1",
-		"name": "Triad Wars content API (preprod) (7)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -2508,9 +3061,13 @@
 		"pattern": "^/preprod/triad-wars/content/gallery(.*)",
 		"secure": true,
 		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/gallery$1",
-		"name": "Triad Wars content API (preprod) (8)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -2523,9 +3080,13 @@
 		"pattern": "^/preprod/triad-wars/content/blog(.*)",
 		"secure": true,
 		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/blog$1",
-		"name": "Triad Wars content API (preprod) (1)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -2538,9 +3099,13 @@
 		"pattern": "^/preprod/triad-wars/content/video(.*)",
 		"secure": true,
 		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/video$1",
-		"name": "Triad Wars content API (preprod) (2)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -2553,9 +3118,13 @@
 		"pattern": "^/preprod/triad-wars/content/image(.*)",
 		"secure": true,
 		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/image$1",
-		"name": "Triad Wars content API (preprod) (3)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -2568,9 +3137,13 @@
 		"pattern": "^/preprod/triad-wars/content/qa-test-entity(.*)",
 		"secure": true,
 		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/qa-test-entity$1",
-		"name": "Triad Wars content API (preprod) (4)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -2583,9 +3156,13 @@
 		"pattern": "^/preprod/triad-wars/content/information(.*)",
 		"secure": true,
 		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/information$1",
-		"name": "Triad Wars content API (preprod) (5)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -2598,9 +3175,13 @@
 		"pattern": "^/preprod/triad-wars/content/about(.*)",
 		"secure": true,
 		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/about$1",
-		"name": "Triad Wars content API (preprod) (6)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -2613,9 +3194,13 @@
 		"pattern": "^/preprod/triad-wars/content/page(.*)",
 		"secure": true,
 		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/page$1",
-		"name": "Triad Wars content API (preprod) (7)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -2628,9 +3213,13 @@
 		"pattern": "^/preprod/triad-wars/content/gallery(.*)",
 		"secure": true,
 		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/gallery$1",
-		"name": "Triad Wars content API (preprod) (8)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -2643,9 +3232,13 @@
 		"pattern": "^/preprod/triad-wars/content/blog(.*)",
 		"secure": true,
 		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/blog$1",
-		"name": "Triad Wars content API (preprod) (1)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -2658,9 +3251,13 @@
 		"pattern": "^/preprod/triad-wars/content/video(.*)",
 		"secure": true,
 		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/video$1",
-		"name": "Triad Wars content API (preprod) (2)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -2673,9 +3270,13 @@
 		"pattern": "^/preprod/triad-wars/content/image(.*)",
 		"secure": true,
 		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/image$1",
-		"name": "Triad Wars content API (preprod) (3)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -2688,9 +3289,13 @@
 		"pattern": "^/preprod/triad-wars/content/qa-test-entity(.*)",
 		"secure": true,
 		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/qa-test-entity$1",
-		"name": "Triad Wars content API (preprod) (4)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -2703,9 +3308,13 @@
 		"pattern": "^/preprod/triad-wars/content/information(.*)",
 		"secure": true,
 		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/information$1",
-		"name": "Triad Wars content API (preprod) (5)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -2718,9 +3327,13 @@
 		"pattern": "^/preprod/triad-wars/content/about(.*)",
 		"secure": true,
 		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/about$1",
-		"name": "Triad Wars content API (preprod) (6)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -2733,9 +3346,13 @@
 		"pattern": "^/preprod/triad-wars/content/page(.*)",
 		"secure": true,
 		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/page$1",
-		"name": "Triad Wars content API (preprod) (7)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -2748,9 +3365,13 @@
 		"pattern": "^/preprod/triad-wars/content/gallery(.*)",
 		"secure": true,
 		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/gallery$1",
-		"name": "Triad Wars content API (preprod) (8)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -2763,9 +3384,13 @@
 		"pattern": "^/preprod/triad-wars/content/blog(.*)",
 		"secure": true,
 		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/blog$1",
-		"name": "Triad Wars content API (preprod) (1)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -2778,9 +3403,13 @@
 		"pattern": "^/preprod/triad-wars/content/video(.*)",
 		"secure": true,
 		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/video$1",
-		"name": "Triad Wars content API (preprod) (2)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -2793,9 +3422,13 @@
 		"pattern": "^/preprod/triad-wars/content/image(.*)",
 		"secure": true,
 		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/image$1",
-		"name": "Triad Wars content API (preprod) (3)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -2808,9 +3441,13 @@
 		"pattern": "^/preprod/triad-wars/content/qa-test-entity(.*)",
 		"secure": true,
 		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/qa-test-entity$1",
-		"name": "Triad Wars content API (preprod) (4)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -2823,9 +3460,13 @@
 		"pattern": "^/preprod/triad-wars/content/information(.*)",
 		"secure": true,
 		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/information$1",
-		"name": "Triad Wars content API (preprod) (5)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -2838,9 +3479,13 @@
 		"pattern": "^/preprod/triad-wars/content/about(.*)",
 		"secure": true,
 		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/about$1",
-		"name": "Triad Wars content API (preprod) (6)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -2853,9 +3498,13 @@
 		"pattern": "^/preprod/triad-wars/content/page(.*)",
 		"secure": true,
 		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/page$1",
-		"name": "Triad Wars content API (preprod) (7)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -2868,9 +3517,13 @@
 		"pattern": "^/preprod/triad-wars/content/gallery(.*)",
 		"secure": true,
 		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/gallery$1",
-		"name": "Triad Wars content API (preprod) (8)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -2883,9 +3536,13 @@
 		"pattern": "^/preprod/triad-wars/content/timelines(.*)",
 		"secure": true,
 		"target": "https://iris-pp.hydra.sqexeu.com/projects/triad/content/timelines$1",
-		"name": "Triad Wars content API (preprod) (1)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -2898,9 +3555,13 @@
 		"pattern": "^/preprod/triad-wars/content/fillers(.*)",
 		"secure": true,
 		"target": "https://iris.hydra.sqexeu.com/projects/triad/content/timelines/fillers$1",
-		"name": "Triad Wars content API (preprod) (1)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -2913,9 +3574,13 @@
 		"pattern": "^/preprod/triad-wars/content/store(.*)",
 		"secure": true,
 		"target": "https://api-pp.hydra.sqexeu.com/api/triad/store$1",
-		"name": "Triad Wars content API (preprod) (1)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -2928,9 +3593,13 @@
 		"pattern": "^/preprod/triad-wars/content/entities(.*)",
 		"secure": true,
 		"target": "https://api-pp.hydra.sqexeu.com/api/projects/triad/entities$1",
-		"name": "Triad Wars content API (preprod) (1)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars session API",
 		"methods": [
 			"GET",
 			"POST",
@@ -2943,45 +3612,64 @@
 		"pattern": "^/preprod/triad-wars/session",
 		"secure": true,
 		"target": "https://arke-pp.hydra.sqexeu.com/triad/user",
-		"name": "Triad Wars session API (preprod) (1)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Membership",
 		"methods": [
 			"GET"
 		],
 		"pattern": "^/preprod/proxy.*",
 		"secure": false,
 		"target": "https://membership.square-enix.com/static/proxy.html",
-		"name": "Membership (1)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446"
+		]
 	},
 	{
+		"name": "Membership",
 		"methods": [
 			"GET"
 		],
 		"pattern": "^/preprod/hitman/proxy.*",
 		"secure": false,
 		"target": "https://membership.square-enix.com/static/proxy.html",
-		"name": "Membership (2)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"99ed03c6-1a56-4e9a-95c4-fb8d9aad8543"
+		]
 	},
 	{
+		"name": "Membership",
 		"methods": [
 			"GET"
 		],
 		"pattern": "^/preprod/just-cause-3/proxy.*",
 		"secure": false,
 		"target": "https://membership.square-enix.com/static/proxy.html",
-		"name": "Membership (3)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"63788d4a-c628-401d-9029-a53bb5a0f245"
+		]
 	},
 	{
+		"name": "Membership",
 		"methods": [
 			"GET"
 		],
 		"pattern": "^/preprod/triad-wars/proxy.*",
 		"secure": false,
 		"target": "https://membership.square-enix.com/static/proxy.html",
-		"name": "Membership (4)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Tomb Raider session API",
 		"methods": [
 			"GET",
 			"POST",
@@ -2994,9 +3682,12 @@
 		"pattern": "^/preprod/tomb-raider/session",
 		"secure": true,
 		"target": "https://arke-pp.hydra.sqexeu.com/common/session",
-		"name": "Tomb Raider session API (preprod) (1)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446"
+		]
 	},
 	{
+		"name": "Just Cause 3 mailing list API",
 		"methods": [
 			"GET",
 			"POST",
@@ -3009,9 +3700,13 @@
 		"pattern": "^/preprod/just-cause-3/mailing_list(.*)",
 		"secure": true,
 		"target": "https://api-pp.hydra.sqexeu.com/api/bluew/mailing_list$1",
-		"name": "Just Cause 3 mailing list API (preprod) (1)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"63788d4a-c628-401d-9029-a53bb5a0f245"
+		]
 	},
 	{
+		"name": "Just Cause 3 content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -3024,9 +3719,13 @@
 		"pattern": "^/preprod/just-cause-3/content/entities(.*)",
 		"secure": true,
 		"target": "https://api-pp.hydra.sqexeu.com/api/projects/bluew/entities$1",
-		"name": "Just Cause 3 content API (preprod) (1)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"63788d4a-c628-401d-9029-a53bb5a0f245"
+		]
 	},
 	{
+		"name": "Just Cause 3 content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -3039,9 +3738,13 @@
 		"pattern": "^/preprod/just-cause-3/content/medici(.*)",
 		"secure": true,
 		"target": "https://api-pp.hydra.sqexeu.com/api/projects/bluew/medici$1",
-		"name": "Just Cause 3 content API (preprod) (2)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"63788d4a-c628-401d-9029-a53bb5a0f245"
+		]
 	},
 	{
+		"name": "Just Cause 3 content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -3054,9 +3757,13 @@
 		"pattern": "^/preprod/just-cause-3/content/(.*)",
 		"secure": true,
 		"target": "https://api-pp.hydra.sqexeu.com/api/bluew/$1",
-		"name": "Just Cause 3 content API (preprod) (3)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"63788d4a-c628-401d-9029-a53bb5a0f245"
+		]
 	},
 	{
+		"name": "Just Cause 3 session API",
 		"methods": [
 			"GET",
 			"POST",
@@ -3069,54 +3776,77 @@
 		"pattern": "^/preprod/just-cause-3/session",
 		"secure": true,
 		"target": "https://api-pp.hydra.sqexeu.com/api/bluew/session",
-		"name": "Just Cause 3 session API (preprod) (1)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"63788d4a-c628-401d-9029-a53bb5a0f245"
+		]
 	},
 	{
+		"name": "Membership",
 		"methods": [
 			"GET"
 		],
 		"pattern": "^/preprod/proxy.*",
 		"secure": false,
 		"target": "https://membership.square-enix.com/static/proxy.html",
-		"name": "Membership (1)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446"
+		]
 	},
 	{
+		"name": "Membership",
 		"methods": [
 			"GET"
 		],
 		"pattern": "^/preprod/hitman/proxy.*",
 		"secure": false,
 		"target": "https://membership.square-enix.com/static/proxy.html",
-		"name": "Membership (2)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"99ed03c6-1a56-4e9a-95c4-fb8d9aad8543"
+		]
 	},
 	{
+		"name": "Membership",
 		"methods": [
 			"GET"
 		],
 		"pattern": "^/preprod/just-cause-3/proxy.*",
 		"secure": false,
 		"target": "https://membership.square-enix.com/static/proxy.html",
-		"name": "Membership (3)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"63788d4a-c628-401d-9029-a53bb5a0f245"
+		]
 	},
 	{
+		"name": "Membership",
 		"methods": [
 			"GET"
 		],
 		"pattern": "^/preprod/triad-wars/proxy.*",
 		"secure": false,
 		"target": "https://membership.square-enix.com/static/proxy.html",
-		"name": "Membership (4)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Hitman Web join mailing list API",
 		"methods": [
 			"([A-Z]+)"
 		],
 		"pattern": "^/preprod/hitman/join_mailing_list(.*)",
 		"secure": true,
 		"target": "https://arke-pp.hydra.sqexeu.com/hitman/join_mailing_list$2",
-		"name": "Hitman Web join mailing list API (preprod) (1)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"99ed03c6-1a56-4e9a-95c4-fb8d9aad8543"
+		]
 	},
 	{
+		"name": "Hitman Web mailing list API",
 		"methods": [
 			"GET",
 			"POST",
@@ -3129,9 +3859,13 @@
 		"pattern": "^/preprod/hitman/mailing_list(.*)",
 		"secure": true,
 		"target": "https://arke-pp.hydra.sqexeu.com/api/hitman/mailing_list$1",
-		"name": "Hitman Web mailing list API (preprod) (1)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"99ed03c6-1a56-4e9a-95c4-fb8d9aad8543"
+		]
 	},
 	{
+		"name": "Hitman Web content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -3144,9 +3878,13 @@
 		"pattern": "^/preprod/hitman/content/static_copies(.*)",
 		"secure": true,
 		"target": "https://api-pp.hydra.sqexeu.com/api/projects/hitman/static_copies$1",
-		"name": "Hitman Web content API (preprod) (1)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"99ed03c6-1a56-4e9a-95c4-fb8d9aad8543"
+		]
 	},
 	{
+		"name": "Hitman Web content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -3159,9 +3897,13 @@
 		"pattern": "^/preprod/hitman/content/entities(.*)",
 		"secure": true,
 		"target": "https://api-pp.hydra.sqexeu.com/api/projects/hitman/entities$1",
-		"name": "Hitman Web content API (preprod) (2)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"99ed03c6-1a56-4e9a-95c4-fb8d9aad8543"
+		]
 	},
 	{
+		"name": "Hitman Web content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -3174,9 +3916,13 @@
 		"pattern": "^/preprod/hitman/content/(.*)",
 		"secure": true,
 		"target": "https://api-pp.hydra.sqexeu.com/api/hitman/$1",
-		"name": "Hitman Web content API (preprod) (3)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"99ed03c6-1a56-4e9a-95c4-fb8d9aad8543"
+		]
 	},
 	{
+		"name": "Hitman Web session API",
 		"methods": [
 			"GET",
 			"POST",
@@ -3189,45 +3935,64 @@
 		"pattern": "^/preprod/hitman/session",
 		"secure": true,
 		"target": "https://api-pp.hydra.sqexeu.com/api/hitman/session",
-		"name": "Hitman Web session API (preprod) (1)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"99ed03c6-1a56-4e9a-95c4-fb8d9aad8543"
+		]
 	},
 	{
+		"name": "Membership",
 		"methods": [
 			"GET"
 		],
 		"pattern": "^/preprod/proxy.*",
 		"secure": false,
 		"target": "https://membership.square-enix.com/static/proxy.html",
-		"name": "Membership (1)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446"
+		]
 	},
 	{
+		"name": "Membership",
 		"methods": [
 			"GET"
 		],
 		"pattern": "^/preprod/hitman/proxy.*",
 		"secure": false,
 		"target": "https://membership.square-enix.com/static/proxy.html",
-		"name": "Membership (2)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"99ed03c6-1a56-4e9a-95c4-fb8d9aad8543"
+		]
 	},
 	{
+		"name": "Membership",
 		"methods": [
 			"GET"
 		],
 		"pattern": "^/preprod/just-cause-3/proxy.*",
 		"secure": false,
 		"target": "https://membership.square-enix.com/static/proxy.html",
-		"name": "Membership (3)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"63788d4a-c628-401d-9029-a53bb5a0f245"
+		]
 	},
 	{
+		"name": "Membership",
 		"methods": [
 			"GET"
 		],
 		"pattern": "^/preprod/triad-wars/proxy.*",
 		"secure": false,
 		"target": "https://membership.square-enix.com/static/proxy.html",
-		"name": "Membership (4)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Augaware content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -3240,9 +4005,13 @@
 		"pattern": "^/preprod/augaware/content/(.*)",
 		"secure": true,
 		"target": "https://iris-pp.hydra.sqexeu.com/projects/augaware/content/$1",
-		"name": "Augaware content API (preprod) (1)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"79461030-dacf-4138-b1f8-ed3c058178c2"
+		]
 	},
 	{
+		"name": "Fast Check Permissions",
 		"methods": [
 			"GET",
 			"POST",
@@ -3255,63 +4024,87 @@
 		"pattern": "^/preprod/auth/users/permissions(.*)",
 		"secure": true,
 		"target": "https://fast-check.hydra.sqexeu.com/permissions$1",
-		"name": "Fast Check Permissions (preprod) (1)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446"
+		]
 	},
 	{
+		"name": "Membership",
 		"methods": [
 			"GET"
 		],
 		"pattern": "^/preprod/proxy.*",
 		"secure": false,
 		"target": "https://membership.square-enix.com/static/proxy.html",
-		"name": "Membership (1)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446"
+		]
 	},
 	{
+		"name": "Membership",
 		"methods": [
 			"GET"
 		],
 		"pattern": "^/preprod/hitman/proxy.*",
 		"secure": false,
 		"target": "https://membership.square-enix.com/static/proxy.html",
-		"name": "Membership (2)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"99ed03c6-1a56-4e9a-95c4-fb8d9aad8543"
+		]
 	},
 	{
+		"name": "Membership",
 		"methods": [
 			"GET"
 		],
 		"pattern": "^/preprod/just-cause-3/proxy.*",
 		"secure": false,
 		"target": "https://membership.square-enix.com/static/proxy.html",
-		"name": "Membership (3)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"63788d4a-c628-401d-9029-a53bb5a0f245"
+		]
 	},
 	{
+		"name": "Membership",
 		"methods": [
 			"GET"
 		],
 		"pattern": "^/preprod/triad-wars/proxy.*",
 		"secure": false,
 		"target": "https://membership.square-enix.com/static/proxy.html",
-		"name": "Membership (4)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "CDN origin server",
 		"methods": [
 			"GET"
 		],
 		"pattern": "^/preprod/assets?/(.*)",
 		"secure": false,
 		"target": "https://nimbus-pp.hydra.sqexeu.com/asset/$1",
-		"name": "CDN origin server (preprod) (1)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446"
+		]
 	},
 	{
+		"name": "CDN origin server",
 		"methods": [
 			"GET"
 		],
 		"pattern": "^/preprod/assets?/(.*)",
 		"secure": false,
 		"target": "https://nimbus-pp.hydra.sqexeu.com/asset/$1",
-		"name": "CDN origin server (preprod) (1)"
+		"tags": [
+			"b5135a80-41cf-4ba5-b58e-f22f73627446"
+		]
 	},
 	{
+		"name": "Avatar API",
 		"methods": [
 			"GET",
 			"POST",
@@ -3323,10 +4116,13 @@
 		],
 		"pattern": "^/stage/avatar(.*)",
 		"secure": true,
-		"target": "http://docker-onlinedev-avatar-stage.netops.eidosinteractive.com/$1",
-		"name": "Avatar API (1)"
+		"target": "http://docker-onlinedev-avatar-stage.netops.eidosinteractive.com$1",
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894"
+		]
 	},
 	{
+		"name": "Billing API",
 		"methods": [
 			"GET",
 			"POST",
@@ -3339,27 +4135,36 @@
 		"pattern": "^/stage/billing/customer/(.*)",
 		"secure": true,
 		"target": "https://stagebilling.sqexeu.com/api/v1/fe/customer/$1",
-		"name": "Billing API (1)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894"
+		]
 	},
 	{
+		"name": "Token check",
 		"methods": [
 			"GET"
 		],
 		"pattern": "^/stage/billing/token(.*)",
 		"secure": false,
 		"target": "http://fast-check-stage.netops.eidosinteractive.com/node/api/token$1",
-		"name": "Token check (1)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894"
+		]
 	},
 	{
+		"name": "Fastcheck token auth",
 		"methods": [
 			"GET"
 		],
 		"pattern": "^/stage/auth/token(.*)",
 		"secure": true,
 		"target": "http://fast-check-stage.netops.eidosinteractive.com/node/api/token$1",
-		"name": "Fastcheck token auth (stage) (1)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894"
+		]
 	},
 	{
+		"name": "Triad Wars web presence API",
 		"methods": [
 			"GET",
 			"POST",
@@ -3372,9 +4177,13 @@
 		"pattern": "^/stage/triad-wars/presence(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-zephyrus-stage.netops.eidosinteractive.com/triad/presence$1",
-		"name": "Triad Wars web presence API (1)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars debug API",
 		"methods": [
 			"GET",
 			"POST",
@@ -3387,9 +4196,13 @@
 		"pattern": "^/stage/triad-wars/maintenance",
 		"secure": true,
 		"target": "http://docker-onlinedev-arke-stage.netops.eidosinteractive.com/triad/services/maintenance",
-		"name": "Triad Wars debug API (stage) (1)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars debug API",
 		"methods": [
 			"GET",
 			"POST",
@@ -3402,9 +4215,13 @@
 		"pattern": "^/stage/triad-wars/debug",
 		"secure": true,
 		"target": "http://docker-onlinedev-arke-stage.netops.eidosinteractive.com/status/debug",
-		"name": "Triad Wars debug API (stage) (1)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars game-to-web/web-to-game API",
 		"methods": [
 			"GET",
 			"POST",
@@ -3417,9 +4234,13 @@
 		"pattern": "^/stage/triad-wars/game/leaderboards(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-arke-stage.netops.eidosinteractive.com/triad/leaderboards$1",
-		"name": "Triad Wars game-to-web/web-to-game API (stage) (1)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars game-to-web/web-to-game API",
 		"methods": [
 			"GET",
 			"POST",
@@ -3432,9 +4253,13 @@
 		"pattern": "^/stage/triad-wars/game/status(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-arke-stage.netops.eidosinteractive.com/triad/status$1",
-		"name": "Triad Wars game-to-web/web-to-game API (stage) (1)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars game-to-web/web-to-game API",
 		"methods": [
 			"GET",
 			"POST",
@@ -3447,9 +4272,13 @@
 		"pattern": "^/stage/triad-wars/game/accounts(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-arke-stage.netops.eidosinteractive.com/triad/accounts$1",
-		"name": "Triad Wars game-to-web/web-to-game API (stage) (1)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars game-to-web/web-to-game API",
 		"methods": [
 			"GET",
 			"POST",
@@ -3462,9 +4291,13 @@
 		"pattern": "^/stage/triad-wars/game/users(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-arke-stage.netops.eidosinteractive.com/triad/users$1",
-		"name": "Triad Wars game-to-web/web-to-game API (stage) (1)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -3477,9 +4310,13 @@
 		"pattern": "^/stage/triad-wars/temp/(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-hydra-api-stage.netops.eidosinteractive.com/api/projects/triad/$1",
-		"name": "Triad Wars content API (stage) (1)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars accounts API",
 		"methods": [
 			"GET",
 			"POST",
@@ -3492,9 +4329,13 @@
 		"pattern": "^/stage/triad-wars/accounts/(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-arke-stage.netops.eidosinteractive.com/triad/accounts/$1",
-		"name": "Triad Wars accounts API (stage) (1)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars metrics API",
 		"methods": [
 			"GET",
 			"POST",
@@ -3507,18 +4348,26 @@
 		"pattern": "^/stage/triad-wars/metrics/(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-arke-stage.netops.eidosinteractive.com/triad/metrics/$1",
-		"name": "Triad Wars metrics API (stage) (1)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars Influence API",
 		"methods": [
 			"POST"
 		],
 		"pattern": "^/stage/triad-wars/collector(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-zephyrus-stage.netops.eidosinteractive.com/collector/triad$1",
-		"name": "Triad Wars Influence API (1)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars Influence API",
 		"methods": [
 			"GET",
 			"POST",
@@ -3531,9 +4380,13 @@
 		"pattern": "^/stage/triad-wars/influence(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-zephyrus-stage.netops.eidosinteractive.com/triad/influence$1",
-		"name": "Triad Wars Influence API (1)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -3546,9 +4399,13 @@
 		"pattern": "^/stage/triad-wars/content/blog(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/blog$1",
-		"name": "Triad Wars content API (stage) (1)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -3561,9 +4418,13 @@
 		"pattern": "^/stage/triad-wars/content/video(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/video$1",
-		"name": "Triad Wars content API (stage) (2)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -3576,9 +4437,13 @@
 		"pattern": "^/stage/triad-wars/content/image(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/image$1",
-		"name": "Triad Wars content API (stage) (3)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -3591,9 +4456,13 @@
 		"pattern": "^/stage/triad-wars/content/qa-test-entity(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/qa-test-entity$1",
-		"name": "Triad Wars content API (stage) (4)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -3606,9 +4475,13 @@
 		"pattern": "^/stage/triad-wars/content/information(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/information$1",
-		"name": "Triad Wars content API (stage) (5)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -3621,9 +4494,13 @@
 		"pattern": "^/stage/triad-wars/content/about(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/about$1",
-		"name": "Triad Wars content API (stage) (6)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -3636,9 +4513,13 @@
 		"pattern": "^/stage/triad-wars/content/page(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/page$1",
-		"name": "Triad Wars content API (stage) (7)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -3651,9 +4532,13 @@
 		"pattern": "^/stage/triad-wars/content/gallery(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/gallery$1",
-		"name": "Triad Wars content API (stage) (8)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -3666,9 +4551,13 @@
 		"pattern": "^/stage/triad-wars/content/blog(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/blog$1",
-		"name": "Triad Wars content API (stage) (1)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -3681,9 +4570,13 @@
 		"pattern": "^/stage/triad-wars/content/video(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/video$1",
-		"name": "Triad Wars content API (stage) (2)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -3696,9 +4589,13 @@
 		"pattern": "^/stage/triad-wars/content/image(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/image$1",
-		"name": "Triad Wars content API (stage) (3)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -3711,9 +4608,13 @@
 		"pattern": "^/stage/triad-wars/content/qa-test-entity(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/qa-test-entity$1",
-		"name": "Triad Wars content API (stage) (4)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -3726,9 +4627,13 @@
 		"pattern": "^/stage/triad-wars/content/information(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/information$1",
-		"name": "Triad Wars content API (stage) (5)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -3741,9 +4646,13 @@
 		"pattern": "^/stage/triad-wars/content/about(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/about$1",
-		"name": "Triad Wars content API (stage) (6)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -3756,9 +4665,13 @@
 		"pattern": "^/stage/triad-wars/content/page(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/page$1",
-		"name": "Triad Wars content API (stage) (7)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -3771,9 +4684,13 @@
 		"pattern": "^/stage/triad-wars/content/gallery(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/gallery$1",
-		"name": "Triad Wars content API (stage) (8)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -3786,9 +4703,13 @@
 		"pattern": "^/stage/triad-wars/content/blog(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/blog$1",
-		"name": "Triad Wars content API (stage) (1)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -3801,9 +4722,13 @@
 		"pattern": "^/stage/triad-wars/content/video(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/video$1",
-		"name": "Triad Wars content API (stage) (2)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -3816,9 +4741,13 @@
 		"pattern": "^/stage/triad-wars/content/image(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/image$1",
-		"name": "Triad Wars content API (stage) (3)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -3831,9 +4760,13 @@
 		"pattern": "^/stage/triad-wars/content/qa-test-entity(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/qa-test-entity$1",
-		"name": "Triad Wars content API (stage) (4)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -3846,9 +4779,13 @@
 		"pattern": "^/stage/triad-wars/content/information(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/information$1",
-		"name": "Triad Wars content API (stage) (5)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -3861,9 +4798,13 @@
 		"pattern": "^/stage/triad-wars/content/about(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/about$1",
-		"name": "Triad Wars content API (stage) (6)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -3876,9 +4817,13 @@
 		"pattern": "^/stage/triad-wars/content/page(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/page$1",
-		"name": "Triad Wars content API (stage) (7)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -3891,9 +4836,13 @@
 		"pattern": "^/stage/triad-wars/content/gallery(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/gallery$1",
-		"name": "Triad Wars content API (stage) (8)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -3906,9 +4855,13 @@
 		"pattern": "^/stage/triad-wars/content/blog(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/blog$1",
-		"name": "Triad Wars content API (stage) (1)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -3921,9 +4874,13 @@
 		"pattern": "^/stage/triad-wars/content/video(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/video$1",
-		"name": "Triad Wars content API (stage) (2)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -3936,9 +4893,13 @@
 		"pattern": "^/stage/triad-wars/content/image(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/image$1",
-		"name": "Triad Wars content API (stage) (3)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -3951,9 +4912,13 @@
 		"pattern": "^/stage/triad-wars/content/qa-test-entity(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/qa-test-entity$1",
-		"name": "Triad Wars content API (stage) (4)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -3966,9 +4931,13 @@
 		"pattern": "^/stage/triad-wars/content/information(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/information$1",
-		"name": "Triad Wars content API (stage) (5)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -3981,9 +4950,13 @@
 		"pattern": "^/stage/triad-wars/content/about(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/about$1",
-		"name": "Triad Wars content API (stage) (6)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -3996,9 +4969,13 @@
 		"pattern": "^/stage/triad-wars/content/page(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/page$1",
-		"name": "Triad Wars content API (stage) (7)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -4011,9 +4988,13 @@
 		"pattern": "^/stage/triad-wars/content/gallery(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/gallery$1",
-		"name": "Triad Wars content API (stage) (8)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -4026,9 +5007,13 @@
 		"pattern": "^/stage/triad-wars/content/blog(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/blog$1",
-		"name": "Triad Wars content API (stage) (1)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -4041,9 +5026,13 @@
 		"pattern": "^/stage/triad-wars/content/video(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/video$1",
-		"name": "Triad Wars content API (stage) (2)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -4056,9 +5045,13 @@
 		"pattern": "^/stage/triad-wars/content/image(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/image$1",
-		"name": "Triad Wars content API (stage) (3)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -4071,9 +5064,13 @@
 		"pattern": "^/stage/triad-wars/content/qa-test-entity(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/qa-test-entity$1",
-		"name": "Triad Wars content API (stage) (4)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -4086,9 +5083,13 @@
 		"pattern": "^/stage/triad-wars/content/information(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/information$1",
-		"name": "Triad Wars content API (stage) (5)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -4101,9 +5102,13 @@
 		"pattern": "^/stage/triad-wars/content/about(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/about$1",
-		"name": "Triad Wars content API (stage) (6)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -4116,9 +5121,13 @@
 		"pattern": "^/stage/triad-wars/content/page(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/page$1",
-		"name": "Triad Wars content API (stage) (7)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -4131,9 +5140,13 @@
 		"pattern": "^/stage/triad-wars/content/gallery(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/gallery$1",
-		"name": "Triad Wars content API (stage) (8)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -4146,9 +5159,13 @@
 		"pattern": "^/stage/triad-wars/content/blog(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/blog$1",
-		"name": "Triad Wars content API (stage) (1)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -4161,9 +5178,13 @@
 		"pattern": "^/stage/triad-wars/content/video(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/video$1",
-		"name": "Triad Wars content API (stage) (2)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -4176,9 +5197,13 @@
 		"pattern": "^/stage/triad-wars/content/image(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/image$1",
-		"name": "Triad Wars content API (stage) (3)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -4191,9 +5216,13 @@
 		"pattern": "^/stage/triad-wars/content/qa-test-entity(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/qa-test-entity$1",
-		"name": "Triad Wars content API (stage) (4)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -4206,9 +5235,13 @@
 		"pattern": "^/stage/triad-wars/content/information(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/information$1",
-		"name": "Triad Wars content API (stage) (5)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -4221,9 +5254,13 @@
 		"pattern": "^/stage/triad-wars/content/about(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/about$1",
-		"name": "Triad Wars content API (stage) (6)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -4236,9 +5273,13 @@
 		"pattern": "^/stage/triad-wars/content/page(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/page$1",
-		"name": "Triad Wars content API (stage) (7)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -4251,9 +5292,13 @@
 		"pattern": "^/stage/triad-wars/content/gallery(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/gallery$1",
-		"name": "Triad Wars content API (stage) (8)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -4266,9 +5311,13 @@
 		"pattern": "^/stage/triad-wars/content/blog(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/blog$1",
-		"name": "Triad Wars content API (stage) (1)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -4281,9 +5330,13 @@
 		"pattern": "^/stage/triad-wars/content/video(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/video$1",
-		"name": "Triad Wars content API (stage) (2)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -4296,9 +5349,13 @@
 		"pattern": "^/stage/triad-wars/content/image(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/image$1",
-		"name": "Triad Wars content API (stage) (3)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -4311,9 +5368,13 @@
 		"pattern": "^/stage/triad-wars/content/qa-test-entity(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/qa-test-entity$1",
-		"name": "Triad Wars content API (stage) (4)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -4326,9 +5387,13 @@
 		"pattern": "^/stage/triad-wars/content/information(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/information$1",
-		"name": "Triad Wars content API (stage) (5)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -4341,9 +5406,13 @@
 		"pattern": "^/stage/triad-wars/content/about(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/about$1",
-		"name": "Triad Wars content API (stage) (6)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -4356,9 +5425,13 @@
 		"pattern": "^/stage/triad-wars/content/page(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/page$1",
-		"name": "Triad Wars content API (stage) (7)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -4371,9 +5444,13 @@
 		"pattern": "^/stage/triad-wars/content/gallery(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/gallery$1",
-		"name": "Triad Wars content API (stage) (8)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -4386,9 +5463,13 @@
 		"pattern": "^/stage/triad-wars/content/blog(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/blog$1",
-		"name": "Triad Wars content API (stage) (1)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -4401,9 +5482,13 @@
 		"pattern": "^/stage/triad-wars/content/video(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/video$1",
-		"name": "Triad Wars content API (stage) (2)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -4416,9 +5501,13 @@
 		"pattern": "^/stage/triad-wars/content/image(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/image$1",
-		"name": "Triad Wars content API (stage) (3)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -4431,9 +5520,13 @@
 		"pattern": "^/stage/triad-wars/content/qa-test-entity(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/qa-test-entity$1",
-		"name": "Triad Wars content API (stage) (4)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -4446,9 +5539,13 @@
 		"pattern": "^/stage/triad-wars/content/information(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/information$1",
-		"name": "Triad Wars content API (stage) (5)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -4461,9 +5558,13 @@
 		"pattern": "^/stage/triad-wars/content/about(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/about$1",
-		"name": "Triad Wars content API (stage) (6)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -4476,9 +5577,13 @@
 		"pattern": "^/stage/triad-wars/content/page(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/page$1",
-		"name": "Triad Wars content API (stage) (7)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -4491,9 +5596,13 @@
 		"pattern": "^/stage/triad-wars/content/gallery(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/gallery$1",
-		"name": "Triad Wars content API (stage) (8)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -4506,9 +5615,13 @@
 		"pattern": "^/stage/triad-wars/content/timelines(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/timelines$1",
-		"name": "Triad Wars content API (stage) (1)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -4521,9 +5634,13 @@
 		"pattern": "^/stage/triad-wars/content/fillers(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/triad/content/timelines/fillers$1",
-		"name": "Triad Wars content API (stage) (1)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars game-to-web/web-to-game API",
 		"methods": [
 			"GET",
 			"POST",
@@ -4536,9 +5653,13 @@
 		"pattern": "^/stage/triad-wars/store(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-arke-stage.netops.eidosinteractive.com/triad/store$1",
-		"name": "Triad Wars game-to-web/web-to-game API (stage) (1)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -4551,9 +5672,13 @@
 		"pattern": "^/stage/triad-wars/content/entities(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-hydra-api-stage.netops.eidosinteractive.com/api/projects/triad/entities$1",
-		"name": "Triad Wars content API (stage) (1)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Triad Wars session API",
 		"methods": [
 			"GET",
 			"POST",
@@ -4566,45 +5691,64 @@
 		"pattern": "^/stage/triad-wars/session",
 		"secure": true,
 		"target": "http://docker-onlinedev-arke-stage.netops.eidosinteractive.com/triad/user",
-		"name": "Triad Wars session API (stage) (1)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Membership",
 		"methods": [
 			"GET"
 		],
 		"pattern": "^/stage/proxy.*",
 		"secure": false,
 		"target": "https://test-membership.square-enix.com/static/proxy.html",
-		"name": "Membership (stage) (1)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894"
+		]
 	},
 	{
+		"name": "Membership",
 		"methods": [
 			"GET"
 		],
 		"pattern": "^/stage/hitman/proxy.*",
 		"secure": false,
 		"target": "https://test-membership.square-enix.com/static/proxy.html",
-		"name": "Membership (stage) (2)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"99ed03c6-1a56-4e9a-95c4-fb8d9aad8543"
+		]
 	},
 	{
+		"name": "Membership",
 		"methods": [
 			"GET"
 		],
 		"pattern": "^/stage/just-cause-3/proxy.*",
 		"secure": false,
 		"target": "https://test-membership.square-enix.com/static/proxy.html",
-		"name": "Membership (stage) (3)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"63788d4a-c628-401d-9029-a53bb5a0f245"
+		]
 	},
 	{
+		"name": "Membership",
 		"methods": [
 			"GET"
 		],
 		"pattern": "^/stage/triad-wars/proxy.*",
 		"secure": false,
 		"target": "https://test-membership.square-enix.com/static/proxy.html",
-		"name": "Membership (stage) (4)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Tomb Raider session API",
 		"methods": [
 			"GET",
 			"POST",
@@ -4617,9 +5761,12 @@
 		"pattern": "^/stage/tomb-raider/session",
 		"secure": true,
 		"target": "http://docker-onlinedev-arke-stage.netops.eidosinteractive.com/common/session",
-		"name": "Tomb Raider session API (stage) (1)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894"
+		]
 	},
 	{
+		"name": "Just Cause 3 mailing list API",
 		"methods": [
 			"GET",
 			"POST",
@@ -4632,9 +5779,13 @@
 		"pattern": "^/stage/just-cause-3/mailing_list(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-hydra-api-stage.netops.eidosinteractive.com/api/bluew/mailing_list$1",
-		"name": "Just Cause 3 mailing list API (stage) (1)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"63788d4a-c628-401d-9029-a53bb5a0f245"
+		]
 	},
 	{
+		"name": "Just Cause 3 content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -4647,9 +5798,13 @@
 		"pattern": "^/stage/just-cause-3/content/entities(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-hydra-api-stage.netops.eidosinteractive.com/api/projects/bluew/entities$1",
-		"name": "Just Cause 3 content API (stage) (1)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"63788d4a-c628-401d-9029-a53bb5a0f245"
+		]
 	},
 	{
+		"name": "Just Cause 3 content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -4662,9 +5817,13 @@
 		"pattern": "^/stage/just-cause-3/content/medici(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-hydra-api-stage.netops.eidosinteractive.com/api/projects/bluew/medici$1",
-		"name": "Just Cause 3 content API (stage) (2)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"63788d4a-c628-401d-9029-a53bb5a0f245"
+		]
 	},
 	{
+		"name": "Just Cause 3 content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -4677,9 +5836,13 @@
 		"pattern": "^/stage/just-cause-3/content/(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-hydra-api-stage.netops.eidosinteractive.com/api/bluew/$1",
-		"name": "Just Cause 3 content API (stage) (3)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"63788d4a-c628-401d-9029-a53bb5a0f245"
+		]
 	},
 	{
+		"name": "Just Cause 3 session API",
 		"methods": [
 			"GET",
 			"POST",
@@ -4692,54 +5855,77 @@
 		"pattern": "^/stage/just-cause-3/session",
 		"secure": true,
 		"target": "http://docker-onlinedev-hydra-api-stage.netops.eidosinteractive.com/api/bluew/session",
-		"name": "Just Cause 3 session API (stage) (1)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"63788d4a-c628-401d-9029-a53bb5a0f245"
+		]
 	},
 	{
+		"name": "Membership",
 		"methods": [
 			"GET"
 		],
 		"pattern": "^/stage/proxy.*",
 		"secure": false,
 		"target": "https://test-membership.square-enix.com/static/proxy.html",
-		"name": "Membership (stage) (1)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894"
+		]
 	},
 	{
+		"name": "Membership",
 		"methods": [
 			"GET"
 		],
 		"pattern": "^/stage/hitman/proxy.*",
 		"secure": false,
 		"target": "https://test-membership.square-enix.com/static/proxy.html",
-		"name": "Membership (stage) (2)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"99ed03c6-1a56-4e9a-95c4-fb8d9aad8543"
+		]
 	},
 	{
+		"name": "Membership",
 		"methods": [
 			"GET"
 		],
 		"pattern": "^/stage/just-cause-3/proxy.*",
 		"secure": false,
 		"target": "https://test-membership.square-enix.com/static/proxy.html",
-		"name": "Membership (stage) (3)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"63788d4a-c628-401d-9029-a53bb5a0f245"
+		]
 	},
 	{
+		"name": "Membership",
 		"methods": [
 			"GET"
 		],
 		"pattern": "^/stage/triad-wars/proxy.*",
 		"secure": false,
 		"target": "https://test-membership.square-enix.com/static/proxy.html",
-		"name": "Membership (stage) (4)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Hitman Web join mailing list API",
 		"methods": [
 			"([A-Z]+)"
 		],
 		"pattern": "^/stage/hitman/join_mailing_list(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-arke-stage.netops.eidosinteractive.com/hitman/join_mailing_list$2",
-		"name": "Hitman Web join mailing list API (stage) (1)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"99ed03c6-1a56-4e9a-95c4-fb8d9aad8543"
+		]
 	},
 	{
+		"name": "Hitman Web mailing list API",
 		"methods": [
 			"GET",
 			"POST",
@@ -4752,9 +5938,13 @@
 		"pattern": "^/stage/hitman/mailing_list(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-arke-stage.netops.eidosinteractive.com/api/hitman/mailing_list$1",
-		"name": "Hitman Web mailing list API (stage) (1)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"99ed03c6-1a56-4e9a-95c4-fb8d9aad8543"
+		]
 	},
 	{
+		"name": "Hitman Web content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -4767,9 +5957,13 @@
 		"pattern": "^/stage/hitman/content/static_copies(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-hydra-api-stage.netops.eidosinteractive.com/api/projects/hitman/static_copies$1",
-		"name": "Hitman Web content API (stage) (1)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"99ed03c6-1a56-4e9a-95c4-fb8d9aad8543"
+		]
 	},
 	{
+		"name": "Hitman Web content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -4782,9 +5976,13 @@
 		"pattern": "^/stage/hitman/content/entities(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-hydra-api-stage.netops.eidosinteractive.com/api/projects/hitman/entities$1",
-		"name": "Hitman Web content API (stage) (2)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"99ed03c6-1a56-4e9a-95c4-fb8d9aad8543"
+		]
 	},
 	{
+		"name": "Hitman Web content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -4797,9 +5995,13 @@
 		"pattern": "^/stage/hitman/content/(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-hydra-api-stage.netops.eidosinteractive.com/api/hitman/$1",
-		"name": "Hitman Web content API (stage) (3)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"99ed03c6-1a56-4e9a-95c4-fb8d9aad8543"
+		]
 	},
 	{
+		"name": "Hitman Web session API",
 		"methods": [
 			"GET",
 			"POST",
@@ -4812,45 +6014,64 @@
 		"pattern": "^/stage/hitman/session",
 		"secure": true,
 		"target": "http://docker-onlinedev-hydra-api-stage.netops.eidosinteractive.com/api/hitman/session",
-		"name": "Hitman Web session API (stage) (1)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"99ed03c6-1a56-4e9a-95c4-fb8d9aad8543"
+		]
 	},
 	{
+		"name": "Membership",
 		"methods": [
 			"GET"
 		],
 		"pattern": "^/stage/proxy.*",
 		"secure": false,
 		"target": "https://test-membership.square-enix.com/static/proxy.html",
-		"name": "Membership (stage) (1)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894"
+		]
 	},
 	{
+		"name": "Membership",
 		"methods": [
 			"GET"
 		],
 		"pattern": "^/stage/hitman/proxy.*",
 		"secure": false,
 		"target": "https://test-membership.square-enix.com/static/proxy.html",
-		"name": "Membership (stage) (2)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"99ed03c6-1a56-4e9a-95c4-fb8d9aad8543"
+		]
 	},
 	{
+		"name": "Membership",
 		"methods": [
 			"GET"
 		],
 		"pattern": "^/stage/just-cause-3/proxy.*",
 		"secure": false,
 		"target": "https://test-membership.square-enix.com/static/proxy.html",
-		"name": "Membership (stage) (3)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"63788d4a-c628-401d-9029-a53bb5a0f245"
+		]
 	},
 	{
+		"name": "Membership",
 		"methods": [
 			"GET"
 		],
 		"pattern": "^/stage/triad-wars/proxy.*",
 		"secure": false,
 		"target": "https://test-membership.square-enix.com/static/proxy.html",
-		"name": "Membership (stage) (4)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "Augaware content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -4863,9 +6084,13 @@
 		"pattern": "^/stage/tomb_raider/content/(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/tomb_raider/content/$1",
-		"name": "Augaware content API (stage) (1)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"7ae01bfd-21c0-4d1a-8a34-44d5c10aea10"
+		]
 	},
 	{
+		"name": "Augaware content API",
 		"methods": [
 			"GET",
 			"POST",
@@ -4878,9 +6103,13 @@
 		"pattern": "^/stage/augaware/content/(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-iris-stage.netops.eidosinteractive.com/projects/augaware/content/$1",
-		"name": "Augaware content API (stage) (1)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"79461030-dacf-4138-b1f8-ed3c058178c2"
+		]
 	},
 	{
+		"name": "Fast Check Permissions",
 		"methods": [
 			"GET",
 			"POST",
@@ -4893,60 +6122,83 @@
 		"pattern": "^/stage/auth/users/permissions(.*)",
 		"secure": false,
 		"target": "http://docker-onlinedev-fast-check-stage.netops.eidosinteractive.com/permissions$1",
-		"name": "Fast Check Permissions (stage) (1)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894"
+		]
 	},
 	{
+		"name": "Membership",
 		"methods": [
 			"GET"
 		],
 		"pattern": "^/stage/proxy.*",
 		"secure": false,
 		"target": "https://test-membership.square-enix.com/static/proxy.html",
-		"name": "Membership (stage) (1)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894"
+		]
 	},
 	{
+		"name": "Membership",
 		"methods": [
 			"GET"
 		],
 		"pattern": "^/stage/hitman/proxy.*",
 		"secure": false,
 		"target": "https://test-membership.square-enix.com/static/proxy.html",
-		"name": "Membership (stage) (2)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"99ed03c6-1a56-4e9a-95c4-fb8d9aad8543"
+		]
 	},
 	{
+		"name": "Membership",
 		"methods": [
 			"GET"
 		],
 		"pattern": "^/stage/just-cause-3/proxy.*",
 		"secure": false,
 		"target": "https://test-membership.square-enix.com/static/proxy.html",
-		"name": "Membership (stage) (3)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"63788d4a-c628-401d-9029-a53bb5a0f245"
+		]
 	},
 	{
+		"name": "Membership",
 		"methods": [
 			"GET"
 		],
 		"pattern": "^/stage/triad-wars/proxy.*",
 		"secure": false,
 		"target": "https://test-membership.square-enix.com/static/proxy.html",
-		"name": "Membership (stage) (4)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894",
+			"ae9a286f-4a7c-49c4-8ce9-7de5d6ba5c59"
+		]
 	},
 	{
+		"name": "CDN origin server",
 		"methods": [
 			"GET"
 		],
 		"pattern": "^/stage/assets?/(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-nimbus-stage.netops.eidosinteractive.com/asset/$1",
-		"name": "CDN origin server (stage) (1)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894"
+		]
 	},
 	{
+		"name": "CDN origin server",
 		"methods": [
 			"GET"
 		],
 		"pattern": "^/stage/assets?/(.*)",
 		"secure": true,
 		"target": "http://docker-onlinedev-nimbus-stage.netops.eidosinteractive.com/asset/$1",
-		"name": "CDN origin server (stage) (1)"
+		"tags": [
+			"55f0e41b-da6f-4751-8bab-c15708b46894"
+		]
 	}
 ]
