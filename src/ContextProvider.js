@@ -25,11 +25,14 @@ export default class ContextProvider extends Component {
     }
   }
 
-  insertCss(styles) {
+  insertCss(style) {
     if (this.props.isServer) {
-      ContextProvider.styles.push(styles._getCss())
+      if (ContextProvider.styles.indexOf(style._getCss()) !== -1) {
+        return;
+      }
+      ContextProvider.styles.push(style._getCss());
     } else {
-      styles._insertCss();
+      style._insertCss();
     }
   }
 
