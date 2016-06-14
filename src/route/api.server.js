@@ -16,9 +16,11 @@ export const on = pubsub.on;
 export const emit = pubsub.emit;
 
 export function all() {
-  return redis.keysAsync(`${ROUTE_QUALIFIER}*`).then(keys =>
-    Promise.all(keys.map(key => redis.hgetallAsync(key)))
-  ).then(routes => {
+  return redis.keysAsync(`${ROUTE_QUALIFIER}*`).then(keys => {
+    const multi = redis.multi();
+    for (let key of keys) { multi.hgetall(key) }
+    return multi.execAsync();
+  }).then(routes => {
     routes = routes.map(route => ({
       ...route,
       order: parseInt(route.order, 10),

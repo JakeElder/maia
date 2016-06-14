@@ -10,9 +10,11 @@ export const TAG_QUALIFIER = `${config.get('db:name')}:tag:`;
 export const makeTagKey = routeId => `${TAG_QUALIFIER}${routeId}`;
 
 export function all() {
-  return redis.keysAsync(`${TAG_QUALIFIER}*`).then(keys =>
-    Promise.all(keys.map(key => redis.hgetallAsync(key)))
-  );
+  return redis.keysAsync(`${TAG_QUALIFIER}*`).then(keys => {
+    const multi = redis.multi();
+    for (let key of keys) { multi.hgetall(key) }
+    return multi.execAsync();
+  });
 }
 
 export function create(tag) {
