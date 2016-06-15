@@ -28,7 +28,7 @@ export function all() {
       tags: JSON.parse(route.tags || '[]'),
       secure: JSON.parse(route.secure || 'true')
     }));
-    return sortBy(routes.splice(0, 50), 'order');
+    return sortBy(routes, 'order');
   });
 }
 

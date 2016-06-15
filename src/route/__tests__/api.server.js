@@ -12,7 +12,8 @@ const routes = [{
   methods: JSON.stringify(['GET', 'POST']),
   pattern: '/test(.*)',
   secure: false,
-  target: 'http://example.com/$1'
+  target: 'http://example.com/$1',
+  tags: '[]'
 }, {
   id: '11dc3c19-9553-4dd2-9f09-554b51d7c71b',
   order: 2,
@@ -20,11 +21,12 @@ const routes = [{
   methods: JSON.stringify(['GET', 'POST', 'PUT', 'DELETE']),
   pattern: '/another-test(.*)',
   secure: true,
-  target: 'http://another-example.com/$1'
+  target: 'http://another-example.com/$1',
+  tags: '[]'
 }];
 
 const stringifiedRoutes = routes.map(route =>
-  ({ ...route, methods: JSON.stringify(route.methods) }) 
+  ({ ...route, methods: JSON.stringify(route.methods), tags: JSON.stringify(route.tags) }) 
 );
 
 const clearRoutes = () => {

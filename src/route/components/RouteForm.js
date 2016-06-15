@@ -52,7 +52,7 @@ export class RouteForm extends Component {
   }
 
   render() {
-    const { id, name, pattern, target, order } = this.props.route;
+    const { id, name, pattern, target, order, tags } = this.props.route;
     const { editable, onChange, onSubmit, elId } = this.props;
 
     return (
@@ -117,6 +117,7 @@ export class RouteForm extends Component {
             })}
           </div>
         </div>
+        {tags.map((tag, idx) => <input type="hidden" name={`tags[${idx}]`} value={`${tag}`}/>)}
         {this.formControls}
       </form>
     );

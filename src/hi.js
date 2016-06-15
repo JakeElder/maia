@@ -9,7 +9,7 @@ import path from 'path';
 import * as Route from 'route-api';
 import * as Tag from 'tag-api';
 import { routes, reducer } from './app';
-import { UNTAGGED } from './group/constants';
+import { UNTAGGED, TAGGED_WITH } from './group/constants';
 import ContextProvider from './ContextProvider';
 import config from '../config';
 
@@ -36,7 +36,8 @@ hi.get('*', (req, res) => {
         routes,
         tags,
         groups: [
-          { id: 1, name: 'Untagged', type: UNTAGGED, showMembers: true }
+          { id: 'untagged', name: 'Untagged', type: UNTAGGED, showMembers: true },
+          ...tags.map(tag => ({ ...tag, type: TAGGED_WITH, showMembers: true }))
         ]
       }
       const store = createStore(reducer, state);

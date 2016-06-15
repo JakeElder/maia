@@ -7,7 +7,7 @@ import { showMembers, hideMembers } from '../actions';
 @connect((state) => ({ groups: state.groups }))
 export default class GroupFilterList extends Component {
   handleChange(event) {
-    const id = parseInt(event.target.id.replace('group_', ''), 10);
+    const id = event.target.id.replace('group_', '');
     const { dispatch } = this.props;
     dispatch(event.target.checked ? showMembers(id) : hideMembers(id));
   }

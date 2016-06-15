@@ -23,6 +23,8 @@ const clearTags = () => {
   });
 };
 
+const sortFn = (a, b) => a.id < b.id;
+
 beforeAll(done => clearTags().then(done)); 
 
 describe('all', () => {
@@ -31,7 +33,7 @@ describe('all', () => {
       db.client.hmset(makeTagKey(tag.id), tag);
     });
     return all().then((retrievedTags) => {
-      expect(tags).toEqual(retrievedTags);
+      expect(tags.sort(sortFn)).toEqual(retrievedTags.sort(sortFn));
     });
   });
 });

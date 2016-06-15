@@ -2,6 +2,7 @@ export const routeize = (routish = {}) => ({
   id: '',
   name: '',
   methods: [],
+  tags: [],
   pattern: '',
   secure: true,
   target: '',
