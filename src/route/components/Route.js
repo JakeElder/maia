@@ -165,6 +165,19 @@ export default class Route extends Component {
     </ul>;
   }
 
+  shouldComponentUpdate(nextProps) {
+    const changed = _.some([
+      'route',
+      'originalRoute',
+      'isDragging',
+      'isExpanded',
+      'isModified',
+      'isUpdating',
+      'tags'
+    ], prop => !_.isEqual(this.props[prop], nextProps[prop]));
+    return changed;
+  }
+
   render() {
     const { id, name, pattern, target } = this.props.route;
     const { connectDragSource, connectDropTarget, isDragging } = this.props;
